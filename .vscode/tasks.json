@@ -1,0 +1,98 @@
+{
+    "version": "2.0.0",
+    "tasks": [        {
+            "label": "Build Thesis (PDF)",
+            "type": "shell",
+            "command": "Rscript",
+            "args": [
+                "build-thesis.R",
+                "pdf"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },        {
+            "label": "Build Thesis (BS4)",
+            "type": "shell",
+            "command": "Rscript",
+            "args": [
+                "build-thesis.R",
+                "bs4"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },        {
+            "label": "Build Thesis (GitBook)",
+            "type": "shell",
+            "command": "Rscript",
+            "args": [
+                "build-thesis.R",
+                "gitbook"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },        {
+            "label": "Build Thesis (Word)",
+            "type": "shell",
+            "command": "Rscript",
+            "args": [
+                "build-thesis.R",
+                "word"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },{
+            "label": "Build Thesis (All Formats)",
+            "type": "shell",
+            "command": "Rscript",
+            "args": [
+                "build-thesis.R", 
+                "pdf", "bs4", "gitbook", "word"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        }
+    ]
+}

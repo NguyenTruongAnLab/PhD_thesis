@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>3 Citations, cross-references, and collaboration | oxforddown: An Oxford University Thesis Template for R Markdown</title>
 <meta name="author" content="Author Name">
-<meta name="generator" content="bookdown 0.29 with bs4_book()">
+<meta name="generator" content="bookdown 0.43 with bs4_book()">
 <meta property="og:title" content="3 Citations, cross-references, and collaboration | oxforddown: An Oxford University Thesis Template for R Markdown">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3 Citations, cross-references, and collaboration | oxforddown: An Oxford University Thesis Template for R Markdown">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -24,6 +24,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -102,18 +103,18 @@ Then reference the path to this file in <strong>index.Rmd</strong>’s YAML head
 <p>Most reference managers can create a .bib file with you references automatically.
 However, the <strong>by far</strong> best reference manager to use with <em>R Markdown</em> is <a href="https://www.zotero.org">Zotero</a> with the <a href="https://retorque.re/zotero-better-bibtex/">Better BibTex plug-in</a>, because the <code>citr</code> plugin for RStudio (see below) can read references directly from your Zotero library!</p>
 <p>Here is an example of an entry in a <strong>.bib</strong> file:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb18-1"><a href="cites-and-refs.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Shea2014</span>,</span>
-<span id="cb18-2"><a href="cites-and-refs.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> =        {Shea, Nicholas and Boldt, Annika},</span>
-<span id="cb18-3"><a href="cites-and-refs.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span> =       {Trends in Cognitive Sciences},</span>
-<span id="cb18-4"><a href="cites-and-refs.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span> =         {186--193},</span>
-<span id="cb18-5"><a href="cites-and-refs.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span> =         {{Supra-personal cognitive control}},</span>
-<span id="cb18-6"><a href="cites-and-refs.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">volume</span> =        {18},</span>
-<span id="cb18-7"><a href="cites-and-refs.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span> =          {2014},</span>
-<span id="cb18-8"><a href="cites-and-refs.html#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span> =           {10.1016/j.tics.2014.01.006},</span>
-<span id="cb18-9"><a href="cites-and-refs.html#cb18-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb29-1"><a href="cites-and-refs.html#cb29-1" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Shea2014</span>,</span>
+<span id="cb29-2"><a href="cites-and-refs.html#cb29-2" tabindex="-1"></a>  <span class="dt">author</span> =        {Shea, Nicholas and Boldt, Annika},</span>
+<span id="cb29-3"><a href="cites-and-refs.html#cb29-3" tabindex="-1"></a>  <span class="dt">journal</span> =       {Trends in Cognitive Sciences},</span>
+<span id="cb29-4"><a href="cites-and-refs.html#cb29-4" tabindex="-1"></a>  <span class="dt">pages</span> =         {186--193},</span>
+<span id="cb29-5"><a href="cites-and-refs.html#cb29-5" tabindex="-1"></a>  <span class="dt">title</span> =         {{Supra-personal cognitive control}},</span>
+<span id="cb29-6"><a href="cites-and-refs.html#cb29-6" tabindex="-1"></a>  <span class="dt">volume</span> =        {18},</span>
+<span id="cb29-7"><a href="cites-and-refs.html#cb29-7" tabindex="-1"></a>  <span class="dt">year</span> =          {2014},</span>
+<span id="cb29-8"><a href="cites-and-refs.html#cb29-8" tabindex="-1"></a>  <span class="dt">doi</span> =           {10.1016/j.tics.2014.01.006},</span>
+<span id="cb29-9"><a href="cites-and-refs.html#cb29-9" tabindex="-1"></a>}</span></code></pre></div>
 <p>In this entry highlighed section, ‘Shea2014’ is the <strong>citation identifier</strong>.
 To default way to cite an entry in your text is with this syntax: <code>[@citation-identifier]</code>.</p>
-<p>So I might cite some things <span class="citation">(<a href="references.html#ref-Lottridge2012" role="doc-biblioref">Lottridge et al., 2012</a>; <a href="references.html#ref-Mill1965" role="doc-biblioref">Mill, 1965 [1843]</a>; <a href="references.html#ref-Shea2014" role="doc-biblioref">Shea et al., 2014</a>)</span>.</p>
+<p>So I might cite some things <span class="citation">(<a href="references.html#ref-Lottridge2012">Lottridge et al., 2012</a>; <a href="references.html#ref-Mill1965">Mill, 1965 [1843]</a>; <a href="references.html#ref-Shea2014">Shea et al., 2014</a>)</span>.</p>
 <div id="citation-appearance" class="section level3" number="3.1.1">
 <h3>
 <span class="header-section-number">3.1.1</span> Appearance of citations and references section (pandoc)<a class="anchor" aria-label="anchor" href="#citation-appearance"><i class="fas fa-link"></i></a>
@@ -127,14 +128,14 @@ By default, <code>oxforddown</code> by the Americal Psychological Association (7
 <ul>
 <li>This: <code>@Shea2014 says blah.</code>
 </li>
-<li>Becomes: <span class="citation">Shea et al. (<a href="references.html#ref-Shea2014" role="doc-biblioref">2014</a>)</span> says blah.</li>
+<li>Becomes: <span class="citation">Shea et al. (<a href="references.html#ref-Shea2014">2014</a>)</span> says blah.</li>
 </ul>
 </li>
 <li>Include only the citation-year (in parenthesis)
 <ul>
 <li>This: <code>Shea et al. says blah [-@Shea2014]</code>
 </li>
-<li>Becomes: Shea et al. says blah <span class="citation">(<a href="references.html#ref-Shea2014" role="doc-biblioref">2014</a>)</span>
+<li>Becomes: Shea et al. says blah <span class="citation">(<a href="references.html#ref-Shea2014">2014</a>)</span>
 </li>
 </ul>
 </li>
@@ -142,7 +143,7 @@ By default, <code>oxforddown</code> by the Americal Psychological Association (7
 <ul>
 <li>This: <code>[see @Shea2014, pp. 33-35; also @Wu2016, ch. 1]</code>
 </li>
-<li>Becomes: Blah blah <span class="citation">(see <a href="references.html#ref-Shea2014" role="doc-biblioref">Shea et al., 2014, pp. 33–35</a>; also <a href="references.html#ref-Wu2016" role="doc-biblioref">Wu, 2016</a>, ch. 1)</span>.</li>
+<li>Becomes: Blah blah <span class="citation">(see <a href="references.html#ref-Shea2014">Shea et al., 2014, pp. 33–35</a>; also <a href="references.html#ref-Wu2016">Wu, 2016</a>, ch. 1)</span>.</li>
 </ul>
 </li>
 </ul>
@@ -198,7 +199,7 @@ See <a href="cites-and-refs.html#cites-and-refs">our chapter title</a> for an ex
 <strong>GOTCHA</strong>: Figures and tables must have captions if you wish to cross-reference them.</li>
 </ul>
 <p>Let’s add an image:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"figures/sample-content/captain.jpeg"</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:captain"></span>
@@ -219,61 +220,36 @@ So Figure <a href="cites-and-refs.html#fig:captain">3.1</a> is <a href="cites-an
 </li>
 </ul>
 <p>Let’s include a table:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">cars</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,<span class="op">]</span>,</span>
 <span>            caption<span class="op">=</span><span class="st">"Stopping cars"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:cars-table2">Table 3.1: </span>Stopping cars
-</caption>
-<thead><tr>
-<th style="text-align:right;">
-speed
-</th>
-<th style="text-align:right;">
-dist
-</th>
+<span id="tab:cars-table2">Table 3.1: </span>Stopping cars</caption>
+<thead><tr class="header">
+<th align="right">speed</th>
+<th align="right">dist</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-2
-</td>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">2</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-10
-</td>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">10</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-4
-</td>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">4</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-22
-</td>
+<tr class="even">
+<td align="right">7</td>
+<td align="right">22</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-16
-</td>
+<tr class="odd">
+<td align="right">8</td>
+<td align="right">16</td>
 </tr>
 </tbody>
 </table></div>

@@ -1,0 +1,11 @@
+{
+    "r.lsp.enabled": true,
+    "r.rterm.windows": "C:\\Program Files\\R\\R-4.2.0\\bin\\R.exe",
+    "r.rpath.windows": "C:\\Program Files\\R\\R-4.2.0\\bin\\R.exe",
+    "[r]": {
+        "editor.defaultFormatter": "REditorSupport.r-lsp"
+    },
+    "[rmd]": {
+        "editor.defaultFormatter": "REditorSupport.r-lsp"
+    }
+}

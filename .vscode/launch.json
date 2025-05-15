@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "R-Debugger",
+            "name": "Launch R Script",
+            "request": "launch",
+            "program": "${file}",
+            "debugMode": "file",
+            "workingDirectory": "${workspaceFolder}"
+        }
+    ]
+}

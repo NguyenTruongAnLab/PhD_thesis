@@ -1,4 +1,4 @@
-name: Build and Deploy Thesis
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -8,99 +8,24 @@ on:
   workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.2.0'
-          
-      - name: Setup pandoc
-        uses: r-lib/actions/setup-pandoc@v2
-        with:
-          pandoc-version: '2.18'
-          
-      - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
-        with:
-          extra_packages: |
-            latex-xcolor
-            lm
-            amsfonts
-            amsmath
-            etoolbox
-            geometry
-            fancyhdr
-            hyperref
-            booktabs
-            graphicx
-            appendix
-            caption
-            multirow
-            array
-            listings
-            xcolor
-            babel
-            fontspec
-            selinput
-            xkeyval
-            soul
-            pdfpages
-            mathspec
-            ifluatex
-            ifxetex
-            textcase
-            natbib
-            biblatex
-            biber
-            logreq
-            xstring
-            microtype
-            url
-            
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
+          # Fetch all history so the last modified dates for files are accurate
+          fetch-depth: 0
       
-      - name: Cache R packages
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
-          restore-keys: ${{ runner.os }}-r-
-          
-      - name: Install R dependencies
+      # Ensure .nojekyll file exists to prevent Jekyll processing
+      - name: Create .nojekyll file
         run: |
-          install.packages(c("rmarkdown", "bookdown", "tidyverse", "kableExtra", "here", "downlit", "bslib"))
-        shell: Rscript {0}
-      
-      - name: Modify index.Rmd for multiple outputs
-        run: |
-          sed -i 's/thesis_formats <- "pdf";/thesis_formats <- c("pdf", "bs4");/' index.Rmd
-          sed -i 's/#   repo: https://github.com\/ulyngs\/oxforddown/    repo: https:\/\/github.com\/${{ github.repository }}/' index.Rmd
-            
-      - name: Build thesis
-        run: |
-          # Remove old docs directory if it exists
-          if [ -d "docs" ]; then
-            find docs -type f -not -name '.nojekyll' -not -path "docs/.git*" -delete
+          if [ ! -f "docs/.nojekyll" ]; then
+            touch docs/.nojekyll
           fi
-          
-          # Build the thesis
-          Rscript -e 'bookdown::render_book("index.Rmd", output_format = "all")'
-          
-          # Ensure .nojekyll file exists
-          touch docs/.nojekyll
-          
+      
+      # Deploy the docs folder to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         if: github.event_name != 'pull_request'

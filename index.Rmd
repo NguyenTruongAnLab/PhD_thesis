@@ -13,10 +13,13 @@ knit: (function(input, ...) {
     knit_thesis(input, thesis_formats, ...)
   })
 
-output:  bookdown::pdf_book:
+output:
+  bookdown::pdf_book:
     template: templates/template.tex
     latex_engine: xelatex
     keep_tex: true
+    includes:
+      in_header: scripts_and_filters/pandoc_fix.tex
     pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
   bookdown::bs4_book:
     css:

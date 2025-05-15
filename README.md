@@ -1,217 +1,317 @@
+# Oxforddown with VS Code
 
-# Oxforddown
-
-A template for writing an Oxford University thesis in R Markdown.
+A template for writing an Oxford University thesis using VS Code and R Markdown.
 The template uses the [bookdown](https://bookdown.org) R package together with the [OxThesis LaTeX template](https://github.com/mcmanigle/OxThesis), plus lots of inspiration from [thesisdown](https://github.com/ismayc/thesisdown).
-
--   [Sample PDF output](https://github.com/ulyngs/oxforddown/blob/master/docs/_main.pdf)
--   [Sample BS4 book output](https://ulyngs.github.io/oxforddown/)
-
-Examples of theses written with `oxforddown` (see also [Google Scholar](https://scholar.google.dk/scholar?oi=bibs&hl=en&cites=14343601209555768076)):
-
--   [Ulysses in Cyberspace: Examining the Effectiveness of Design Patterns for Digital Self-Control](https://ulyngs.github.io/phd-thesis/) by [Ulrik Lyngs](https://ulriklyngs.com)
--   [The impact of heat on occupational injuries, illnesses and associated economic costs in Australia](https://digital.library.adelaide.edu.au/dspace/bitstream/2440/137773/1/Borg2022_PhD.pdf) by Matthew Anthony Borg
--   [The Psychology of Managerial Capital Allocation](https://thesis.shirdekel.com) by [Shir Dekel](https://shirdekel.com)
--   [Teens, Screens and Wellbeing: An Improved Approach](https://www.amyorben.com/docs/thesis/index.html) by [Amy Orben](https://www.amyorben.com)
--   [Interpreting Neural Language Models for Linguistic Complexity Assessment](https://gsarti.com/thesis/introduction.html) by [Gabriele Sarti](https://gsarti.com)
--   [Modeling of nutrient dynamics in an urbanized tropical estuary and application to eutrophication risk management](https://drive.google.com/file/d/1UFT8NfDxHqbFnDNOEk3KtV0IYofb5Go8/view) by Nguyen Truong An
-
-
-*NOTE: If you've used this template to write your thesis, drop me a line at [ulrik.lyngs\@cs.ox.ac.uk](mailto:ulrik.lyngs@cs.ox.ac.uk) and I'll add a link showcasing it!*
-
 
 ## Requirements
 
--   [R](https://cran.rstudio.com) and [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [R](https://cran.r-project.org) (version 4.0 or higher recommended)
+- VS Code extensions:
+  - [R Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r)
+  - [R Markdown All in One](https://marketplace.visualstudio.com/items?itemName=TianyiShi.rmarkdown) (optional but recommended)
+  - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) (optional but recommended)
 
--   The R packages `rmarkdown`, `bookdown`, `tidyverse`, `kableExtra`, and `here`
+## Getting Started
 
--   a LaTeX installation
+### 1. Clone the Repository
 
-    -   Option 1: Use [TinyTeX](https://yihui.name/tinytex/) (a minimal LaTeX installation intended for use with R Markdown)
+```powershell
+# Clone the repository
+git clone https://github.com/ulyngs/oxforddown.git
+cd oxforddown
 
-        -   the development version of TinyTex is [currently required](https://github.com/ulyngs/oxforddown/issues/4). Install from R with
+# OR download and extract the ZIP file from GitHub
+# https://github.com/ulyngs/oxforddown/archive/refs/heads/main.zip
+```
 
-        ``` r
-        remotes::install_github('yihui/tinytex')
-        tinytex::install_tinytex()
-        ```
+### 2. Open the Project in VS Code
 
-        -   Then install the LaTeX packages used by `oxforddown` (diskspace taken up by TinyTex with the required packages installed is about 280 Mb)
+```powershell
+code .
+```
 
-        ``` r
-        missing_packages <- c(
-          "appendix", "babel-english", "babel-greek", "babel-latin", 
-          "biber", "biblatex", "caption", "cbfonts-fd", "colortbl", "csquotes", 
-          "enumitem", "environ", "eso-pic", "fancyhdr", "greek-fontenc", 
-          "grfext", "hyphen-greek", "hyphen-latin", "lineno", "logreq", 
-          "makecell", "microtype", "minitoc", "multirow", "notoccite", 
-          "oberdiek", "pdflscape", "pdfpages", "quotchap", "soul", "tabu", 
-          "threeparttable", "threeparttablex", "titlesec", "tocbibind", 
-          "trimspaces", "ulem", "units", "utopia", "varwidth", "wrapfig",
-          "fvextra", "xurl"
-          )
-        tinytex::tlmgr_install(missing_packages)
-        ```
+Or open VS Code and select File > Open Folder... > Navigate to the oxforddown directory.
 
-    -   Option 2: Use an ordinary LaTeX distribution
+### 3. Install Required R Packages
 
-        -   Mac: download and install MacTeX from [tug.org/mactex/](http://www.tug.org/mactex/) (\~4 gigs)
-        -   Windows: download and install MikTex from [miktex.org](https://miktex.org)
+Open a terminal in VS Code (Terminal > New Terminal) and run:
 
--   *If on Mac*
+```powershell
+# Install required R packages
+Rscript -e "install.packages(c('rmarkdown', 'bookdown', 'tidyverse', 'kableExtra', 'here', 'downlit', 'bslib'))"
+```
 
-    -   Command line developer tools. If you haven't got these installed already, your mac will probably automatically prompt you to install them. Otherwise, you can install them by opening a terminal and typing `xcode-select --install`
+### 4. LaTeX Installation
 
-## How to use
+You need a LaTeX installation to build the PDF output. Choose one of these options:
 
--   download the **ulyngs/oxforddown** repo as a zip
--   open **oxforddown.Rproj** in RStudio
+#### Option 1: TinyTeX (Recommended for R Markdown users)
 
-### How-to chapters
-Read the ['How to use' chapter](https://ulyngs.github.io/oxforddown/how-to-use.html) to understand the structure of `oxforddown` and how to do the basic things like building your thesis.
+TinyTeX is a lightweight LaTeX distribution specifically designed for R Markdown.
 
-Note: bibliography files cannot have underscores in their names!
+```powershell
+# Install TinyTeX
+Rscript -e "install.packages('remotes'); remotes::install_github('yihui/tinytex'); tinytex::install_tinytex()"
 
-For how to use R Markdown syntax in general and in `oxforddown` in particular, read the dedicated chapters on this ([R Markdown basics](https://ulyngs.github.io/oxforddown/rmd-basics.html), [Citations, cross-references, and collaboration](https://ulyngs.github.io/oxforddown/cites-and-refs.html), and [Tables](https://ulyngs.github.io/oxforddown/tables.html)).
+# Install required LaTeX packages
+Rscript -e "tinytex::tlmgr_install(c('appendix', 'babel-english', 'babel-greek', 'babel-latin', 'biber', 'biblatex', 'caption', 'cbfonts-fd', 'colortbl', 'csquotes', 'enumitem', 'environ', 'eso-pic', 'fancyhdr', 'greek-fontenc', 'grfext', 'hyphen-greek', 'hyphen-latin', 'lineno', 'logreq', 'makecell', 'microtype', 'minitoc', 'multirow', 'notoccite', 'oberdiek', 'pdflscape', 'pdfpages', 'quotchap', 'soul', 'tabu', 'threeparttable', 'threeparttablex', 'titlesec', 'tocbibind', 'trimspaces', 'ulem', 'units', 'utopia', 'varwidth', 'wrapfig', 'fvextra', 'xurl'))"
+```
 
-See also the general, official R Markdown resources [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/) and the [*R Markdown Cookbook*](https://bookdown.org/yihui/rmarkdown-cookbook/).
+#### Option 2: Full LaTeX Distribution
 
-### Video tutorials
+- **Windows**: Install MiKTeX from [miktex.org](https://miktex.org)
+- **Mac**: Install MacTeX from [tug.org/mactex/](http://www.tug.org/mactex/) (approximately 4 GB)
+- **Linux**: Install TeX Live with `sudo apt-get install texlive-full` (Ubuntu/Debian) or equivalent for your distribution
 
-I am in the process of updating the tutorial videos to v3 - I've noted below which have yet to be updated, but are still informative, and struck out those that no longer apply:
+### 5. VS Code Setup for Building the Thesis
 
-- [Part 1: Building the entire thesis](https://youtu.be/LBHxcuCMjnk)
-- [Part 2: Building a single chapter](https://youtu.be/8vcO252Us6g)
-- [(*old but informative*) Part 3: Understanding the file structure](https://www.youtube.com/watch?v=jafgJobOgpc)
-- [(*old but informative*) Part 4: A walk-through example of creating your thesis](https://www.youtube.com/watch?v=uWpinaVSZ6Q)
-- [~~Part 5: The content included in index.Rmd (or: why the introduction chapter is special)~~](https://www.youtube.com/watch?v=FPlwCj5ZH8M)
-- [(*old but informative*) Part 6: Adjusting the order of chapters](https://www.youtube.com/watch?v=-0M3TuDnu7Y)
-- [(*old but informative*) Part 7: \_bookdown.yml: Adjusting build settings](https://www.youtube.com/watch?v=jXYfC8RXTvg)
-- [~~Part 8: Makefile: Adjusting build settings~~](https://www.youtube.com/watch?v=L6mV8z32RfE)
-- [(*old but informative*) Part 9: The LaTeX templates](https://www.youtube.com/watch?v=o2fd_O1On7g)
+The repository already includes VS Code task configurations in the `.vscode/tasks.json` file. These tasks make it easy to build your thesis in different formats.
 
+If the `.vscode` folder doesn't exist in your repository, create it:
 
-### Writing your thesis
+```bash
+mkdir -p .vscode
+```
 
--   update the YAML header (the stuff at the top between '---') in **index.Rmd** with your name, college, etc.
--   write the individual chapters as **.Rmd** files in the root folder
--   write the front matter (abstract, acknowledgements, abbreviations) and back matter (appendices) by adjusting the **.Rmd** files in the **front-and-back-matter/** folder
+Then create a `tasks.json` file with the following content:
 
-**.Rmd** files you don't want included in the body text must be given file names that begin with an underscore (e.g. **front-and-back-matter/\_abstract.Rmd** and **front-and-back-matter/\_acknowledgements.Rmd**).
-(Alternatively, specify manually in **\_bookdown.yml** which files should be merged into the body text.)
+```json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Thesis (PDF)",
+      "type": "shell",
+      "command": "Rscript",
+      "args": [
+        "build-thesis.R",
+        "pdf"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Thesis (BS4)",
+      "type": "shell",
+      "command": "Rscript",
+      "args": [
+        "build-thesis.R",
+        "bs4"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Build Thesis (GitBook)",
+      "type": "shell",
+      "command": "Rscript",
+      "args": [
+        "build-thesis.R",
+        "gitbook"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Build Thesis (Word)",
+      "type": "shell",
+      "command": "Rscript",
+      "args": [
+        "build-thesis.R",
+        "word"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Build Thesis (All Formats)",
+      "type": "shell",
+      "command": "Rscript",
+      "args": [
+        "build-thesis.R",
+        "pdf",
+        "bs4",
+        "gitbook",
+        "word"
+      ],
+      "group": "build"
+    }
+  ]
+}
+```
 
-### Building your entire thesis
+## Writing Your Thesis
 
--   Build the entire thesis by opening **index.Rmd** and clicking the 'knit' button.
--   The generated thesis files are saved in the **docs/** folder
--   To choose output formats, go to the top of **index.Rmd**'s YAML header and edit the line `thesis_formats <- "pdf";` to the format(s) you want (options are "pdf", "bs4", "gitbook", and "word")
--   You can build to multiple formats simultaneously with, e.g., `thesis_formats <- c("pdf", "bs4", "word")`
--   If you want to customise the build function, edit **scripts_and_filters/knit-functions.R**
+### Thesis Configuration
 
-#### PDF output
+Update the YAML header in `index.Rmd` with your name, college, and other details:
 
-``` yaml
+```yaml
+---
+title: |
+  `oxforddown`: \
+  An Oxford University Thesis \
+  Template for R Markdown
+author: Your Name
+college: Your College
+university: University of Oxford
+# ... other settings
+---
+```
+
+### Thesis Structure
+
+- Write your chapters as `.Rmd` files in the root folder
+- Front matter (abstract, acknowledgements) and back matter (appendices) are in the `front-and-back-matter/` folder
+- Bibliography files are in the `bibliography/` folder (don't use underscores in filenames!)
+
+## Building Your Thesis in VS Code
+
+### Using VS Code Tasks
+
+1. Press `Ctrl+Shift+B` (Windows/Linux) or `Cmd+Shift+B` (Mac) to open the task runner
+2. Select one of the available build tasks:
+   - **Build Thesis (PDF)**: Builds the thesis as a PDF document
+   - **Build Thesis (BS4)**: Builds the thesis as an HTML document using the BS4 format
+   - **Build Thesis (GitBook)**: Builds the thesis as an HTML document using the GitBook format
+   - **Build Thesis (Word)**: Builds the thesis as a Word document
+   - **Build Thesis (All Formats)**: Builds the thesis in all available formats
+
+### Alternative: Using Terminal
+
+You can also build the thesis directly from the terminal:
+
+```powershell
+# Build PDF version
+Rscript build-thesis.R pdf
+
+# Build multiple formats
+Rscript build-thesis.R pdf bs4 gitbook
+```
+
+### Output Files
+
+All generated thesis files will be saved in the `docs/` folder:
+- PDF output: `docs/_main.pdf`
+- HTML output (BS4/GitBook): `docs/index.html`
+- Word output: `docs/_main.docx`
+
+## Publishing to GitHub Pages
+
+There are two approaches for publishing your thesis to GitHub Pages:
+
+### Approach 1: Local Build + GitHub Pages (Recommended)
+
+This approach is faster and more reliable, especially for large theses:
+
+1. Build your thesis locally using one of the VS Code tasks
+2. Commit and push the changes including the `docs/` folder to GitHub
+3. Set up GitHub Pages to use the `docs` folder from your main branch:
+   - Go to your repository's Settings > Pages
+   - Under "Source", select "Deploy from a branch"
+   - Select "main" branch and "/docs" folder
+   - Click "Save"
+
+#### Pros:
+- Faster: No need to wait for GitHub Actions to compile
+- More reliable: Avoids potential GitHub Actions timeout issues
+- Better debugging: You can fix build issues locally before pushing
+
+#### Cons:
+- Need to remember to rebuild and commit the `docs/` folder when making changes
+- Have to manage LaTeX locally
+
+Here's a typical workflow:
+
+```powershell
+# 1. Make your changes to the thesis
+
+# 2. Build the thesis locally
+Rscript build-thesis.R pdf bs4  # Build both PDF and HTML versions
+
+# 3. Commit and push to GitHub
+git add .
+git commit -m "Update thesis content and build files"
+git push origin main
+```
+
+### Approach 2: GitHub Actions Automated Build
+
+The repository is pre-configured with GitHub Actions to automatically build your thesis and deploy it to GitHub Pages:
+
+1. Push your changes to GitHub without building locally
+2. GitHub Actions will automatically build and deploy the thesis
+3. Set up GitHub Pages to use the GitHub Actions source:
+   - Go to your repository's Settings > Pages
+   - Under "Source", select "GitHub Actions"
+
+#### Pros:
+- Fully automated: Just push your changes and let GitHub build it
+- No need for local LaTeX installation
+
+#### Cons:
+- Slower: Each build takes 5-10 minutes
+- May hit workflow time limits for very large theses
+- More difficult to debug build issues
+
+To customize the GitHub Actions workflow, edit the `.github/workflows/build-thesis.yml` file.
+
+### Reducing GitHub Actions Build Time
+
+If you're using GitHub Actions but experiencing slow builds:
+
+1. Limit the output formats to just what you need (e.g., only PDF and BS4)
+2. Use the cache effectively (the workflow already includes caching)
+3. Use a specific LaTeX package list instead of installing all packages
+4. Consider switching to the local build approach for large theses
+
+## Customizing Build Options
+
+### Changing Output Formats
+
+Edit the `thesis_formats` variable in your `index.Rmd` file:
+
+```yaml
 knit: (function(input, ...) {
-    thesis_formats <- "pdf";
-    ...
+    thesis_formats <- "pdf";  # Change to "bs4", "gitbook", "word", or c("pdf", "bs4", "word")
+    
+    source("scripts_and_filters/knit-functions.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
 ```
 
-![](figures/sample-content/screenshots/compiled_pdf.png)
+### Creating a Custom Build Script
 
-When you build the entire thesis to PDF, Latex generates a whole bunch of auxillary files - these are automatically removed after the build process end by the custom knit function that is used when you knit **index.Rmd**.
+You can also create a custom build script for more advanced configuration. Create a file called `build-thesis.R` with:
 
-To change how this removal is done, edit **scripts_and_filters/knit-functions.R**.
-The line `file.remove(list.files(pattern = "*\\.(log|mtc\\d*|maf|aux|bcf|lof|lot|out|toc)$"))` within `if ("pdf" %in% output_format){` is the one that removes files after PDF output is generated.
-
-#### BS4 book output (HTML)
-
-``` yaml
-knit: (function(input, ...) {
-    thesis_formats <- "bs4";
-    ...
+```r
+source(file.path(getwd(), "scripts_and_filters", "knit-functions.R"))
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) > 0) { formats <- args } else { formats <- "pdf" }
+knit_thesis("index.Rmd", formats)
 ```
 
--   NOTE: the [bs4 book output](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html) requires the `downlit` and `bslib` R packages (install them with `install.packages`)
--   Note also that to deploy a BS4 book on GitHub Pages, there must be a **.nojekyll** file in the **docs/** folder, otherwise GitHub does some voodoo that causes some filepaths not to work. This file is generated automatically by `oxforddown`'s knitting function.
+This allows you to specify output formats when calling the script.
 
-#### Gitbook output (HTML)
+## Tips and Troubleshooting
 
-``` yaml
-knit: (function(input, ...) {
-    thesis_formats <- "gitbook";
-    ...
-```
+1. **YAML Formatting**: Ensure proper indentation in YAML headers. Common issues include improper indentation in the `output:` section.
 
--   Note that to deploy a gitbook on GitHub Pages, there must be a **.nojekyll** file in the **docs/** folder, otherwise GitHub does some voodoo that causes some filepaths not to work. This file is generated automatically by `oxforddown`'s knitting function.
+2. **LaTeX Errors**:
+   - If you encounter LaTeX errors, check the `.log` file in the root directory
+   - For missing LaTeX packages, install them with `tinytex::tlmgr_install("package-name")`
 
-#### Word output
+3. **File Naming**: Avoid using underscores (_) in your filenames and YAML front matter to prevent LaTeX errors.
+   - Avoid: `bibliography: bib_final.bib`
+   - Better: `bibliography: bib-final.bib`
 
-``` yaml
-knit: (function(input, ...) {
-    thesis_formats <- "word";
-    ...
-```
-
--   Note that the Word output has no templates behind it, and many things do not work (e.g. image rotation, highlighting corrections). **I encourage pull requests that optimise the Word output, e.g. by using tools from the [`officer`](https://github.com/davidgohel/officer) package.**
-
-### Building a single chapter
-
-To knit an individual chapter without compiling the entire thesis:
-
-1.  open the **.Rmd** file of a chapter
-2.  add a YAML header specifying the output format(s) (e.g. `bookdown::word_document2` for a word document you might want to upload to Google Docs for feedback from collaborators)
-3.  click the `knit` button (the output file is then saved in the root folder)
-
-As shown in the sample chapters' YAML headers, to output a single chapter to PDF, use e.g.:
-
-``` yaml
-output:
-  bookdown::pdf_document2:
-    template: templates/brief_template.tex
-    citation_package: biblatex
-documentclass: book
-bibliography: references.bib
-```
-
-The file **templates/brief_template.tex** formats the chapter in the OxThesis style but without including the front matter (table of contents, abstract, etc).
-
-**NOTE:** The bibliography path in your individual chapters' YAML headers needs to be identical to the one in **index.Rmd** - otherwise your individual chapters' bibliography path may override the path in **index.Rmd** and cause trouble when you knit the entire thesis.
-
-## Customisations and extensions
-
--   for common things you might want to do in your thesis, read through the sample content
--   the ['Customisations and extensions' chapter](https://ulyngs.github.io/oxforddown/customisations-and-extensions.html) (thanks \@bmvandoren!) has tips on how to include PDF pages from a published typeset article in your thesis, and much more!
-
-## Limitations
-
-### Gotchas
-
--   don't use underscores (\_) in your YAML front matter or code chunk labels!
-    (underscores have special meaning in LaTeX, so therefore you are likely to get an error, cf. <https://yihui.org/en/2018/03/space-pain/>)
-
-    -   bad YAML: `bibliography: bib_final.bib`
-    -   good YAML: `bibliography: bib-final.bib`
-    -   bad chunk label: `{r my_plot}`
-    -   good chunk label: `{r my-plot}`
-
-### Output formats
-
--   at the moment only PDF and HTML output have been properly implemented; I may improve on the Word output further down the line
-
-### GitHub Actions and Automatic Deployment
-
-This repo is set up with GitHub Actions to automatically build your thesis and deploy it to GitHub Pages whenever you push to the main branch. To enable this:
-
-1. Push this repository to GitHub
-2. Go to your repository's Settings > Pages
-3. Set the source to "GitHub Actions"
-4. Push a change to your repository to trigger the workflow
-
-The GitHub Actions workflow will:
-- Build both PDF and HTML (bs4) versions of your thesis
-- Deploy the contents of the `docs` folder to GitHub Pages
-- Make your thesis available at `https://yourusername.github.io/yourrepository/`
-- The PDF will be available at `https://yourusername.github.io/yourrepository/_main.pdf`
-
-Enjoy!
+4. **Building Single Chapters**: To build an individual chapter, add a YAML header to the chapter's `.Rmd` file and click the knit button or use the VS Code R Markdown extension.
