@@ -3,6 +3,8 @@
 A template for writing an Oxford University thesis using VS Code and R Markdown.
 The template uses the [bookdown](https://bookdown.org) R package together with the [OxThesis LaTeX template](https://github.com/mcmanigle/OxThesis), plus lots of inspiration from [thesisdown](https://github.com/ismayc/thesisdown).
 
+*Updated configuration for easier local building and GitHub Pages deployment.*
+
 ## Requirements
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
