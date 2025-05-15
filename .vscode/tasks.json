@@ -76,6 +76,25 @@
             },
             "problemMatcher": []
         },{
+            "label": "Build Thesis (PDF+BS4)",
+            "type": "shell",
+            "command": "Rscript",
+            "args": [
+                "build-thesis.R", 
+                "pdf", "bs4"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Build Thesis (All Formats)",
             "type": "shell",
             "command": "Rscript",

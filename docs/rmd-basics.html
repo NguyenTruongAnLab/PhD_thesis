@@ -286,16 +286,6 @@ f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}
 <p>The magic of R Markdown is that we can add executable code within our document to make it dynamic.</p>
 <p>We do this either as <em>code chunks</em> (generally used for loading libraries and data, performing calculations, and adding images, plots, and tables), or <em>inline code</em> (generally used for dynamically reporting results within our text).</p>
 <p>The syntax of a code chunk is shown in Figure <a href="rmd-basics.html#fig:chunk-parts">2.1</a>.</p>
-<pre><code>## Warning: package 'tidyverse' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'ggplot2' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'tibble' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'tidyr' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'readr' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'purrr' was built under R version 4.4.3</code></pre>
-<pre><code>## Warning: package 'dplyr' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'stringr' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'forcats' was built under R version 4.4.1</code></pre>
-<pre><code>## Warning: package 'lubridate' was built under R version 4.4.1</code></pre>
 <div class="figure">
 <span style="display:block;" id="fig:chunk-parts"></span>
 <img src="figures/sample-content/chunk-parts.png" alt="Code chunk syntax" width="100%"><p class="caption">
@@ -334,7 +324,7 @@ library(tidyverse)
 <span class="header-section-number">2.2.2</span> Including images<a class="anchor" aria-label="anchor" href="#including-images"><i class="fas fa-link"></i></a>
 </h3>
 <p>Code chunks are also used for including images, with <code>include_graphics</code> from the <code>knitr</code> package, as in Figure <a href="rmd-basics.html#fig:oxford-logo">2.2</a></p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"figures/sample-content/beltcrest.png"</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:oxford-logo"></span>
@@ -354,7 +344,7 @@ Figure 2.2: Oxford logo
 </h4>
 <p>You can use the chunk option <code>out.extra</code> to rotate images.</p>
 <p>The syntax is different for LaTeX and HTML, so for ease we might start by assigning the right string to a variable that depends on the format you’re outputting to:</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/output_type.html">is_latex_output</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">rotate180</span> <span class="op">&lt;-</span> <span class="st">"angle=180"</span></span>
 <span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
@@ -375,7 +365,7 @@ Figure 2.3: Oxford logo, rotated
 </h3>
 <p>Similarly, code chunks are used for including dynamically generated plots.
 You use ordinary code in R or other languages - Figure <a href="rmd-basics.html#fig:cars-plot">2.4</a> shows a plot of the <code>cars</code> dataset of stopping distances for cars at various speeds (this dataset is built in to <strong>R</strong>).</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cars</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">speed</span>, y <span class="op">=</span> <span class="va">dist</span><span class="op">)</span> <span class="op">+</span></span>
@@ -394,7 +384,7 @@ Figure 2.4: A ggplot of car stuff
 </h3>
 <p>Tables are usually included with the <code>kable</code> function from the <code>knitr</code> package.</p>
 <p>Table <a href="rmd-basics.html#tab:cars-table">2.1</a> shows the first rows of that cars data - read in your own data, then use this approach to automatically generate tables.</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cars</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"A knitr kable table"</span><span class="op">)</span></span></code></pre></div>
@@ -444,7 +434,7 @@ Figure 2.4: A ggplot of car stuff
 <p>One thing that may be annoying is the way <em>R Markdown</em> handles “floats” like tables and figures.
 In your PDF output, LaTeX will try to find the best place to put your object based on the text around it and until you’re really, truly done writing you should just leave it where it lies.</p>
 <p>In general, you should allow LaTeX to do this, but if you really <em>really</em> need a figure to be positioned where you put in the document, then you can make LaTeX attempt to do this with the chunk option <code>fig.pos="H"</code>, as in Figure <a href="rmd-basics.html#fig:oxford-logo-controlled">2.5</a>:</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"figures/sample-content/beltcrest.png"</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:oxford-logo-controlled"></span>
@@ -466,7 +456,7 @@ The syntax for doing this is <code>`r R_CODE`</code>
 For example, <code>`r 4 + 4`</code> will output 8 in your text.</p>
 <p>You will usually use this in parts of your thesis where you report results - read in data or results in a code chunk, store things you want to report in a variable, then insert the value of that variable in your text.
 For example, we might assign the number of rows in the <code>cars</code> dataset to a variable:</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">num_car_observations</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span></code></pre></div>
 <p>We might then write:<br>
 “In the <code>cars</code> dataset, we have <code>`r num_car_observations`</code> observations.”</p>
