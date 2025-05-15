@@ -84,17 +84,6 @@
 \usepackage[includehead,hmargin={3.6cm, 2.6cm}, vmargin={2.5cm,2.7cm}, headsep=.8cm,footskip=1.2cm]{geometry}
 \fi
 
-% JEM fix header on cleared pages for openright
-\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-   \hbox{}
-   \fancyhead[RE,LO]{}
-   \newpage
-   \if@twocolumn\hbox{}\newpage
-   \fi
-   \fancyhead[LO]{\emph{\leftmark}} 
-   \fancyhead[RE]{\emph{\rightmark}} 
-   \fi\fi}
-
 \usepackage{xcolor}
 \usepackage{graphicx} 
 \usepackage{microtype}
@@ -179,9 +168,6 @@
 
 %define title page layout
 \newcommand{\university}{University of Oxford}
-\newcommand{\thesistitlesize}{\LARGE}
-\newcommand{\gapbeforecrest}{30mm}
-\newcommand{\gapaftercrest}{25mm}
 
 \renewcommand{\maketitle}{%
 \begin{alwayssingle}\null
@@ -191,8 +177,8 @@
 \ifmasterssubmission
   \begin{center}
   \vspace*{-3ex}
-    { \thesistitlesize {\bfseries {\@title}} \par}
-{\large \vspace*{\gapbeforecrest} {\crest \par} \vspace*{\gapaftercrest}}
+    { \LARGE {\bfseries {\@title}} \par}
+{\large \vspace*{25mm} {\crest \par} \vspace*{20mm}}
     {{\Large Candidate no.\ \@candidateno} \par}
 {\large \vspace*{1ex}
     {Word count: {\@wordcount} \par}
@@ -207,8 +193,8 @@
   \end{center}
 \else
   \begin{center}
-    { \thesistitlesize {\bfseries {\@title}} \par}
-{\large \vspace*{\gapbeforecrest} {\crest \par} \vspace*{\gapaftercrest}}
+    { \LARGE {\bfseries {\@title}} \par}
+{\large \vspace*{30mm} {\crest \par} \vspace*{25mm}}
     {{\Large \@author} \par}
 {\large \vspace*{1ex}
     {{\@college} \par}
@@ -246,11 +232,10 @@
 % themselves appear in a quote environment, i.e. tabbed in at both sides, and
 % on its own page.
 
-\newcommand{\numberstyleacks}{empty}
 \newenvironment{acknowledgements}%
-{ \begin{alwayssingle}\chapter*{Acknowledgements}
-  \thispagestyle{\numberstyleacks}
-	\pagestyle{\numberstyleacks}
+{   \begin{alwayssingle}\chapter*{Acknowledgements}
+    \thispagestyle{empty}
+	\pagestyle{empty}
 	\setlength{\baselineskip}{\frontmatterbaselineskip}
 }
 {\end{alwayssingle}}
@@ -262,23 +247,12 @@
 %the top of the page. The abstract itself appears in a quote environment,
 %i.e. tabbed in at both sides, and on its own page.
 
-\newcommand{\abstracttitle}{Abstract}
-\newcommand{\numberstyleabstract}{empty}
 \renewenvironment{abstract}%
-{   \begin{alwayssingle}\chapter*{\abstracttitle}
-    \thispagestyle{\numberstyleabstract}
-    \pagestyle{\numberstyleabstract}
+{   \begin{alwayssingle}\chapter*{Abstract}
+    \thispagestyle{empty}
+    \pagestyle{empty}
    \setlength{\baselineskip}{\frontmatterbaselineskip}}
 {\end{alwayssingle}}
-
-\newcommand{\abstractsecondtitle}{Resumé}
-\newenvironment{abstractsecond}
-{   \begin{alwayssingle}\chapter*{\abstractsecondtitle}
-    \thispagestyle{\numberstyleabstract}
-    \pagestyle{\numberstyleabstract}
-   \setlength{\baselineskip}{\frontmatterbaselineskip}}
-{\end{alwayssingle}}
-
 
 %The abstractseparate environment is for running of a page with the abstract
 %on including title and author etc as required to be handed in separately
@@ -411,7 +385,9 @@
 % JEM: for crazy multi character set quotes and Unicode and all
 \usepackage{lmodern}
 \usepackage[LGR,TS1,T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[greek,latin,english]{babel}
+\usepackage{csquotes}
 \hyphenpenalty=500
 \def\longs{{\fontencoding{TS1}\selectfont s}}
 
@@ -438,8 +414,8 @@
 
 
 % JEM: adjust start-of-chapter spacing
-\renewcommand{\chapterheadstartvskip}{\vspace*{40pt}}
-\renewcommand{\chapterheadendvskip}{\vspace{30pt}}
+\renewcommand{\chapterheadstartvskip}{\vspace*{20pt}}
+\renewcommand{\chapterheadendvskip}{\vspace{10pt}}
 
 
 % JEM: combine all of the commands you run before appendices start

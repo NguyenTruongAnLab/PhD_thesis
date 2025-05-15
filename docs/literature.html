@@ -81,7 +81,7 @@ and application to eutrophication risk management</p></a>
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/ulyngs/oxforddown">View book source <i class="fab fa-github"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/NguyenTruongAnLab/PhD_thesis">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -229,7 +229,6 @@ Figure 1.6: Phosphorus processes in aquatic. DOP is dissolved organic phosphorus
 </div>
 <p><strong>Difference between N and P</strong></p>
 <p>There are important differences between the two elements, including fixation, oxygen consumption, denitrification, settling process, and toxicity <span class="citation">(<a href="references.html#ref-Ji2017">Ji 2017</a>)</span>. These differences are reported in Table <a href="#tab:CH1-table3-NP"><strong>??</strong></a>.</p>
-
 </div>
 <div id="silica-dynamics" class="section level4" number="1.1.3.5">
 <h4>
@@ -448,7 +447,6 @@ Figure 1.18: Illustration of pollutant transport by advection and dispersion/dif
 <span class="header-section-number">1.3.1.1</span> Governing equations for hydrodynamics<a class="anchor" aria-label="anchor" href="#governing-equations-for-hydrodynamics"><i class="fas fa-link"></i></a>
 </h4>
 <p>To simulate water quality in estuaries, it is first necessary to determine the physical transport information of the substances. The hydrodynamics model is thus set up first. The required common equations are shown in Table <a href="#tab:CH1-table5-hydro"><strong>??</strong></a>. The tide effect equation is one of the main differences between the hydraulic model in the tidal estuaries and rivers.</p>
-
 <p>In reality, these above equations need to be numerically solved with some approximations. The shallow water approximation is widely used in the studies of rivers, then the continuity and momentum equations can be further simplified <span class="citation">(<a href="references.html#ref-Savenije2012">H. H. G. Savenije 2012</a>)</span>, for instance:</p>
 <embed src="figures/EqHydraulics.pdf" width="90%" style="display: block; margin: auto;" type="application/pdf"></embed><p>where <em>H</em>(= <em>h</em> + <span class="math inline">\(\xi\)</span>)=total water depth, <em>h</em>=the equilibrium water depth, <span class="math inline">\(\xi\)</span>=surface displacement level, <em>u</em>=water velocity in x-direction, |<em>u</em>|=water speed, <em>Q</em>=water inflow/outflow from external sources, <em>C_B</em>=bottom drag coefficient, <em>A_H</em>=horizontal viscosity, <span class="math inline">\(\tau_x\)</span>=wind stress</p>
 </div>
@@ -457,7 +455,6 @@ Figure 1.18: Illustration of pollutant transport by advection and dispersion/dif
 <span class="header-section-number">1.3.1.2</span> Governing equations for water quality<a class="anchor" aria-label="anchor" href="#governing-equations-for-water-quality"><i class="fas fa-link"></i></a>
 </h4>
 <p>The water quality model simultaneously uses the information in the hydraulic model (e.g., advection and dispersion) and combines it with the biogeochemical processes equations to obtain the variable concentrations over time and space. Besides biogeochemical reactions, the concentration of substances changes according to other processes such as sorption or exchange with the atmosphere. Although many processes lead to changes in the concentration of substances, a water quality model is always based on the conservation of mass equation principle. The total mass of an element such as C, N or P will remain the same; they only change the chemical formula under the influence of reactions in water, sediment, air. The main processes leading to the change in the concentration of variables are presented in Table <a href="#tab:CH1-table6-process"><strong>??</strong></a>.</p>
-
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:C1-model"></span>
 <embed src="figures/C1-model.pdf" title="Simplified biogeochemical processes in the aquatic system (ellipse, rectangle, red line, green line, dot line represent the processes, the elements/pollutants, consumption, production and settling/deposition, respectively), DIC and $CH_2O$ are dissolved inorganic and organic carbon (adapted from \cite{Regnier2013})" width="100%" type="application/pdf"></embed><p class="caption">
@@ -486,7 +483,6 @@ Figure 1.19: Simplified biogeochemical processes in the aquatic system (ellipse,
 <h4>
 <span class="header-section-number">1.3.2.2</span> Strengths and weaknesses of simplified and complex models<a class="anchor" aria-label="anchor" href="#strengths-and-weaknesses-of-simplified-and-complex-models"><i class="fas fa-link"></i></a>
 </h4>
-
 <p>Although water quality modeling for estuaries has greatly improved over time, the adoption of modern models has not always been consistent for many estuaries. In previous decades, mixing diagrams and steady-state box models were often used, but the disadvantage of these models was that they ignored the influence of tides <span class="citation">(<a href="references.html#ref-Arndt2009">Sandra Arndt, Regnier, and Vanderborght 2009</a>)</span>. As in the synthesis report of <span class="citation">Espey and GH Ward. (<a href="references.html#ref-EspeyNo10">1972</a>)</span> reaction-transport models allowed an accurate description of biogeochemical processes under the complex influence of many factors in estuaries such as tide, requiring time-costly computation. Today the computational limitation is not an important factor, but the lack of applications of reaction-transport models still exists in many developing countries because of insufficient monitoring plans and access to relevant data series <span class="citation">(<a href="references.html#ref-Regnier2013">Pierre Regnier et al. 2013</a>)</span>. Therefore, selecting or developing appropriate models to apply on a regional or global scale is critical under the great influence of wastewater from emerging countries <span class="citation">(<a href="references.html#ref-Regnier2013">Pierre Regnier et al. 2013</a>; <a href="references.html#ref-Volta2014">C. Volta et al. 2014</a>)</span>.</p>
 <p>The model selection is an important step for modeling application because no single model can apply for estuaries systems, even with a very advanced model. One model can be applied for the estuarine system if it can reach these criteria:</p>
 <ol style="list-style-type: decimal">
@@ -539,8 +535,8 @@ Figure 1.19: Simplified biogeochemical processes in the aquatic system (ellipse,
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/ulyngs/oxforddown/blob/master/01-literature-review.rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/ulyngs/oxforddown/edit/master/01-literature-review.rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/NguyenTruongAnLab/PhD_thesis/blob/master/01-literature-review.rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/NguyenTruongAnLab/PhD_thesis/edit/master/01-literature-review.rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

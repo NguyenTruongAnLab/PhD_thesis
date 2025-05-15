@@ -201,13 +201,52 @@ knitr::include_graphics("figures/C1-fig-P.pdf")
 There are important differences between the two elements, including fixation, oxygen consumption, denitrification, settling process, and toxicity [@Ji2017]. These differences are reported in Table \@ref(tab:CH1-table3-NP).
 
 ```{r CH1-table3-NP, echo=F, warning=F}
-temp.mat = data.frame(image="")
-colnames(temp.mat) <- NULL
-temp.mat %>%
-  kbl(format="latex",booktabs = T,escape = F,caption="Difference of N and P in aquatic systems") %>%
-  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
-  column_spec(1, image = "excel/CH1-table3-Difference of N and P.pdf") %>%
-  sub("\\\\toprule", "", .)
+kbl(
+  data.frame(
+    "Process" = c(
+      "Fixation", 
+      "Oxygen consumption", 
+      "Denitrification", 
+      "Settling and burial",
+      "Toxicity"
+    ),
+    "N" = c(
+      "N can be fixed from $\\mathrm{N_2}$ gas by some bacteria. N is not as often limiting phytoplankton growth in estuaries.",
+      
+      "N metabolisms normally use oxygen such as nitrification",
+      
+      "N can be removed from aquatic systems by denitrification, which converts $\\mathrm{NO_3^-}$ to $\\mathrm{N_2O}$ and $\\mathrm{N_2}$.",
+      
+      "N can adsorb to suspended sediments, but this process is not strong. Absorbed N easily returns to the water column before the suspended sediment settles to the bottom.",
+      
+      "$\\mathrm{NH_3}$ with high concentration can be toxic for fishes"
+    ),
+    "P" = c(
+      "P is not gaseous. There is a very small proportion of phosphine ($\\mathrm{PH_3}$, a volatile P compound). Therefore, P has no atmospheric deposition contribution.",
+      
+      "P metabolisms do not use oxygen.",
+      
+      "No P exists in the gaseous form, so there is no real process of P removal from water",
+      
+      "P has a strong ability to adsorb to suspended sediment and settle to the riverbed. This process (burial) can remove P from the water column.",
+      
+      "P is nontoxic in an aquatic system"
+    )
+  ),
+  format = "latex",
+  booktabs = TRUE,
+  escape = FALSE,
+  caption = "Difference of N and P in aquatic systems",
+  align = c('l', 'l', 'l')
+) %>%
+  kable_styling(
+    font_size = 9,
+    latex_options = c("striped", "hold_position", "scale_down")
+  ) %>%
+  column_spec(1, width = "2.5cm") %>%
+  column_spec(2, width = "6.5cm") %>% 
+  column_spec(3, width = "6.5cm") %>%
+  row_spec(0, bold = TRUE)
 ```
 
 
@@ -423,14 +462,47 @@ knitr::include_graphics("figures/C1-avection.pdf")
 To simulate water quality in estuaries, it is first necessary to determine the physical transport information of the substances. The hydrodynamics model is thus set up first. The required common equations are shown in Table \@ref(tab:CH1-table5-hydro). The tide effect equation is one of the main differences between the hydraulic model in the tidal estuaries and rivers.
 
 ```{r CH1-table5-hydro, echo=F, warning=F}
-temp.mat = data.frame(image="")
-colnames(temp.mat) <- NULL
-temp.mat %>%
-  kbl(format="latex",booktabs = T,escape = F,caption="Simplified governing equations of hydrodynamics model in estuaries") %>%
-  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
-  column_spec(1, image = "excel/CH1-table5-Simplified governing equations.pdf") %>%
-  sub("\\\\toprule", "", .) %>%
-  sub("\\\\bottomrule", "", .)
+kbl(
+  data.frame(
+    "Equation Type" = c(
+      "Continuity equation", 
+      "Momentum equation (x-direction)", 
+      "Momentum equation (y-direction)", 
+      "Tidal equation"
+    ),
+    "Formula" = c(
+      "$\\displaystyle \\frac{\\partial \\zeta}{\\partial t} + \\frac{\\partial (Hu)}{\\partial x} + \\frac{\\partial (Hv)}{\\partial y} = 0$",
+      
+      "$\\displaystyle \\frac{\\partial u}{\\partial t} + u\\frac{\\partial u}{\\partial x} + v\\frac{\\partial u}{\\partial y} = -g\\frac{\\partial \\zeta}{\\partial x} - \\frac{\\tau_{bx}}{\\rho H} + \\frac{\\tau_{sx}}{\\rho H} + A_H(\\frac{\\partial^2 u}{\\partial x^2} + \\frac{\\partial^2 u}{\\partial y^2})$", 
+      
+      "$\\displaystyle \\frac{\\partial v}{\\partial t} + u\\frac{\\partial v}{\\partial x} + v\\frac{\\partial v}{\\partial y} = -g\\frac{\\partial \\zeta}{\\partial y} - \\frac{\\tau_{by}}{\\rho H} + \\frac{\\tau_{sy}}{\\rho H} + A_H(\\frac{\\partial^2 v}{\\partial x^2} + \\frac{\\partial^2 v}{\\partial y^2})$",
+      
+      "$\\displaystyle \\zeta(x,t) = \\sum_{i=1}^{n} A_i\\cos(\\omega_i t - k_i x + \\phi_i)$"
+    ),
+    "Description" = c(
+      "Conservation of water mass where $\\zeta$ is water surface elevation, $H$ is total water depth, $u$ and $v$ are velocity components",
+      
+      "Conservation of momentum in x-direction where $g$ is gravity acceleration, $\\tau_{bx}$ is bottom stress, $\\tau_{sx}$ is surface stress, $\\rho$ is water density, $A_H$ is horizontal eddy viscosity",
+      
+      "Conservation of momentum in y-direction with same parameters as x-direction equation",
+      
+      "Tidal elevation where $A_i$ is amplitude, $\\omega_i$ is angular frequency, $k_i$ is wave number, and $\\phi_i$ is phase of tidal component $i$"
+    )
+  ),
+  format = "latex",
+  booktabs = TRUE,
+  escape = FALSE, 
+  caption = "Simplified governing equations of hydrodynamics model in estuaries",
+  align = c('l', 'c', 'l')
+) %>%
+  kable_styling(
+    font_size = 9,
+    latex_options = c("striped", "hold_position", "scale_down")
+  ) %>%
+  column_spec(1, width = "3cm") %>%
+  column_spec(2, width = "7cm") %>%
+  column_spec(3, width = "6cm")
+
 ```
 
 In reality, these above equations need to be numerically solved with some approximations. The shallow water approximation is widely used in the studies of rivers, then the continuity and momentum equations can be further simplified [@Savenije2012], for instance:
@@ -445,17 +517,51 @@ where *H*(= *h* + $\xi$)=total water depth, *h*=the equilibrium water depth, $\x
 
 The water quality model simultaneously uses the information in the hydraulic model (e.g., advection and dispersion) and combines it with the biogeochemical processes equations to obtain the variable concentrations over time and space. Besides biogeochemical reactions, the concentration of substances changes according to other processes such as sorption or exchange with the atmosphere. Although many processes lead to changes in the concentration of substances, a water quality model is always based on the conservation of mass equation principle. The total mass of an element such as C, N or P will remain the same; they only change the chemical formula under the influence of reactions in water, sediment, air. The main processes leading to the change in the concentration of variables are presented in Table \@ref(tab:CH1-table6-process).
 
-
 ```{r CH1-table6-process, echo=F, warning=F}
-temp.mat = data.frame(image="")
-colnames(temp.mat) <- NULL
-temp.mat %>%
-  kbl(format="latex",booktabs = T,escape = F,caption="Processes controlling concentrations of nutrients in aquatic systems") %>%
-  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
-  column_spec(1, image = "excel/CH1-table6-Processes controlling concentrations of nutrients.pdf") %>%
-  sub("\\\\toprule", "", .) %>%
-  sub("\\\\bottomrule", "", .)
+kbl(
+  data.frame(
+    "Processes" = c(
+      "Hydrodynamic transport",
+      "Biogeochemical processes",
+      "Sediment-water exchange\nAdsorption and desorption",
+      "Water-air exchange"
+    ),
+    "Equation" = c(
+      "$\\displaystyle \\frac{\\partial C}{\\partial t} + \\frac{\\partial(u C)}{\\partial x} + \\frac{\\partial(v C)}{\\partial y} + \\frac{\\partial(w C)}{\\partial z} = \\frac{\\partial}{\\partial x}\\left(K_x \\frac{\\partial C}{\\partial x}\\right) + \\frac{\\partial}{\\partial y}\\left(K_y \\frac{\\partial C}{\\partial y}\\right) + \\frac{\\partial}{\\partial z}\\left(K_z \\frac{\\partial C}{\\partial z}\\right)$\\newline where $C$ = concentration of a water quality state variable, $u$, $v$, $w$ = velocity components in the $x$, $y$, and $z$ directions, respectively, $K_x$, $K_y$, $K_z$ = turbulent diffusivities in the $x$, $y$, and $z$ directions (Park 2005)",
+      
+      "$\\displaystyle \\frac{\\partial C}{\\partial t} = k \\cdot C + R$\\newline where $k$ = kinetic rate (1/time) and $R$ = internal/external loadings (Park 1995). Kinetic rate (e.g., algal growth rate) can be illustrated by Michaelis–Menten formulation\\newline $\\displaystyle k_c = k_{max}\\frac{C}{K_M + C}$\\newline where $k_c$ = reaction rate (1/time), $k_{max}$ = maximum rate(1/time), $C$ = nutrient concentration (mg/L), and $K_M$ = concentration (mg/L) at half saturation $k_{max}$",
+      
+      "Langmuir isotherm model is used to describe substrate P sorption onto sediments, suspended sediments\\newline $\\displaystyle \\frac{PIP}{SS} = \\frac{P_{ac} \\times SRP}{SRP + K_{ps}}$\\newline Where $P_{ac}$ = the maximal sorption capacity of P onto suspended solids (SS), and $K_{ps}$ = the half-saturation constant, PIP = concentration of particulate inorganic phosphorus, SRP = concentration of soluble reactive phosphorus",
+      
+      "Reaeration is a function of current velocity, wind speed and temperature, which affect saturated DO (Regnier et al., 1997)"
+    ),
+    "Description" = c(
+      "For the 3D model, nutrients are advected, dispersed within the water column in $x$, $y$ and $z$-direction and transported into the system following the flow. Please note that this equation only applies in the water column with external sources of pollutants.",
+      
+      "Biogeochemical reactions transform or remove nutrients by processes such as nitrification and denitrification. Kinetic equations can represent the essence of these processes. Each variable often has each kinetic equation related to its reaction (such as nitrification).\\newline The kinetic rate can be phytoplankton growth rate, bacteria, or other reactions (e.g., nitrification, organic carbon degradation).",
+      
+      "Some nutrients, such as P, have strong interaction between the particulate and the dissolved nutrients. Their concentrations are thus affected by the suspended sediments and bed sediments.",
+      
+      "The reaeration process can add dissolved oxygen to the waterbody from the atmosphere"
+    )
+  ),
+  format = "latex",
+  booktabs = TRUE,
+  escape = FALSE,
+  caption = "Processes controlling concentrations of nutrients in aquatic systems",
+  align = c('l', 'l', 'l')
+) %>%
+  kable_styling(
+    font_size = 9,
+    latex_options = c("striped", "hold_position", "scale_down")
+  ) %>%
+  column_spec(1, width = "3.5cm") %>%
+  column_spec(2, width = "7cm") %>%
+  column_spec(3, width = "5.5cm") %>%
+  row_spec(0, bold = TRUE)
+
 ```
+
 
 ```{r C1-model, echo=FALSE, out.width='100%', fig.cap='Simplified biogeochemical processes in the aquatic system (ellipse, rectangle, red line, green line, dot line represent the processes, the elements/pollutants, consumption, production and settling/deposition, respectively), DIC and $CH_2O$ are dissolved inorganic and organic carbon (adapted from \\cite{Regnier2013})', fig.align='center'}
 knitr::include_graphics("figures/C1-model.pdf")
@@ -479,15 +585,66 @@ From 1980 to 2013, most of the estuarine biogeochemical model applications were 
 
 
 ```{r CH1-table7-compare, echo=F, warning=F}
-temp.mat = data.frame(image="")
-colnames(temp.mat) <- NULL
-temp.mat %>%
-  kbl(format="latex",booktabs = T,escape = F,caption="Comparison of some well-known biogeochemical model applications in estuaries. The order of models indicates the simplicity to the complexity of the model") %>%
-  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
-  column_spec(1, image = "excel/CH1-table7-Comparison of some well-known biogeochemical model.pdf") %>%
-  sub("\\\\toprule", "", .) %>%
-  sub("\\\\bottomrule", "", .)
+kbl(
+  data.frame(
+    "Model" = c(
+      "C-GEM 1D,\\newline daily - seasonal",
+      "CONTRASTE 1D,\\newline daily - seasonal",
+      "MOSES 1D,\\newline yearly",
+      "HEM-3D\\newline daily - seasonal",
+      "ELCOM-CAEDYM 3D,\\newline daily - seasonal",
+      "MOHID 3D,\\newline daily - yearly",
+      "MIKE 1-3D\\newline + water quality module",
+      "Delft3D +\\newline GEM/water quality module"
+    ),
+    "Requirement" = c(
+      "Simpliﬁed hydro-geometrical characteristics, tidal period; biogeochemical reactions",
+      "Bathymetrical maps, Hydrodynamic description in detail in upstream, tidal forcings. Biogeochemical reactions",
+      "Biogeochemical, pelagic, reactive- transport model",
+      "Detail bathymetry. Hourly tide, daily discharge. Meteorological data. Water quality",
+      "Detail bathymetry, meteorological data, tidal elevation, Water quality",
+      "Detail bathymetry, Hourly tide, daily discharge upstream, Atmosphere, Water quality, Algal species",
+      "Detail bathymetry, hourly tide, daily discharge upstream and tributaries. Water quality",
+      "Detail bathymetry, hourly tide, daily discharge upstream and tributaries. Water quality"
+    ),
+    "Usage scope" = c(
+      "Biogeochemical dynamics in estuaries. Reduces data requirements by using an idealized representation of the estuarine geometry.",
+      "The time series of nutrient transformations and ﬂuxes along the estuary–coastal zone",
+      "Fate and turnover of nutrients entering the estuary; and fluxes in the estuary",
+      "Nutrient dynamics (21 state variables), algal groups, fecal coliform bacteria",
+      "Nutrient dynamics, phytoplankton bloom, phytoplankton species",
+      "Mainly Phytoplankton and macroalgae, zooplankton dynamics",
+      "Depend on water quality module, for instance, nutrients dynamics and diatom development.",
+      "Describes the behavior of nutrients, organic matter, and primary producers in estuaries"
+    ),
+    "Applied area" = c(
+      "Scheldt estuary (Volta et al., 2014, 2016)",
+      "Scheldt estuary (Regnier et al., 1997, 1999)",
+      "Scheldt estuary (Hofmann et al., 2008)",
+      "Kwang-Yang Bay (Park et al., 1995, 2005)",
+      "Mozambique coast (Miguel et al., 2018)",
+      "Vouga Estuary (Trancoso et al., 2005)",
+      "Scheldt estuary (Arndt et al., 2009, 2011)",
+      "Dutch coastal waters Blauw et al., 2008"
+    )
+  ),
+  format = "latex",
+  booktabs = TRUE,
+  escape = FALSE,
+  caption = "Comparison of some well-known biogeochemical model applications in estuaries. The order of models indicates the simplicity to the complexity of the model",
+  align = c('l', 'l', 'l', 'l')
+) %>%
+  kable_styling(
+    font_size = 8,
+    latex_options = c("striped", "hold_position", "scale_down")
+  ) %>%
+  column_spec(1, width = "2.5cm") %>%
+  column_spec(2, width = "4.5cm") %>%
+  column_spec(3, width = "5cm") %>%
+  column_spec(4, width = "3.5cm") %>%
+  row_spec(0, bold = TRUE)
 ```
+
 
 Although water quality modeling for estuaries has greatly improved over time, the adoption of modern models has not always been consistent for many estuaries. In previous decades, mixing diagrams and steady-state box models were often used, but the disadvantage of these models was that they ignored the influence of tides [@Arndt2009]. As in the synthesis report of @EspeyNo10 reaction-transport models allowed an accurate description of biogeochemical processes under the complex influence of many factors in estuaries such as tide, requiring time-costly computation. Today the computational limitation is not an important factor, but the lack of applications of reaction-transport models still exists in many developing countries because of insufficient monitoring plans and access to relevant data series [@Regnier2013]. Therefore, selecting or developing appropriate models to apply on a regional or global scale is critical under the great influence of wastewater from emerging countries [@Regnier2013;@Volta2014].
 
