@@ -1,0 +1,10 @@
+Variable,Location,Frequency,Period
+"Water level, velocity, discharge",7 stations in mainstream,Monthly,2014 – 2017
+"Water level, velocity, discharge",3 stations in tributaries,Monthly,2015 – 2017
+"$T^{o}, salinity, TSS, DO, NH_4^{+}, PO_4^{3-}, COD, BOD_5$",13 stations in mainstream ,Monthly ,2014 – 2017
+"$T^{o}, salinity, TSS, DO, NH_4^{+}, PO_4^{3-}, COD, BOD_5$",11 stations in canals,Bi-weekly,2014 – 2017
+"$T^{o}, salinity, TSS, DO, NH_4^{+}, PO_4^{3-}, COD, BOD_5$",1 station estuary mouth,Monthly ,2008 – 2013
+"$T^{o}, salinity, TSS, DO, NH_4^{+}, PO_4^{3-}, TN, TP, NO_3^{-}, TOC, DSi, chlorophyll-a$",3 stations at Saigon River ,Bi-weekly,2016 – 2017
+"$T^{o}, salinity, TSS, DO, NH_4^{+}, PO_4^{3-}, TN, TP, NO_3^{-}, TOC, DSi, chlorophyll-a$",1 station at Dongnai River,Bi-weekly,2017 – 2017
+Sunshine hours and wind speed,At HCMC,Monthly,2014 – 2017
+Estuarine width and depth,83 cross-sections,One time,"2008, 2016"

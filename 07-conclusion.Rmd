@@ -1,0 +1,49 @@
+---
+#########################################
+# options for knitting a single chapter #
+#########################################
+output:
+  #bookdown::html_document2: default
+  #bookdown::word_document2: default
+  bookdown::pdf_document2:
+    template: templates/brief_template.tex
+documentclass: book
+bibliography: [bibliography/references.bib]
+---
+
+# Conclusion and perspectives {-}
+
+```{=tex}
+\adjustmtc
+\markboth{Conclusion and perspectives }{}
+```
+           
+## Conclusion {.unnumbered}
+
+Nutrient pollution, eutrophication and greenhouse gases (GHGs) emissions in urbanized tropical estuaries are hot topics in the rapidly growing trend of emerging countries. This thesis is one of the first efforts covering all these related issues, from monitoring to statistical analysis and modeling eutrophication processes in Saigon River Estuary, an urbanized tropical estuary in Southern Vietnam affected by Ho Chi Minh Megacity (HCMC).
+
+The monitoring program with complete parameters such as nutrients, greenhouse gases and phytoplankton from 2016-2020 observed spatial and temporal fluctuations in water quality and eutrophication in Saigon River Estuary. The application of multivariate statistics has allowed the identification of controlling factors for phytoplankton growth and the interaction of GHGs with eutrophication. This work also highlighted the important role of biogeochemical processes in water column, including nitrification and denitrification responding to high $NH_4^{+}$ concentrations from urban discharge. Saigon River Estuary has GHGs emissions similar to those observed in other urbanized estuaries with much higher GHGs concentrations in the urban section of the estuary. The impact of nutrient limitation on phytoplankton development at Saigon River is similar to many tropical estuaries where $PO_4^{3-}$ is a limiting factor for phytoplankton development.
+
+The calibrated and validated C-GEM was first applied in the dry season at Saigon River Estuary to capture spatial variations of nutrients and phytoplankton under the influence of megacity. C-GEM allowed measuring the intensity of biogeochemical processes involved in the metabolism and removal of nutrients from urban canals and tributaries. In the context of scarce hydrological and water quality data at Saigon River, the biogeochemical functioning of this tropical estuary was discovered by C-GEM. In addition, the tidal range and tidal period data applied in the C-GEM allowed the estimation of the movement of a 50 km pollutant cloud (high TOC, $NH_4^{+}$, and low DO concentrations). This pollutant cloud can move within a radius of about 10 km according to tidal fluctuations. Future climate change impacts may have the risk of spreading this polluted area upstream of the Saigon River, where one strategic water production plant is located.
+
+Seasonal simulation of nutrients and phytoplankton by the transient version of C-GEM explained huge differences in phytoplankton biomass between dry and rainy seasons in this tropical estuary. Efforts to apply seasonal simulation helped fill in most of the knowledge gaps that the current monitoring program and steady-state models have not addressed. Simulation results determined that nutrient limitation was the driving factor for spatial variation of phytoplankton between urban section and other sections of Saigon River. At the same time, the residence time of water body was responsible for the difference between phytoplankton in dry and rainy seasons. The distinct characteristics of hydrological conditions between the two seasons in tropical estuaries have led to the different states in the risk of eutrophication. Therefore, management solutions need to consider both nutrient availability and seasonal aspects to ensure the region's sustainable development.
+
+Based on the development of HCMC, scenarios of nutrient loadings under the construction of wastewater treatment plants (WWTPs), population growth and climate change were examined. Past, present and future scenarios all show that the dry season is at risk of eutrophication. Oxygen depletion in the urban section of Saigon River persisted in both seasons because of high concentrations of $NH_4^{+}$ from urban canals. Although the construction of WWTPs is a very expensive solution for developing countries, the future water quality of HCMC megacity is not guaranteed. In order to improve water quality (dissolved oxygen condition in urban section), it is necessary to upgrade $NH_4^{+}$ treatment technology. It is necessary to control the concentration of $PO_4^{3-}$ for eutrophication management in the Saigon River. The temperature rise scenario in 2050 warned of the risk of turning the Saigon River back to the eutrophication state of the 2000s when there was no WWTP.
+
+## Limitation {.unnumbered}
+
+Although this study has been carried out to the fullest extent from sampling, analysis to modeling application to address some of the remaining questions in urbanized tropical estuaries, we believe that three main limitations remain in this study, including:
+
+- The calibration parameters of the biogeochemical module are still not stable for the steady-state and transient version of C-GEM for Saigon River. The C-GEM application in tropical estuaries needs more improvement for calibrated parameters because the generic parameters in the biogeochemical module were developed mainly for temperate estuaries.
+
+- The description of sediment dynamics is still limited, affecting other processes such as $PO_4^{3-}$ sorption, light utilization efficiency and finally, phytoplankton development. Since $PO_4^{3-}$ is a limiting factor of eutrophication in the Saigon River, errors in $PO_4^{3-}$ simulations can lead to inappropriate interpretations.
+
+- Monitoring and modeling programs focus mainly on the mainstream of Saigon River. The dynamics of a major tributary (Dongnai River) downstream with a discharge 10 times higher than Saigon River were omitted. There is only one monitoring station at Dongnai River, and this river is rated as having good water quality thanks to a large freshwater discharge. However, according to the development plan of HCMC megacity, the population will gradually concentrate around Dongnai River, not just in Saigon River (as described in future scenarios in Chapter 6). Pollution of the Dongnai River and changes in its hydrological regime can lead to completely different concentrations of nutrients and phytoplankton downstream of Saigon River.
+
+## Future research directions {.unnumbered}
+
+Urbanization and pollution emissions of coastal megacities in emerging countries are inevitable. In the last decades, eutrophication of many developed countries has been controlled based on long-term monitoring and biogeochemical modeling results. The first successful application of the C-GEM model at Saigon River Estuary shows the prospect of applying this model to other urbanized tropical estuaries, for example, in Southeast Asia. With the advantage of minimizing data requirement while ensuring accurate characterization of hydrodynamics and most biogeochemical processes, it would be a particularly meaningful tool in these developing countries.
+
+The application and expansion of C-GEM in other tropical estuaries will establish a parameter set of the biogeochemical module for the tropics. The unification of parameters and processes allows improving the computational efficiency of C-GEM for the regional scale such as Southeast Asia. In addition, C-GEM is also capable of estimating $CO_2$ emissions from estuaries. This can compensate for uncertainties in estimating GHGs from estuaries in Asia in global models.
+
+Besides applying C-GEM to other tropical estuaries, improvements in the monitoring program and other components to the C-GEM model are needed. As discussed in chapters 4 and 5, the addition of other processes to C-GEM is entirely achievable. The addition of benthic processes and the classification of major phytoplankton groups will allow the application of C-GEM to be extended to other estuarine types with strong benthic processes (e.g., shallow estuaries) and at risk of phytoplankton shift. C-GEM can take advantage of available models such as freshwater RIVE [@Garnier2002], QUAL-NET [@Minaudo2018], marine MIRO (Lancelot et al., 2007) to complement these important processes. 

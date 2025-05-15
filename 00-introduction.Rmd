@@ -4,11 +4,12 @@
 #########################################
 output:
   bookdown::pdf_document2:
-    template: templates/template.tex
+    template: templates/brief_template.tex
+    citation_package: biblatex
   bookdown::html_document2: default
   bookdown::word_document2: default
 documentclass: book
-#bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
+bibliography: [bibliography/references.bib]
 ---
 
 # Introduction {.unnumbered}
@@ -19,28 +20,45 @@ documentclass: book
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
-Welcome to `oxforddown` [@lyngsOxforddown2019], a thesis template for R Markdown that I created when writing [my own PhD thesis](https://ulyngs.github.io/phd-thesis/) at the University of Oxford.
-This template allows you to write in R Markdown, while formatting the PDF output with the beautiful and time-tested [OxThesis LaTeX template](https://github.com/mcmanigle/OxThesis).
-The sample content is partly adapted from [`thesisdown`](https://github.com/ismayc/thesisdown) .
+## Motivation  {.unnumbered}
 
-Hopefully, writing your thesis in R Markdown will provide a nicer interface to the OxThesis template if you haven't used TeX or LaTeX before.
-More importantly, *R Markdown* allows you to embed chunks of code within your thesis and generate plots and tables directly from the underlying data, avoiding copy-paste steps.
-This gets you into the habit of doing reproducible research, which will benefit you long-term as a researcher, and also help anyone that is trying to reproduce or build upon your results down the road.
 
-## Why use it? {.unnumbered}
+Estuaries represent only a small proportion of the world's surface waters, but they are among the most productive ecosystems in nature. Rivers drain into estuaries, bringing in nutrients from continental uplands. However, coastal areas and estuaries and lower stretches of urbanized rivers are also the frequent sinks and sources of nutrient pollution, which likely cause eutrophication in estuaries [@Lanoux2013;@Paerl2006]. These phenomena threaten water resources safety, especially for megacities in developing countries, where the balance between urbanization and environmental management is commonly a difficult trade-off. Besides, estuaries are known to be emitters of greenhouse gases (GHGs), which vary according to their hydrological and biogeochemical characteristics [@Daniel2013;@Borges2011;@Abril2005;@Marescaux2018]. In this context, reactive transport models can provide valuable insight to better understand the complex biogeochemical dynamics of such estuaries and help predict the potential response of mass water bodies to anthropic perturbations. Under the pressure of multiple pollution sources (e.g., domestic wastewater, industrials inputs), the main factors controlling water quality in estuaries are biological and physical processes; in particular: (1) biogeochemical processes such as nitrification, denitrification, remineralization, primary production in water columns [@Hu2009;@Vanderborght2007;@Volta2016]; (2) dilution process between riverine and marine waters [@Etcheber2011;@LajaunieSalla2019;@Lanoux2013]; (3) the interaction with sediment through adsorption/desorption process [@Vilmin2015;@AissaGrouz2018]. In addition, eutrophication can significantly affect GHGs emissions in estuaries [@Li2021], such as reducing $CO_2$ emissions by intense photosynthesis, while $CH_4$ emissions have been observed to increase exponentially with eutrophication status [@DelSontro2019].
 
-*R Markdown* creates a simple and straightforward way to interface with the beauty of LaTeX.
-Packages have been written in **R** to work directly with LaTeX to produce nicely formatting tables and paragraphs.
-In addition to creating a user friendly interface to LaTeX, *R Markdown* allows you to read in your data, analyze it and to visualize it using **R**, **Python** or other languages, and provide documentation and commentary on the results of your project.\
+Studies on the anthropogenic impacts on water quality in estuaries by biogeochemical models are mainly available in temperate estuaries of industrialized countries [@Gawade2017;@Regnier2013]. The Carbon-Generic Estuarine Model (C-GEM) is a generic one-dimensional, reactive-transport model that takes advantage of the relationship between estuarine geometry and hydrodynamics to minimize data requirements [@Volta2014]. Steady-state simulations of C-GEM have provided accurate descriptions of estuarine hydrodynamics and biogeochemical transformations in several temperate estuaries [@Laruelle2017;@Laruelle2019;@Volta2014;@Volta2016b]. Although several studies have been carried out in tropical estuaries through monitoring and experiments (e.g., @MiguelLucasLavoAntonioJimo2018; @Vipindas2018; @Wu2013), estuarine biogeochemical modeling applications are still missing in many countries of Southeast Asia, India, Africa, South and Central Americas [@Volta2016;@Regnier2013]. There is now a need to improve the parameterization of C-GEM to strengthen the robustness of simulations in tropical estuarine contexts. This is particularly important for water resource management in urbanized tropical estuaries such as in Saigon River Estuary, Vietnam [@Nguyen2019], which is closely related to the social and economic development in Southern Vietnam. The most notable difference between temperate and tropical systems is the rate of biological processes. The higher temperature of tropical estuaries often increases the biological uptake, excretion of nutrients and microbial activity (e.g., nitrification and denitrification) [@Eyre1999;@Tappin2002]. In most tropical estuaries, two distinct flow rates and retention time are found during the dry and rainy seasons [@Dong2011], whereas higher flow rates occur in winter in temperate estuaries. Therefore, the factors controlling the intensity of biogeochemical processes will differ between the temperate and tropical systems.
 
-Further, it allows for results of code output to be passed inline to the commentary of your results.
-You'll see more on this later, focusing on **R**.
-If you are more into **Python** or something else, you can still use *R Markdown* - see ['Other language engines'](https://bookdown.org/yihui/rmarkdown/language-engines.html) in Yihui Xie's [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/language-engines.html).
+## Knowledge gaps  {.unnumbered}
 
-Using LaTeX together with *Markdown* is more consistent than the output of a word processor, much less prone to corruption or crashing, and the resulting file is smaller than a Word file.
-While you may never have had problems using Word in the past, your thesis is likely going to be about twice as large and complex as anything you've written before, taxing Word's capabilities.
+Based on this context and the literature review, the main knowledge gaps for understanding the water quality processes and eutrophication management in tropical urbanized estuaries are:
 
-## Who should use it? {.unnumbered}
+1.  Incompleted information on impacts of human activities on the water quality, including nutrients, phytoplankton dynamics, and GHGs in urbanized tropical estuaries
 
-Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about reproducibility in research can benefit from using *R Markdown*.
-If you are working in 'softer' fields, the user-friendly nature of the *Markdown* syntax and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should still make it of great benefit to your thesis project.
+2.  Lacking information on the interaction between biogeochemical processes and hydrological regimes, and their impacts on eutrophication in tropical estuaries
+
+3.  Difficulties for policy makers to establish a robust strategy in emerging countries.
+
+## Research objectives  {.unnumbered}
+
+This PhD research aims to address the three above-mentioned knowledge gaps. The overall research objective is to better understand nutrient dynamics and eutrophication management comprehensively in tropical urbanized estuaries. Saigon River Estuary (Vietnam) was selected to conduct this study. Main thesis works include water sampling, analysis of physical-chemical parameters, nutrients, phytoplankton, GHGs and hydrodynamic and biogeochemical modeling. Four sub-objectives are formulated to achieve the thesis's objective.
+
+1.  Assessing nutrients, eutrophication and GHGs dynamics in Saigon River Estuary, based on a pluriannual monitoring approach.
+
+2.  Understanding the seasonal variation of nutrients and eutrophication in tropical estuaries
+
+3.  Modeling the biogeochemical functioning of urbanized estuaries with a reactive-transport model (C-GEM)
+
+4.  Helping for the establishment of a strategy of adaptation/mitigation to eutrophication risk in urbanized estuaries based on historical and projected nutrient loadings
+
+## Thesis outline  {.unnumbered}
+
+Chapter 1 presents the risks of water pollution, eutrophication, and increased greenhouse gases emissions from urbanized tropical estuaries in the context of emerging countries. The biogeochemical cycles (carbon, nitrogen, phosphorus, silica, phytoplankton) and the effects of the hydrological regime of estuaries are described. Current knowledge on the role of these processes in tropical estuaries is compared with temperate estuaries. Finally, several biogeochemical estuarine models are compared to identify the suitable model and to simulate the biogeochemical functioning of tropical estuaries under limited data availability.
+
+Chapter 2 presents the characteristics of the study site, Saigon River Estuary and the influence of Ho Chi Minh megacity. The methods of sampling, analysis, and data processing are presented in detail. Then, the biogeochemical model C-GEM is presented with a focus on application for tropical estuaries.
+
+Chapter 3 describes the spatio-temporal variation of nutrients, phytoplankton, eutrophication, and greenhouse gases in this urbanized tropical estuary. Control factors such as biogeochemical processes, hydrological regimes are analyzed, based on some statistical methods. Finally, the processes that are most likely to affect water quality evolution in this estuary are identified to cross-validate water quality modeling applications.
+
+Chapter 4 presents the application of the C-GEM model at steady-state for Saigon River Estuary to quantify biogeochemical functioning. The model uses the average data for 2014-2017 to describe the average hydrodynamics and biogeochemical processes for the dry season period.
+
+Chapter 5 presents the application of the C-GEM model with a transient version, allowing the description of the seasonal evolution of phytoplankton and eutrophication. The model allows identifying the driving factors for the spatial-temporal variation of phytoplankton.
+
+Chapter 6 presents solutions to manage eutrophication by evaluating the development-oriented scenarios of a megacity. Scenarios including the development of new WWTPs, population growth and climate change to 2050 are assessed.

@@ -1,0 +1,6 @@
+Component,Equation,Description
+Continuity equation,$\frac{\partial\rho}{\partial t}+\nabla\left(\rho\vec{v}\right)=0$,Account for the flux of mass going into a defined area and the flux of mass leaving the defined area
+The momentum equations,$\frac{\partial\vec{v}}{\partial t}=\vec{g}-\frac{1}{\rho}\nabla p+\nu\nabla^2\vec{v}-2\vec{\Omega}\times\vec{v}+\vec{F}$,"Navier–Stokes equation, valid for incompressible Newtonian flows"
+The advection equation,$J_a=C\vec{v}$,Provide information for the horizontal transport by flows of pollutants; this is a primary transport process in the longitudinal direction in the rivers and estuaries
+The dispersion equation,$J=-D\frac{dC}{dx}$,Provide information for the horizontal spreading by reducing the gradient of material concentration
+Tidal equation,$\eta\left(t\right)=a_0+\sum_{k=1}^{N}\left[a_k\cos{\left(\frac{2\pi}{T_k}t\right)}+b_k\sin{\left(\frac{2\pi}{T_k}t\right)}\right]+\eta_0\left(t\right)$,Provide information of water level over the tidal cycle in the tidal estuaries

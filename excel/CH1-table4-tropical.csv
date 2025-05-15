@@ -1,0 +1,23 @@
+Factors,Temperate estuaries,Tropical estuaries
+Climate (a),Season: 4 seasons,Two seasons: dry and rainy season
+Climate (a),Light: Variable,Light: Higher and relative constant
+Climate (a),Temperature: Variable,Temperature: Higher and relative constant
+Hydrology (a),Discharge: More stable ,Discharge: Large seasonal variation 
+Hydrology (a),Flushing capacity: More stable,Flushing capacity: High variation
+Hydrology (a),Less mangrove system in temperate estuaries,The strong impact of mangroves in downstream 
+Nutrient loads (a),Stable or decrease in recent years,Increase by urbanization
+Variables in water column (a),Silica: Can be limiting for production,Silica: Less likely to limit primary production
+Variables in water column (a),Turbidity: more stable,Turbidity: high seasonal variation
+Variables in bottom sediments (a),High organic carbon content,"Higher organic carbon and carbonate,  $PO_4^{3-}$"
+Seawater (a),Variable concentrations because of seasonal biological activities ,"Seawater concentrations are more stable due to constant input of insolation (light, temperature) than temperate "
+Phytoplankton (a),Easier shift to non-silicious phytoplankton,The dominant phytoplankton group is diatom
+Biogeochemical process,"Reaction rates are lower (a, b)",Reaction rates: Higher biological uptake and excretion (a)
+Biogeochemical process,There is a limitation of production in the cold period (b),No temperature limitation for production (b)
+Biogeochemical process,Nitrification is no longer a major factor because of the decrease of $NH_4^{+}$ (d),"Dominated by OM oxidation, nitrification, deposition (f,g,h)"
+"Nutrient export to coastal zone, ocean",Low nutrient retention rate. 75% of nutrients can be exported to the ocean. Less seasonal variation (c),"Similarly, retention of nutrients is low in the rainy season but much higher in the dry season, thus less nutrient export (f)"
+"Nutrient export to coastal zone, ocean",Less than 10% of nutrients were retained/buried in sediment (b),"Higher phosphate retention (higher sorption), but small nitrogen burial (around 2.5%) in sediment (b)"
+Assimilation capacity ,"Net removal of N and Si, but a source of P because of P desorption (c)","Act as a sink for OC, $NH_4^{+}$, $PO_4^{3-}$ but a source for $NO_3^{-}$ (g)"
+Assimilation capacity ,"30-65% N can be removed by physical, biological processes in estuaries (d)","Higher N removal because of higher denitrification rate (b). For instance, 50%, 37% and 11% C, N, P of external sources were removed by Pearl River in 1999 (g)"
+Climate change (b),Four seasons may become dry and wet seasons,Greater contrasting seasonal behavior
+"a: Eyre et al., 1999","c: Romero et al., 2019","e: McKee et al., 1999, f: Le et al., 2010 & Trinh et al., 2010"
+b: Tappin 2002,d: Nixon et al. 1996,"g: Hu et al., 2009, h: Yu et al. 2019"

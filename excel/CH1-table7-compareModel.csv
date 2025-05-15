@@ -1,0 +1,10 @@
+Model,Requirement,Usage scope,Applied area
+"C-GEM 1D, daily - seasonal","Simpli?ed hydro-geometrical characteristics, tidal period; biogeochemical reactions",Biogeochemical dynamics in estuaries. Reduces data requirements by using an idealized representation of the estuarine geometry.,"Scheldt estuary (Volta et al., 2014, 2016)"
+"CONTRASTE 1D, daily - seasonal","Bathymetrical maps, Hydrodynamic description in detail in upstream, tidal forcings. Biogeochemical reactions",The time series of nutrient transformations and ?uxes along the estuary–coastal zone,"Scheldt estuary (Regnier et al., 1997, 1999)"
+"MOSES 1D, yearly","Biogeochemical, pelagic, reactive- transport model",Fate and turnover of nutrients entering the estuary; and fluxes in the estuary,"Scheldt estuary (Hofmann et al., 2008)"
+"HEM-3D, daily - seasonal","Detail bathymetry. Hourly tide, daily discharge. Meteorological data. Water quality","Nutrient dynamics (21 state variables), algal groups, fecal coliform bacteria","Kwang-Yang Bay (Park et al., 1995, 2005)"
+"ELCOM-CAEDYM 3D, daily - seasonal","Detail bathymetry, meteorological data, tidal elevation, Water quality","Nutrient dynamics, phytoplankton bloom, phytoplankton species",Mozambique coast
+"MOHID 3D, daily - yearly","Detail bathymetry, Hourly tide, daily discharge upstream, Atmosphere, Water quality, Algal species","Mainly Phytoplankton and macroalgae, zooplankton dynamics","Vouga Estuary (Trancoso et al., 2005)"
+MIKE 1-3D + water quality module,"Detail bathymetry, hourly tide, daily discharge upstream and tributaries. Water quality","Depend on water quality module, for instance, nutrients dynamics and diatom development.","Scheldt estuary (Arndt et al., 2009, 2011)"
+Delft3D + GEM/water quality module,"Detail bathymetry, hourly tide, daily discharge upstream and tributaries. Water quality","Describes the behavior of nutrients, organic matter and primary producers in estuaries","Dutch coastal waters (Blauw et al., 2008)"
+,,,

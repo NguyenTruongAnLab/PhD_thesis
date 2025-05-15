@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>2 Materials and methodology | Modeling of nutrient dynamics in an urbanized tropical estuary and application to eutrophication risk management</title>
+<meta name="author" content="Nguyen Truong An">
+<meta name="generator" content="bookdown 0.43 with bs4_book()">
+<meta property="og:title" content="2 Materials and methodology | Modeling of nutrient dynamics in an urbanized tropical estuary and application to eutrophication risk management">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2 Materials and methodology | Modeling of nutrient dynamics in an urbanized tropical estuary and application to eutrophication risk management">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="templates/bs4_style.css">
+<link rel="stylesheet" href="templates/corrections.css">
+<meta name="description" content="This chapter describes the research area and methods to study the biogeochemical functioning of an urbanized tropical estuary by monitoring, experiment, statistical analysis and modeling. The area...">
+<meta property="og:description" content="This chapter describes the research area and methods to study the biogeochemical functioning of an urbanized tropical estuary by monitoring, experiment, statistical analysis and modeling. The area...">
+<meta name="twitter:description" content="This chapter describes the research area and methods to study the biogeochemical functioning of an urbanized tropical estuary by monitoring, experiment, statistical analysis and modeling. The area...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title=""><p>Modeling of nutrient dynamics in an urbanized tropical estuary<br>
+and application to eutrophication risk management</p></a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="introduction.html">Introduction</a></li>
+<li><a class="" href="literature.html"><span class="header-section-number">1</span> Background and state of the art</a></li>
+<li><a class="active" href="method.html"><span class="header-section-number">2</span> Materials and methodology</a></li>
+<li><a class="" href="cites-and-refs.html"><span class="header-section-number">3</span> Eutrophication and greenhouse gases in an urbanized tropical estuary</a></li>
+<li><a class="" href="steady-state-model.html"><span class="header-section-number">4</span> Biogeochemical functioning of an urbanized tropical estuary: Implementing the generic C-GEM (reactive transport) model</a></li>
+<li><a class="" href="modeling-the-seasonal-nutrient-dynamics-and-phytoplankton-development-in-the-saigon-river-tropical-estuary.html"><span class="header-section-number">5</span> Modeling the seasonal nutrient dynamics and phytoplankton development in the Saigon River tropical estuary</a></li>
+<li><a class="" href="eutrophicaiton-assessment-in-an-urbanized-estuary-based-on-past-present-and-future-nutrient-loadings-a-modeling-approach.html"><span class="header-section-number">6</span> Eutrophicaiton assessment in an urbanized estuary based on past, present and future nutrient loadings: A modeling approach</a></li>
+<li><a class="" href="conclusion-and-perspectives.html">Conclusion and perspectives</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/ulyngs/oxforddown">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="method" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Materials and methodology<a class="anchor" aria-label="anchor" href="#method"><i class="fas fa-link"></i></a>
+</h1>
+<p><!-- this will include a mini table of contents--></p>
+<p>This chapter describes the research area and methods to study the biogeochemical functioning of an urbanized tropical estuary by monitoring, experiment, statistical analysis and modeling.</p>
+<p>The area of study is Saigon River Estuary, located in the South of Vietnam, with the characteristics of tropical estuaries strongly impacted by urbanization (Ho Chi Minh megacity). The topographic, morphological and hydrological features of Saigon River Estuary are presented first. The urbanization of HCMC is then presented for the 1979 to 2020 period and trends for 2050. The pollution status of Saigon River Estuary is reported based on the previous studies. Finally, water management plans of this urbanized estuary (e.g., construction, upgrading of waste treatment system) are discussed to assess water pollution risks in the future.</p>
+<p>In terms of research methods, this study was conducted in the period 2018-2021. In addition to available hydrological and water quality data from the national environmental monitoring center, we collected nutrients, carbon, phytoplankton, and greenhouse gases concentration data. Multivariate statistical methods were used to evaluate the correlation between explanatory variables (e.g., environmental, hydrological parameters) and responses (e.g., greenhouse gases, phytoplankton densities). Finally, a biogeochemical estuarine model for tropical estuaries is presented in detail, from the platform model to the setup protocol to allow the reader to replicate this research for another area.</p>
+<div id="study-site" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Study site<a class="anchor" aria-label="anchor" href="#study-site"><i class="fas fa-link"></i></a>
+</h2>
+<p>Vietnam is a coastal country stretching over 3260 km from the north (subtropical climate) to the south (tropical climate). Nearly half of Vietnam’s cities are adjacent to the sea and have a large population living there. The coastal areas of Vietnam have been affected by urbanization and climate change for many years. Vietnam’s three largest river estuarine systems that play the most important role in Vietnam’s economy are the Red River Delta, the Saigon - Dongnai river basin, and the Mekong River Delta (Figure <a href="method.html#fig:C2-SG-DEM">2.1</a> ). In the Mekong Delta, many studies have assessed the impacts of climate change, particularly sea level rise and subsidence affecting the country’s agriculture. Mainly studies have also been carried out in the Red River Delta to assess agricultural activity and urbanization on water quality. The Saigon - Dongnai river basin is a special area, mainly affected by the region’s rapid urbanization, especially the megacity of HCMC.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-SG-DEM"></span>
+<embed src="figures/C2-SG-DEM.pdf" title="Overview of three biggest river estuarine systems in Vietnam and topography of Saigon River Basin, Southern Vietnam (topography data is from MERIT DEM, 2018)" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.1: Overview of three biggest river estuarine systems in Vietnam and topography of Saigon River Basin, Southern Vietnam (topography data is from MERIT DEM, 2018)
+</p>
+</div>
+<div id="saigon-river-estuary" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> Saigon River Estuary<a class="anchor" aria-label="anchor" href="#saigon-river-estuary"><i class="fas fa-link"></i></a>
+</h3>
+<div id="location-and-topography" class="section level4" number="2.1.1.1">
+<h4>
+<span class="header-section-number">2.1.1.1</span> Location and topography<a class="anchor" aria-label="anchor" href="#location-and-topography"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Location</strong></p>
+<p>The Saigon River Estuary is located in the south of Vietnam, part of the Saigon-Dongnai River basin. The Saigon River flows through Tay Ninh, Binh Duong, Dongnai, HCMC and Long An administrative provinces. The Saigon River Basin has a total area of 4717 <span class="math inline">\(km^{2}\)</span> and borders the following areas in turn:</p>
+<ul>
+<li><p>The North and the Northwest border Cambodia, a country with many-sided relations with Vietnam in terms of politics, economy and culture.</p></li>
+<li><p>The southeast direction borders the East Sea of Vietnam and provides marine resources, oil, gas, and international shipping.</p></li>
+<li><p>The southwest direction borders the Mekong River Delta, which mainly produces food, aquatic products and fruit trees. HCMC is about 170 km from the largest city of the Mekong Delta (Can Tho City).</p></li>
+<li><p>The North and the Northeast border with the highland area, which is mainly for crops.</p></li>
+</ul>
+<p><strong>Topography</strong></p>
+<p>The Saigon River originates from the Vietnam-Cambodia border area with terrain about 200 m high and is controlled at Dau Tieng Reservoir in the territory of Vietnam. Dau Tieng reservoir is one of the largest reservoirs in Vietnam, with a total water surface area of 270 <span class="math inline">\(km^{2}\)</span>, a volume of 1580 million <span class="math inline">\(m^3\)</span>. Dau Tieng Reservoir regulates floods and aims at mitigating saline intrusion downstream, storing fresh water and supplying irrigation water to Tay Ninh, Binh Duong, Binh Phuoc provinces and HCMC. From Dau Tieng Reservoir to the estuary mouth (about 200 km), the Saigon River has a small slope of about 1.3% (Figure <a href="method.html#fig:C2-SG-DEM">2.1</a>). Elevation of more than 100 km from estuary mouth is less than 2 m; the areas surrounding this river are thus sensitive to saline intrusion and flooding, as a hydrological response of the watershed to rainfall and tide.</p>
+</div>
+<div id="climate-and-hydrology" class="section level4" number="2.1.1.2">
+<h4>
+<span class="header-section-number">2.1.1.2</span> Climate and hydrology<a class="anchor" aria-label="anchor" href="#climate-and-hydrology"><i class="fas fa-link"></i></a>
+</h4>
+<p>Located in the tropics, the Saigon River Estuary experiences two distinct seasons: the rainy and dry seasons. The rainy season is from May to November (hot and humid climate, high temperature with lots of rain), and the dry season is from December to April of next year (dry climate, high temperature and little rain). This area has 160 to 270 hours of sunshine <span class="math inline">\(month^{-1}\)</span> (Figure <a href="method.html#fig:C2-Rain">2.2</a>), with an average temperature of 27<span class="math inline">\(^\circ\)</span>C, maximum up to 40<span class="math inline">\(^\circ\)</span>C, and minimum down to 13.8 <span class="math inline">\(^\circ\)</span>C. Solar radiation intensity is of about 4.5 kWh <span class="math inline">\(m^{-2}\)</span> <span class="math inline">\(d^{-1}\)</span>and of about 1100 kWh<span class="math inline">\(yr^{-1}\)</span> (Figure <a href="method.html#fig:C2-wind">2.3</a>). The average daytime temperature ranges mainly from 25 to 28 <span class="math inline">\(^\circ\)</span>C. The average rainfall is 2000 mm <span class="math inline">\(yr^{-1}\)</span>, of which 90% falls during the rainy season (about 159 rainy days <span class="math inline">\(yr^{-1}\)</span> with about 200 – 500 mm <span class="math inline">\(month^{-1}\)</span>) (HCMC Statistical Year Book, 2010 to 2016).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Rain"></span>
+<embed src="figures/C2-Rain.pdf" title="Average monthly precipitation and sunshine duration  from 2005-2016 in Saigon River (Data source from HCMC Statistical Year Books from 2010 to 2016)" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.2: Average monthly precipitation and sunshine duration from 2005-2016 in Saigon River (Data source from HCMC Statistical Year Books from 2010 to 2016)
+</p>
+</div>
+<p>This area is affected by two main wind directions: The West - Southwest and North - Northeast monsoons. West - Southwest wind from the Indian Ocean, average speed 3.6 <span class="math inline">\(ms^{-1}\)</span>, in the rainy season. Wind North - Northeast wind from the East Sea, average speed 2.4 <span class="math inline">\(ms^{-1}\)</span>, in the dry season. There is also a trade wind in the south-southeast direction from March to May, averaging 3.7 <span class="math inline">\(ms^{-1}\)</span> (HCMC Statistical Year Book 2010). The average wind speed at 10 m above the surface of the Saigon River fluctuates around 2 <span class="math inline">\(ms^{-1}\)</span> upstream and about 4 <span class="math inline">\(ms^{-1}\)</span> near the estuary (Figure <a href="method.html#fig:C2-wind">2.3</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-wind"></span>
+<embed src="figures/C2-wind.pdf" title="Average of wind speed at 10 m ($ms^{-1}$) and the yearly average of normal irradiation (kWh$m^{-2}$ $yr^{-1}$) in Saigon River Basin in 2007-2018 (Data source: Global Wind Atlas and Global Solar Atlas, 2018)." width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.3: Average of wind speed at 10 m (<span class="math inline">\(ms^{-1}\)</span>) and the yearly average of normal irradiation (kWh<span class="math inline">\(m^{-2}\)</span> <span class="math inline">\(yr^{-1}\)</span>) in Saigon River Basin in 2007-2018 (Data source: Global Wind Atlas and Global Solar Atlas, 2018).
+</p>
+</div>
+<p>In terms of hydrology, the Saigon River and its estuary have a very diverse network of rivers and canals. The Saigon River is about 30 m in width upstream and about 225-370 m in HCMC. The average water depth is 18 m. From Dau Tieng Reservoir to the estuary mouth, 200 km downstream, the Saigon River (18 <span class="math inline">\(\pm\)</span> 14 <span class="math inline">\(m^3s^{-1}\)</span>) joins, in turn, several notable tributaries such as the Thi Tinh River (20 <span class="math inline">\(\pm\)</span> 11 <span class="math inline">\(m^3s^{-1}\)</span>) and the Dongnai River (632 <span class="math inline">\(\pm\)</span> 446 <span class="math inline">\(m^3s^{-1}\)</span>) (Figure <a href="method.html#fig:C2-discharge">2.6</a>), forming Long Tau River and flowing through Can Gio Mangrove and into the East Sea of Vietnam (Figure <a href="method.html#fig:C2-Bathymetry">2.4</a> ). In addition, the Saigon River is connected to an urban river (Vam Thuat River, 4 <span class="math inline">\(m^3s^{-1}\)</span>) and three urban canals of HCMC (combined discharge of 5.5 <span class="math inline">\(m^3s^{-1}\)</span>) before the confluence with Dongnai River <span class="citation">(<a href="references.html#ref-Nguyen2020">T. T. N. Nguyen et al. 2020</a>)</span>. The semi-diurnal regime influences the Saigon River from the East Sea of Vietnam (Figure <a href="method.html#fig:C2-Tide">2.5</a> ). The tidal amplitude ranges from 1.5 m during neap tide to about 4 m during a spring tide <span class="citation">(<a href="references.html#ref-Schwarzer2016">Schwarzer, Thanh, and Ricklefs 2016</a>)</span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Bathymetry"></span>
+<embed src="figures/C2-Bathymetry.pdf" title="(a) Saigon River and tributaries, (b) urban canals, (c) Can Gio Mangrove (Bathymetry data is from Southern Vietnam Institute of Water Resources Research (SIWRR) in 2008 and 2016, only available for Saigon and Dongnai River)" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.4: (a) Saigon River and tributaries, (b) urban canals, (c) Can Gio Mangrove (Bathymetry data is from Southern Vietnam Institute of Water Resources Research (SIWRR) in 2008 and 2016, only available for Saigon and Dongnai River)
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Tide"></span>
+<embed src="figures/C2-Tide.pdf" title="Variation of water level at estuary mouth of Saigon River in 2018 and in 1-5 May 2018 (Data source: Vung Tau Station, UHSLC Data)" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.5: Variation of water level at estuary mouth of Saigon River in 2018 and in 1-5 May 2018 (Data source: Vung Tau Station, UHSLC Data)
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-discharge"></span>
+<embed src="figures/C2-discharge.pdf" title="Average residual monthly discharge in Saigon and Dongnai River from 2013-2016 (adapted from \cite{Nguyen2019})" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.6: Average residual monthly discharge in Saigon and Dongnai River from 2013-2016 (adapted from )
+</p>
+</div>
+</div>
+<div id="land-use" class="section level4" number="2.1.1.3">
+<h4>
+<span class="header-section-number">2.1.1.3</span> Land use<a class="anchor" aria-label="anchor" href="#land-use"><i class="fas fa-link"></i></a>
+</h4>
+<p>Figure <a href="method.html#fig:C2-Landuse">2.7</a> presents the land use and population density of the Saigon River watershed. Land use in the watershed of the Saigon River significantly varies from North to South. Upstream HCMC (North of the city, Tay Ninh and Binh Duong provinces), mainly agricultural activities (paddy rice and rubber tree farms). Urban settlements and industrial zones belonging to HCMC and part of Dongnai province are dominant. Downstream of the estuary, the Can Gio mangrove system is recognized as a biosphere reserve by UNESCO.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Landuse"></span>
+<embed src="figures/C2-Landuse.pdf" title=" Land use and population densities in Saigon River Basin (Data source: Land use from JAXA, 2017, Population densities from General Statistics Office of Vietnam, 2019)" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.7:  Land use and population densities in Saigon River Basin (Data source: Land use from JAXA, 2017, Population densities from General Statistics Office of Vietnam, 2019)
+</p>
+</div>
+</div>
+</div>
+<div id="ho-chi-minh-megacity-southern-vietnam" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Ho Chi Minh megacity (Southern Vietnam)<a class="anchor" aria-label="anchor" href="#ho-chi-minh-megacity-southern-vietnam"><i class="fas fa-link"></i></a>
+</h3>
+<div id="population" class="section level4" number="2.1.2.1">
+<h4>
+<span class="header-section-number">2.1.2.1</span> Population<a class="anchor" aria-label="anchor" href="#population"><i class="fas fa-link"></i></a>
+</h4>
+<p>HCMC, formerly known as Saigon (before 1975), has the largest population and fastest growth rate in Vietnam. The Saigon River is mainly located in the territory of this city and directly receives wastewater from human activities through a system of canals, as shown in Figure <a href="method.html#fig:C2-Bathymetry">2.4</a>. The population in 1929 was 123,890 people, of which 12,100 were French, and its population reached 498,000 people in 1943. In 1967 the city had grown threefold with a population of 1.5 million people. However, this population increase was mainly due to immigration <span class="citation">(<a href="references.html#ref-TapchiCongThuong2021">Nguyen Van Tien 2021</a>)</span>. Since 1979, HCMC’s population has grown rapidly from more than 3 million to 9 million by 2020. The population distribution in HCMC is uneven. While some districts such as 4, 5, 10 and 11 have densities of over 40,000 inhabitants <span class="math inline">\(km^{-2}\)</span> , the suburban district of Can Gio has a relatively low density of 100 persons <span class="math inline">\(km^{-2}\)</span> (Figure <a href="method.html#fig:C2-Landuse">2.7</a>). Regarding population growth, while the natural growth rate is about 1.07%, the mechanical growth rate is up to 2.5% (Source: General Statistics Office Of Vietnam - GSO, 2019). The population growth rate also varied each period, the period 1999-2009 was 3.5%, while the period 2009-2019 was lower with an increased rate of 2.3%. If based on the average population growth rate of 2.8%, the population of HCMC is estimated to be more than 20 million people by 2050 <span class="citation">(<a href="references.html#ref-Nguyen2020">T. T. N. Nguyen et al. 2020</a>)</span>. However, according to UN World Urbanization Prospects 2018, the population growth rate in HCMC will decrease from 2.8% in 2019 to 1.3% in 2050. The population of HCMC is thus estimated at 16 million people in 2050. This estimate is appropriate because the HCMC government is increasingly taking measures to control immigration in the future (Source: Vietnam Ministry of Construction, 2020).</p>
+<p>HCMC is the largest economic and trading center of Vietnam. The city occupies about 0.6% area but 10% population of Vietnam and accounts for more than 30% of the value of industrial production and 35% of foreign projects. The economy of HCMC is diversified from mining, fisheries, agriculture, processing industry, construction to tourism, finance. Regarding economic sectors, services accounted for the highest proportion, about 50%. The industry and construction accounted for 48%, while agriculture, forestry and fishery accounted for only 2% (HCMC statistics book, 2016). In 2020, HCMC had 24 export processing zones and industrial parks with about 62 <span class="math inline">\(km^{2}\)</span>. All industrial parks in HCMC have centralized wastewater treatment systems. Up to now, HCMC is the first city in the country to reach the target of 100% of industrial parks operating with centralized wastewater treatment systems of 63000 <span class="math inline">\(m^3\)</span><span class="math inline">\(d^{-1}\)</span>(www.hepza.gov.vn). Thus, if the WWTPs of these industrial parks are operated according to the design, wastewater from these industrial zones should not be a source of pollution for the Saigon River.</p>
+</div>
+<div id="sewerage-and-wastewater-treatment-capacities" class="section level4" number="2.1.2.2">
+<h4>
+<span class="header-section-number">2.1.2.2</span> Sewerage and wastewater treatment capacities<a class="anchor" aria-label="anchor" href="#sewerage-and-wastewater-treatment-capacities"><i class="fas fa-link"></i></a>
+</h4>
+<p>The sewerage and sanitation system of HCMC was built in the 1870s during the French colonial period. Until now, domestic water and rainwater have been collected and transported together by the sewer system and by urban canals and creeks
+<span class="citation">(<a href="references.html#ref-TranNgoc2016">Tran Ngoc et al. 2016</a>)</span>.</p>
+<p>The current WWTPs system in HCMC cannot deal with the total domestic wastewater volume of about 9 million people (about 2.5 million <span class="math inline">\(m^3\)</span> <span class="math inline">\(d^{-1}\)</span>). Before 2006, all domestic wastewater was discharged directly into canals and the Saigon River; treated wastewater is about 12% in 2021 (Figure <a href="method.html#fig:C2-population">2.8</a>). In response to the increase in domestic wastewater, the Vietnamese government called for the total construction of 12 WWTPs to treat about 3 million <span class="math inline">\(m^3\)</span><span class="math inline">\(d^{-1}\)</span>by 2040 (Vietnam Prime Ministerial Decision Jan. 2010, n24/QĐ-TTg). However, there are currently only three WWTPs in operation; one WWTP is under construction, while other WWTPs are still in the fundraising stage. The total estimated cost is over 2 billion USD for the remaining WWTPs. Therefore, we estimate that in 2025 HCMC could treat about 780,000 <span class="math inline">\(m^3\)</span> <span class="math inline">\(d^{-1}\)</span>, equivalent to 27% of the total wastewater volume of about 2.8 million people and 3 million <span class="math inline">\(m^3\)</span> <span class="math inline">\(d^{-1}\)</span>, equivalent to 54% of the wastewater of about 16 million people in by 2050 (Figure <a href="method.html#fig:C2-population">2.8</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-population"></span>
+<embed src="figures/C2-population.pdf" title="           Population in HCMC from 1979 to 2020, predicted to 2050, and WWTP capacity." width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.8:  Population in HCMC from 1979 to 2020, predicted to 2050, and WWTP capacity.
+</p>
+</div>
+</div>
+<div id="canal-network" class="section level4" number="2.1.2.3">
+<h4>
+<span class="header-section-number">2.1.2.3</span> Canal network<a class="anchor" aria-label="anchor" href="#canal-network"><i class="fas fa-link"></i></a>
+</h4>
+<p>In the urban area of HCMC, there are four main canals, with a total length of 76 km, including Nhieu Loc - Thi Nghe; Tan Hoa – Lo Gom; Tau Hu – Kenh Doi; Kenh Te - Ben Nghe; Tham Luong - Vam Thuat. This system plays an important role in draining water for the inner city of HCMC. However, this system currently receives domestic wastewater and stores it before discharging it into the Saigon River. Figure <a href="method.html#fig:C2-Bathymetry">2.4</a> depicts four canals that directly lead wastewater to the Saigon River, starting from the upstream Vam Thuat River, then Nhieu Loc, Ben Nghe, and Kenh Te canals.</p>
+</div>
+</div>
+<div id="water-quality-conditions-in-the-saigon-river-estuary" class="section level3" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> Water quality conditions in the Saigon River Estuary<a class="anchor" aria-label="anchor" href="#water-quality-conditions-in-the-saigon-river-estuary"><i class="fas fa-link"></i></a>
+</h3>
+<div id="spatial-and-seasonal-variation-of-water-quality" class="section level4" number="2.1.3.1">
+<h4>
+<span class="header-section-number">2.1.3.1</span> Spatial and seasonal variation of water quality<a class="anchor" aria-label="anchor" href="#spatial-and-seasonal-variation-of-water-quality"><i class="fas fa-link"></i></a>
+</h4>
+<p>Several studies have assessed the overall status of water quality (specifically nutrients pollution) in the Saigon River Estuary and its canal system <span class="citation">(<a href="references.html#ref-Strady2017">Strady et al. 2017</a>; <a href="references.html#ref-Nguyen2019">T. T. N. Nguyen, Némery, Gratiot, Strady, et al. 2019</a>; <a href="references.html#ref-Nguyen2020">T. T. N. Nguyen et al. 2020</a>)</span>. <span class="citation">T. T. N. Nguyen, Némery, Gratiot, Strady, et al. (<a href="references.html#ref-Nguyen2019">2019</a>)</span>;<span class="citation">T. T. N. Nguyen et al. (<a href="references.html#ref-Nguyen2020">2020</a>)</span> show that nutrients and organic carbon concentration in the Saigon River increases significantly when receiving domestic wastewater from HCMC. The DO concentration also declines quickly when the Saigon River flows through this area (Figure <a href="method.html#fig:C2-Tuyet">2.9</a>a). Very high concentrations of <span class="math inline">\(\mathrm{PO_4^{3-}}\)</span> and <span class="math inline">\(\mathrm{NH_{4}^{+}}\)</span> were found in urban canals (Figure <a href="method.html#fig:C2-Tuyet">2.9</a>b), with values 10 and 20 times higher than in the Saigon River. This cannot be denied the impact of domestic wastewater on the canal system without WWTPs. However, upstream to downstream of the canals also show that this system plays a role in pollutant retention. Part of the wastewater is diluted before being discharged from the system, while the pollutants deposited as sludge in the canal are regularly dredged <span class="citation">(<a href="references.html#ref-Nguyen2020">T. T. N. Nguyen et al. 2020</a>)</span>. Figure <a href="method.html#fig:C2-Tuyet">2.9</a> presents the water quality along the Saigon River in 2012-2016 <span class="citation">(<a href="references.html#ref-Nguyen2020">T. T. N. Nguyen et al. 2020</a>)</span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Tuyet"></span>
+<embed src="figures/C2-Tuyet.pdf" title="Mean total suspended sediment (TSS), dissolved oxygen (DO),  $\mathrm{NH_{4}^{+}}$, and  $\mathrm{PO_4^{3-}}$ concentrations in 2012 - 2016 period: (a) along the Saigon River during the wet and dry seasons and (b) in urban canals of HCMC (adapted from \cite{Nguyen2020})" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.9: Mean total suspended sediment (TSS), dissolved oxygen (DO), <span class="math inline">\(\mathrm{NH_{4}^{+}}\)</span>, and <span class="math inline">\(\mathrm{PO_4^{3-}}\)</span> concentrations in 2012 - 2016 period: (a) along the Saigon River during the wet and dry seasons and (b) in urban canals of HCMC (adapted from )
+</p>
+</div>
+<p>Regarding the eutrophication status, <span class="citation">T. T. N. Nguyen, Némery, Gratiot, Strady, et al. (<a href="references.html#ref-Nguyen2019">2019</a>)</span> found that the upstream and downstream of Saigon River are in a mesotrophic state, while the urban section was in a eutrophic state. In addition, 3-year monitoring also shown that P is the limiting factor for phytoplankton development based on the Redfield ratio (C:N:P:Si) (Figure <a href="method.html#fig:C2-ratio">2.10</a>). The N:P ratio in the Saigon River was about 70:1, much higher than 16:1. Therefore, the control of P concentration should be of concern for the authorities to control eutrophication in the Saigon River, especially in the rapidly urbanizing districts of HCMC <span class="citation">(<a href="references.html#ref-Nguyen2019">T. T. N. Nguyen, Némery, Gratiot, Strady, et al. 2019</a>)</span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-ratio"></span>
+<embed src="figures/C2-ratio.pdf" title="Molar ratios of Si:N and Si:P in Saigon River 2015-2017 (adapted from \cite{Nguyen2019})" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.10: Molar ratios of Si:N and Si:P in Saigon River 2015-2017 (adapted from )
+</p>
+</div>
+</div>
+<div id="current-water-quality-management-tools" class="section level4" number="2.1.3.2">
+<h4>
+<span class="header-section-number">2.1.3.2</span> Current water quality management tools<a class="anchor" aria-label="anchor" href="#current-water-quality-management-tools"><i class="fas fa-link"></i></a>
+</h4>
+<p>The water quality of the Saigon River is assessed to be directly affected by domestic wastewater from the HCMC megacity. Therefore, the HCMC government has had programs to monitor the water quality of the Saigon River since the 1990s. This program is completed with monitoring points from Dau Tieng Reservoir to the estuary and other sampling sites in the urban canals, with a monthly frequency since 2012.</p>
+<p>By 2019, according to the Ministry of Natural Resources and Environment of Vietnam (Decision 154/QD-TCMT, February 15, 2019), the water quality of major rivers affected by tides in Vietnam must be simulated by two software QUAL2K and MIKE 11. The requirement to use this two software is to calculate the total maximum daily loads of rivers (Source: Ministry of Natural Resources and Environment of Vietnam - MONRE, 2019). The QUAL2K model is applied to the north of Vietnam because of its low tidal influence. The MIKE model is used to the south of Vietnam because of its ability to solve tidal problems (MONRE, 2019). Therefore, many Vietnamese scientists have applied the MIKE model to simulate hydraulic processes in the Saigon River. However, currently, there is only one study using the MIKE model to assess water quality in the Saigon River <span class="citation">(<a href="references.html#ref-Nguyen2019b">H. D. Nguyen et al. 2019</a>)</span>. The remaining studies mainly evaluate saline intrusion. In addition, the researches on water quality modeling in Vietnam are mostly used internally, rarely published internationally. To the author’s knowledge, there has been no published assessment of biogeochemical processes and hydrological regimes on the changes in the Saigon River’s water quality and the risk of eutrophication under the impact of urbanization.</p>
+</div>
+<div id="the-risk-of-water-pollution-in-the-future" class="section level4" number="2.1.3.3">
+<h4>
+<span class="header-section-number">2.1.3.3</span> The risk of water pollution in the future<a class="anchor" aria-label="anchor" href="#the-risk-of-water-pollution-in-the-future"><i class="fas fa-link"></i></a>
+</h4>
+<p>During 20 years of monitoring the water quality of the Saigon River, the dissolved oxygen concentration in the 2000s was very low. In 2008, the water quality improved thanks to the operation of WWTPs (but only 10% of the total wastewater was treated). The water quality improvement is also supported by the activities of dredging canals in the inner city. However, almost all the canals suffered serious pollution levels during this period, and fish deaths were frequent (Figure <a href="method.html#fig:C2-Fish">2.11</a>). In recent years, DO concentration has tended to decrease gradually and often until anoxic conditions (Figure <a href="method.html#fig:C2-DO">2.12</a>). Concentrations of pollutants in this river are still highly fluctuating but note that it is on a deteriorating trend.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Fish"></span>
+<embed src="figures/C2-Fish.pdf" title="Nhieu Loc Canal in 2012 (Source: Tuoitre News, 2012) and fish death in Nhieu Loc Canal in 2015 (Source: Vnexpress News, 2015)" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.11: Nhieu Loc Canal in 2012 (Source: Tuoitre News, 2012) and fish death in Nhieu Loc Canal in 2015 (Source: Vnexpress News, 2015)
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-DO"></span>
+<embed src="figures/C2-DO.pdf" title="Evolution of DO in Saigon River (urban section) from 2003 to 2021 (Data source: data of 2003-2015 period is from the center of monitoring Vietnam, data of 2016-2021 period is from CARE, see section 2.2 for detailed description of CEM and CARE monitoring programs)" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.12: Evolution of DO in Saigon River (urban section) from 2003 to 2021 (Data source: data of 2003-2015 period is from the center of monitoring Vietnam, data of 2016-2021 period is from CARE, see section 2.2 for detailed description of CEM and CARE monitoring programs)
+</p>
+</div>
+<p>Managing water quality in the Saigon River is to control the source of domestic wastewater before being discharged into the canal system and the Saigon River. However, the planification construction of 12 WWTPs is expected to cost more than 2 billion USD, while the construction of only one WWTP had lasted from 10 years before operation. Therefore, the step-by-step planning of construction and selection of treatment technology will be extremely important to the financial viability of the region. Similar to the lessons on water pollution control from the Seine River (France) or Shenzhen Bay (China), solutions to reduce pollutants need to be based on research and support of biogeochemical models. This can optimize costs and improve the effectiveness of future pollution mitigation in the context of HCMC’s rapid urbanization.</p>
+</div>
+</div>
+</div>
+<div id="methods-for-water-quality-evaluation" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Methods for water quality evaluation<a class="anchor" aria-label="anchor" href="#methods-for-water-quality-evaluation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Following the monitoring effort undertaken at CARE laboratory (<a href="http://carerescif.hcmut.edu.vn/" class="uri">http://carerescif.hcmut.edu.vn/</a>), this study extended the data collection for 2 years, 2019 – 2020. The available data used for this study are also described in detail below.</p>
+<div id="monitoring-and-sampling-strategy" class="section level3" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> Monitoring and sampling strategy<a class="anchor" aria-label="anchor" href="#monitoring-and-sampling-strategy"><i class="fas fa-link"></i></a>
+</h3>
+<div id="vietnamese-water-monitoring-program" class="section level4" number="2.2.1.1">
+<h4>
+<span class="header-section-number">2.2.1.1</span> Vietnamese water monitoring program<a class="anchor" aria-label="anchor" href="#vietnamese-water-monitoring-program"><i class="fas fa-link"></i></a>
+</h4>
+<p>Vietnamese Center of Monitoring (CEM) of the Department of Natural Resources and Environment of HCMC (DONRE) has been responsible for monitoring water quality and hydrology in the Saigon River since the 2000s. After many modifications of the monitoring strategy, by 2012, this program was operating more stably. CEM surveyed 26 points along the Saigon River and its tributaries (approximately 300 km in total length) and 15 points in the urban canals (Figure <a href="method.html#fig:C2-CEMsite">2.13</a> for sampling sites using in this study). The measured parameters include temperature, pH, TSS, salinity, turbidity, <span class="math inline">\(\mathrm{NH_{4}^{+}}\)</span>, <span class="math inline">\(\mathrm{PO_4^{3-}}\)</span>, COD, <span class="math inline">\(\mathrm{BOD_5}\)</span>, DO, metals (Pb, Cu, Cd, Hd, Mn), oil, coliforms and <em>E. coli</em>. Monitoring frequency is bi-weekly for locations along the river and monthly for sampling sites at urban canals.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-CEMsite"></span>
+<embed src="figures/C2-CEMsite.pdf" title="Location of water quality survey by Vietnamese center environmental monitoring (CEM) in urban canals and along the Saigon River Estuary." width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.13: Location of water quality survey by Vietnamese center environmental monitoring (CEM) in urban canals and along the Saigon River Estuary.
+</p>
+</div>
+<p>In addition, CEM monitors water levels and discharge at several monitoring stations along the Saigon River. Each month, at these monitoring stations, some operators will observe the water level and hourly velocity for 48 hours continuously to calculate the daily inflow and outflow. CEM uses the velocity index method to calculate residual discharge. The flow calculation method of CEM is presented more in details in <span class="citation">Camenen et al. (<a href="references.html#ref-Camenen2021">2021</a>)</span>.</p>
+</div>
+<div id="bi-weekly-monitoring" class="section level4" number="2.2.1.2">
+<h4>
+<span class="header-section-number">2.2.1.2</span> Bi-weekly monitoring<a class="anchor" aria-label="anchor" href="#bi-weekly-monitoring"><i class="fas fa-link"></i></a>
+</h4>
+<p>This bi-weekly monitoring program is conducted by Center Asiatique de Recherche sur l’Eau (CARE, Vietnam). This program has been implemented since 07/2015 and continues to survey the temporal evolution of water quality in three areas along the Saigon River and one area in the Dongnai River (Figure <a href="method.html#fig:C2-CARE">2.14</a>). Four sampling sites represent four areas of (i) an upstream station on the Saigon River (SG01) representative of the reference water status before HCMC, (ii) a station located in the urban area (SG10) representative of the impact of the megacity and (iii) a downstream station after the confluence of the Saigon and Dongnai Rivers (SG18) that aims at assessing the global impact of HCMC to the estuarine and coastal waters. Four sampling sites of CARE coincide with the sampling location of CEM. However, CARE analyzed additional indicators including POC, DOC, <span class="math inline">\(\mathrm{NO_{3}^{-}}\)</span>, TN, TP, Chl-a, phytoplankton density.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-CARE"></span>
+<embed src="figures/C2-CARE.pdf" title="Sampling sites of bi-weekly monitoring and longitudinal profile in the Saigon River Estuary" width="70%" type="application/pdf"></embed><p class="caption">
+Figure 2.14: Sampling sites of bi-weekly monitoring and longitudinal profile in the Saigon River Estuary
+</p>
+</div>
+<p>At the survey site, water samples were taken about 30 cm below the water surface and stored in a 2.5 L polypropylene flask for phytoplankton analysis and a 5 L flask for nutrient analysis. The sample was taken during low tide when the Saigon River receives water from tributaries and urban canals. Samples were taken at the mid-river location by using boats or bridges. Physicochemical parameters of water samples were measured immediately using the multi-parameter probe (WTW 3420), including temperature, pH, conductivity, salinity, dissolved oxygen concentration and percentage of oxygen saturation.</p>
+<p>In addition to water quality monitoring, CARE measures the water level and calculates the discharge by a high-resolution (10-minute) probe for 2017 – 2019 in the upstream area of the Saigon River <span class="citation">(<a href="references.html#ref-Camenen2021">Camenen et al. 2021</a>)</span>. This data will be discussed in the C-GEM model application.</p>
+</div>
+<div id="longitudinal-profile" class="section level4" number="2.2.1.3">
+<h4>
+<span class="header-section-number">2.2.1.3</span> Longitudinal profile<a class="anchor" aria-label="anchor" href="#longitudinal-profile"><i class="fas fa-link"></i></a>
+</h4>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-sampling"></span>
+<embed src="figures/C2-sampling.pdf" title="Sampling in Saigon River in 2019." width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.15: Sampling in Saigon River in 2019.
+</p>
+</div>
+<p>Four sampling campaigns were conducted at 27 sampling sites covering 141 km of Saigon River and four sampling sites in urban canals of HCMC (close to SG07, SG09, SG11 and SG12) in dry (April 2019 and March 2020) and the rainy season (October 2019 and 2020) (Figure <a href="method.html#fig:C2-CARE">2.14</a> and Figure <a href="method.html#fig:C2-sampling">2.15</a>). Each campaign was carried out on three consecutive days: 14 sampling sites (UP01 – SG 10) on the first day, four sampling sites in urban canals on the second day and 13 sampling sites (SG10 – SG23) on the third day. A GPS was used to mark each point’s longitude and latitude values and calculate the distance (km) point to point. For each survey, discrete samples of surface water were collected for physicochemical parameters, total suspended sediment (TSS), nutrients (nitrate- <span class="math inline">\(\mathrm{NO_{3}^{-}}\)</span>, ammonium- <span class="math inline">\(\mathrm{NH_{4}^{+}}\)</span>, phosphate- <span class="math inline">\(\mathrm{PO_4^{3-}}\)</span>, total N and total P), organic carbon (particulate organic carbon-POC, dissolved organic carbon- DOC), chlorophyll-a (Chl-a), alkalinity, GHGs ( <span class="math inline">\(\mathrm{N_{2}O}\)</span>, <span class="math inline">\(\mathrm{CO_{2}}\)</span>, <span class="math inline">\(\mathrm{CH_{4}}\)</span>,) and phytoplankton identification</p>
+<p>In the field, physicochemical parameters (temperature, pH, conductivity, salinity, dissolved oxygen, Chl-a and turbidity) were measured in situ at surface using WTW multiparameters probe and along the vertical profile using Hydrolab Multiparameter probe. The water transparency was measured with a secchi disk. Five liters of surface water (0–30 cm below the surface) were filled in polypropylene bottles for nutrients, organic carbon and Chl-a analysis. For phytoplankton, a 2-L polypropylene bottle for phytoplankton identification and counting was sampled and fixed <em>in situ</em> with Lugol solution <span class="citation">(<a href="references.html#ref-Smayda1978">Smayda and Sournia 1978</a>)</span>. For GHGs sampling, 100 ml of surface water was carefully filled in borosilicate serum bottles avoiding air bubbles. Then, 50<span class="math inline">\(\mu\)</span>L of mercuric chloride (2%) was added to stop biological activities before sealing by a rubber septum <span class="citation">(<a href="references.html#ref-Garnier2009">Josette Garnier et al. 2009</a>)</span> .</p>
+</div>
+</div>
+<div id="measurement-and-analytical-methods" class="section level3" number="2.2.2">
+<h3>
+<span class="header-section-number">2.2.2</span> Measurement and analytical methods<a class="anchor" aria-label="anchor" href="#measurement-and-analytical-methods"><i class="fas fa-link"></i></a>
+</h3>
+<div id="total-suspended-solid-nutrients-and-organic-carbon" class="section level4" number="2.2.2.1">
+<h4>
+<span class="header-section-number">2.2.2.1</span> Total suspended solid, nutrients and organic carbon<a class="anchor" aria-label="anchor" href="#total-suspended-solid-nutrients-and-organic-carbon"><i class="fas fa-link"></i></a>
+</h4>
+<p>In the laboratory, samples were immediately filtered through a Whatman GF/F filter (porosity 0.7 <span class="math inline">\(\mu\)</span>m) at the Centre Asiatique de Recherche sur l’Eau (CARE, Ho Chi Minh University of Technology, Vietnam) (Figure <a href="method.html#fig:C2-measurement">2.16</a>) for analysis of dissolved parameters and TSS. Total alkalinity was analyzed using 40 ml of filtered water with pH electrode (WTW 3420) and HCl 0.1M as titrant.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-measurement"></span>
+<embed src="figures/C2-measurement.pdf" title="Measurement of nutrients in CARE lab." width="80%" type="application/pdf"></embed><p class="caption">
+Figure 2.16: Measurement of nutrients in CARE lab.
+</p>
+</div>
+<p>Dissolved nutrients (<span class="math inline">\(\mathrm{PO_4^{3-}}\)</span>, <span class="math inline">\(\mathrm{NO_{3}^{-}}\)</span>, <span class="math inline">\(\mathrm{NH_{4}^{+}}\)</span> and, <span class="math inline">\(\mathrm{SiO_2}\)</span> as DSi) were analyzed using standard colorimetric methods (American Public Health Association: APHA 1995). Unfiltered waters were used to measure Total N and Total P using the persulfate digestion process and standard colorimetric method (APHA 1995). A TOC analyzer apparatus (TOC-V Shimadzu, CARE laboratory, HCMC, Vietnam) was used to determine Dissolved Organic Carbon (DOC) in filtered water samples (Sugimura and Suzuki 1988). Particulate organic carbon (POC) was measured by Cavity Ring-Down Spectrometer (Picarro, Inc.) coupled with a Combustion Module (CM-CRDS, ISTerre laboratory, Grenoble, France) based on <span class="citation">López–Sandoval et al. (<a href="references.html#ref-LopezSandoval2019">2019</a>)</span> and <span class="citation">Guédron et al. (<a href="references.html#ref-Guedron2021">2021</a>)</span> for sample preparation and analytical methods. POC is expressed in % or in concentration mgC<span class="math inline">\(L^{-1}\)</span> by multiplying POC% and TSS concentrations. TOC is then calculated as the sum of DOC and POC concentrations.</p>
+</div>
+<div id="chlorophyll-a-and-phytoplankton" class="section level4" number="2.2.2.2">
+<h4>
+<span class="header-section-number">2.2.2.2</span> Chlorophyll-a and phytoplankton<a class="anchor" aria-label="anchor" href="#chlorophyll-a-and-phytoplankton"><i class="fas fa-link"></i></a>
+</h4>
+<p>Chlorophyll a was measured after filtration through a second GF/F filter using acetone (90%) extraction and spectrophotometry measurement (Aminot and Kérouel 2004).</p>
+<p>For phytoplankton counting, one litter of water sample was settled at least 48 h in the laboratory <span class="citation">(<a href="references.html#ref-Smayda1978">Smayda and Sournia 1978</a>)</span>. The supernatant (top water) was removed and the settling material, including phytoplankton, was transferred into a measuring beaker and concentrated to 10 – 30 mL depending on the amount of settling material. Phytoplankton was observed at 100 – 400 x magnification on a microscope (Optika 150) and identified to species or genus levels, based on morphology following the system of <span class="citation">(<a href="references.html#ref-Komarek1988">Komárek and Anagnostidis 1988</a>, <a href="references.html#ref-Komarek1999">1999</a>, <a href="references.html#ref-Komarek2005">2005</a>)</span> for cyanobacteria, <span class="citation">Krammer (<a href="references.html#ref-Krammer1991">1991</a>)</span> for diatoms and other taxonomy books for green algae, golden algae, dinoflagellates and euglenoids. Phytoplankton was enumerated with a Sedgewick Rafter counting cell (volume of 1 mL; PYSER-SGI, England) with a total counted number from 400 individuals or more for each sample <span class="citation">(<a href="references.html#ref-Smayda1978">Smayda and Sournia 1978</a>)</span> to ensure that samples were statistically representative. An individual of phytoplankton is defined as a single cell, a trichome or a colony of phytoplankton as they commonly occur in nature.</p>
+</div>
+<div id="greenhouse-gas-mathrmco_2-mathrmch_4-mathrmn_2o" class="section level4" number="2.2.2.3">
+<h4>
+<span class="header-section-number">2.2.2.3</span> Greenhouse gas: <span class="math inline">\(\mathrm{CO_{2}}\)</span>, <span class="math inline">\(\mathrm{CH_{4}}\)</span>, <span class="math inline">\(\mathrm{N_{2}O}\)</span><a class="anchor" aria-label="anchor" href="#greenhouse-gas-mathrmco_2-mathrmch_4-mathrmn_2o"><i class="fas fa-link"></i></a>
+</h4>
+<p>GHGs (<span class="math inline">\(\mathrm{N_{2}O}\)</span>, <span class="math inline">\(\mathrm{CH_{4}}\)</span>, <span class="math inline">\(\mathrm{CO_{2}}\)</span>) concentrations were determined with a gas chromatograph apparatus in METIS laboratory, Paris, France (Clarus, Perkin Elmer) based on previously analytical methods <span class="citation">(<a href="references.html#ref-Garnier2009">Josette Garnier et al. 2009</a>, <a href="references.html#ref-Garnier2013">2013</a>; <a href="references.html#ref-Marescaux2018">Marescaux, Thieu, and Garnier 2018</a>)</span>.</p>
+</div>
+</div>
+<div id="eutrophication-status-and-ghgs-calculation" class="section level3" number="2.2.3">
+<h3>
+<span class="header-section-number">2.2.3</span> Eutrophication status and GHGs calculation<a class="anchor" aria-label="anchor" href="#eutrophication-status-and-ghgs-calculation"><i class="fas fa-link"></i></a>
+</h3>
+<div id="eutrophication-index" class="section level4" number="2.2.3.1">
+<h4>
+<span class="header-section-number">2.2.3.1</span> Eutrophication index<a class="anchor" aria-label="anchor" href="#eutrophication-index"><i class="fas fa-link"></i></a>
+</h4>
+<p>The eutrophication status in the estuarine and coastal areas can be assessed by the trophic index (TRIX). The TRIX index was previously applied in several countries, such as Mahanadi estuary, India <span class="citation">(<a href="references.html#ref-Srichandan2019">Srichandan et al. 2019</a>)</span>, Foz de Almargem coastal lagoon, Portugal <span class="citation">(<a href="references.html#ref-Coelho2007">Coelho, Gamito, and Pérez-Ruzafa 2007</a>)</span>. TRIX was calculated based on the linear relation of Chl-a (<span class="math inline">\(\mu\)</span>g<span class="math inline">\(L^{-1}\)</span>), dissolved inorganic nitrogen–DIN (mg<span class="math inline">\(L^{-1}\)</span>), dissolved inorganic phosphorus–<em>DIP</em> (mgP<span class="math inline">\(L^{-1}\)</span>) and the absolute percentage of deviation from oxygen saturation values (aD%DO). The term <em>k</em> is the sum of the minimum logarithmic value of each variable (ΣLogMin) and <em>m</em> is the scale factor <span class="citation">(<a href="references.html#ref-Vollenweider1998">Vollenweider et al. 1998</a>)</span>.</p>
+<p><span class="math display">\[TRIX=\frac{\log _{10}(\text { Chla } \times a D \% DO \times DIN \times DIP)-k}{m}\]</span></p>
+<p>Five trophic state categories were classified based on TRIX index (from 0 to 10) <span class="citation">(<a href="references.html#ref-Cabral2019">Cabral and Fonseca 2019</a>)</span>: Ultra-oligotrophic (0 &lt; TRIX &lt; 2), Oligotrophic (2 &lt; TRIX &lt; 4), Mesotrophic (4 &lt; TRIX &lt; 6), Eutrophic (6 &lt; TRIX &lt; 8), Hypertrophic (8 &lt; TRIX &lt; 10).</p>
+</div>
+<div id="ghg-fluxes-calculation" class="section level4" number="2.2.3.2">
+<h4>
+<span class="header-section-number">2.2.3.2</span> GHG fluxes calculation<a class="anchor" aria-label="anchor" href="#ghg-fluxes-calculation"><i class="fas fa-link"></i></a>
+</h4>
+<p>Water-to-air fluxes of <span class="math inline">\(\mathrm{N_{2}O}\)</span>, <span class="math inline">\(\mathrm{CO_{2}}\)</span> and <span class="math inline">\(\mathrm{CH_{4}}\)</span> were calculated using the GHGs concentrations for each sampled station. After, these fluxes per station were daily averaged considering the upstream, urban and downstream sections of Saigon River Estuary.</p>
+<p>The water-air flux rates (<span class="math inline">\(mg\)</span> <span class="math inline">\(m^{-3}\)</span> <span class="math inline">\(d^{-1}\)</span>) were determined as:</p>
+<p><span class="math display">\[F=k\left(\mathrm{C}_\mathrm{w}-\mathrm{C}_\mathrm{a}\right)=k\left(\mathrm{C}_\mathrm{w}-\mathrm{p}_\mathrm{a}\times\mathrm{k}_\mathrm{h}\right)\]</span></p>
+<p>Where:</p>
+<ul>
+<li>
+<span class="math inline">\(\mathrm{C}_\mathrm{w}\)</span> is the gas transfer velocity (cm<span class="math inline">\(h^{-1}\)</span>)</li>
+<li>
+<span class="math inline">\(\mathrm{C}_\mathrm{a}\)</span> is the greenhouse gases concentration in surface water</li>
+<li>
+<span class="math inline">\(\mathrm{C}_\mathrm{a}\)</span> is the concentration of greenhouse gases in equilibrium with the atmosphere</li>
+<li>
+<span class="math inline">\(P_a\)</span> is the partial pressure above the surface water at equilibrium with the atmosphere. We used atmospheric values of 1.865, 0.32 and 410 <span class="math inline">\(\mu\)</span>atm (or 0.189, 0.032 and 41.54 Pa) for <span class="math inline">\(\mathrm{CH_{4}}\)</span>, <span class="math inline">\(\mathrm{N_{2}O}\)</span> and <span class="math inline">\(\mathrm{CO_{2}}\)</span>, respectively, which correspond to global averages of atmospheric GHGs concentrations in 2019-2020, provided by the NOAA, Global Monitoring Laboratory (<a href="https://gml.noaa.gov/ccgg/trends/global.html" class="uri">https://gml.noaa.gov/ccgg/trends/global.html</a>, last accessed date April 15, 2021). The differences between the global and local atmospheric concentrations were assumed to be small compared to high GHGs concentrations in the surface water of the Saigon River <span class="citation">(<a href="references.html#ref-Jay2009">Jay 2009</a>)</span>.</li>
+</ul>
+<p><span class="math inline">\(k_h\)</span> (mol <span class="math inline">\(m^{-3}\)</span> Pa-1) is Henry’s law constant corrected in a given temperature which was used to calculate concentrations of GHGs in equilibrium with the atmosphere.</p>
+<p><span class="math display">\[k_h\left(T\right)=k_h^0\times\exp{\left[\frac{-\Delta_{\mathrm{sol}}H}{R}\left(\frac{1}{T}-\frac{1}{T^0}\right)\right]}\]</span></p>
+<p>where is Henry’s law constant at the reference temperature 𝑇0 = 298.15 K; is the enthalpy of dissolution. The values of and are averaged empirical values (Sander 2015):</p>
+<p><span class="math inline">\(\mathrm{CO_{2}}\)</span>: 3.4x10<span class="math inline">\(^{-4}\)</span> <span class="math inline">\((mol m^{-3} Pa^{-1})\)</span> and 2400 (K)</p>
+<p><span class="math inline">\(\mathrm{CH_{4}}\)</span>: 1.4x10<span class="math inline">\(^{-5}\)</span> <span class="math inline">\((mol m^{-3} Pa^{-1})\)</span> and 1600 (K)</p>
+<p><span class="math inline">\(\mathrm{N_{2}O}\)</span>: 2.4x10<span class="math inline">\(^{-4}\)</span> <span class="math inline">\((mol m^{-3} Pa^{-1})\)</span> and 2600 (K)</p>
+<p>The gas transfer velocity (k) was computed with the following equation:</p>
+<p><span class="math display">\[k=k_{600}\times\sqrt{\frac{600}{Sc}}\]</span></p>
+<p>Where:</p>
+<p><span class="math inline">\(k_{600}\)</span> is the normalized gas transfer velocity to a Schmidt number of 600, cm <span class="math inline">\(h^{-1}\)</span>.</p>
+<p><span class="math inline">\(S_c\)</span> is the Schmidt number of a given gas at a given temperature in degree Celsius (<span class="math inline">\(^\circ\)</span>C) as described in <span class="citation">Wanninkhof (<a href="references.html#ref-Wanninkhof">1992</a>)</span>.</p>
+<p><span class="math display">\[Sc_{CO_{2}}(t_w)=1911.1-118.11\times t_w+3.4527\times t_w^2-0.04132\times t_w^3\]</span></p>
+<p><span class="math display">\[Sc_{CH_{4}}(t_w)=1897.8-114.28\times t_w+3.2902\times t_w^2-0.039061\times t_w^3\]</span></p>
+<p><span class="math display">\[Sc_{{N_2O}}(t_w)=2301.1-151.1\times t_w+4.7364\times t_w^2-0.059431\times t_w^3\]</span></p>
+<p>The normalized gas transfer velocity was derived from an empirical equation for estuaries which was a function of wind speed, estuarine surface area and water current velocity <span class="citation">(<a href="references.html#ref-Abril2009">Abril et al. 2009</a>)</span>.</p>
+<p><span class="math display">\[k_{600}=1.80\mathrm{e}^{\mathrm{-0.0165v}}+\left[1.23+1.00\log{\left(TSS\right)}\right]\times\left[1-0.44\mathrm{TSS/1000}\right]\times U_{10}\]</span></p>
+<p>Where:</p>
+<p><span class="math inline">\(v\)</span> is the water current velocity, m <span class="math inline">\(s^{-1}\)</span> (average values from modeling output of <span class="citation">(<a href="references.html#ref-Nguyen2021">A. T. Nguyen et al. 2021</a>)</span>.</p>
+<p><span class="math inline">\(S\)</span> is the estimated surface area of the estuary, <span class="math inline">\(km^{2}\)</span> (all areas with tidal influence, including Saigon River, Can Gio Mangrove, parts of Dongnai River and Vam Co River).</p>
+<p><span class="math inline">\(U_{10}\)</span> is the estimated wind speed at 10 m height, m <span class="math inline">\(s^{-1}\)</span> (2.18 – 4.47 m <span class="math inline">\(s^{-1}\)</span>, data from Global Wind Atlas, <a href="https://globalwindatlas.info" class="uri">https://globalwindatlas.info</a>, last accessed date April 15, 2021).</p>
+<p><span class="math inline">\(TSS\)</span> is total suspended sediment in mg<span class="math inline">\(L^{-1}\)</span>.</p>
+</div>
+<div id="interpretation-of-internal-processes" class="section level4" number="2.2.3.3">
+<h4>
+<span class="header-section-number">2.2.3.3</span> Interpretation of internal processes<a class="anchor" aria-label="anchor" href="#interpretation-of-internal-processes"><i class="fas fa-link"></i></a>
+</h4>
+<p>The participation of nitrification and denitrification in <span class="math inline">\(\mathrm{N_{2}O}\)</span> production can be investigated by using the correlation of excess <span class="math inline">\(\mathrm{N_{2}O}\)</span> ( <span class="math inline">\(\mathrm{N_{2}O}\)</span>xs) and Apparent Oxygen Utilization (AOU) <span class="citation">(<a href="references.html#ref-Brase2017">Brase et al. 2017</a>)</span>. A linear correlation of AOU and <span class="math inline">\(\mathrm{N_{2}O}\)</span>xs indicates the dominance of nitrification in <span class="math inline">\(\mathrm{N_{2}O}\)</span> production <span class="citation">(<a href="references.html#ref-Nevison2003">Nevison, Butler, and Elkins 2003</a>; <a href="references.html#ref-Brase2017">Brase et al. 2017</a>)</span>. It is noticed that when mixing is dominant, this linear correlation cannot be used as a proxy for nitrification because of the predominance of linear dilution. The dominance of <span class="math inline">\(\mathrm{N_{2}O}\)</span> is produced by the denitrification process when there is an effect on the linearity of <span class="math inline">\(\mathrm{N_{2}O}\)</span>xs/AOU by increasing the relative amount of <span class="math inline">\(\mathrm{N_{2}O}\)</span> <span class="citation">(<a href="references.html#ref-Brase2017">Brase et al. 2017</a>)</span></p>
+<p><span class="math inline">\(\mathrm{N}_\mathrm{2}\mathrm{O}_{xs}=\mathrm{N}_\mathrm{2}\mathrm{O}_{water}-\mathrm{N}_\mathrm{2}\mathrm{O}_{\mathrm{air}}\)</span></p>
+<p><span class="math inline">\(\mathrm{AOU\ }={\mathrm{O}_\mathrm{2}}_{air}-{\mathrm{O}_\mathrm{2}}_{water}\)</span></p>
+<p>Where:</p>
+<p><span class="math inline">\(\mathrm{N}_\mathrm{2}\mathrm{O}_{water}\)</span> is <span class="math inline">\(\mathrm{N_{2}O}\)</span> concentration in the water (<span class="math inline">\(\mu\)</span>gN<span class="math inline">\(L^{-1}\)</span>)</p>
+<p><span class="math inline">\(\mathrm{N}_\mathrm{2}\mathrm{O}_{air}\)</span> is the theoretical equilibrium concentration (<span class="math inline">\(\mu\)</span>gC<span class="math inline">\(L^{-1}\)</span>)</p>
+<p><span class="math inline">\({\mathrm{O}_\mathrm{2}}_{water}\)</span> is the dissolved <span class="math inline">\(\mathrm{O_{2}}\)</span> in water (mgO2<span class="math inline">\(L^{-1}\)</span>)</p>
+<p><span class="math inline">\({\mathrm{O}_\mathrm{2}}_{air}\)</span> is the theoretical equilibrium concentration of the water to atmospheric <span class="math inline">\(\mathrm{O_{2}}\)</span> concentration (<span class="math inline">\(mgO_2L^{-1}\)</span>)</p>
+<p>Similar to the relationship of <span class="math inline">\(\mathrm{N_{2}O_{xs}}\)</span> and AOU, the relationship of excess <span class="math inline">\(\mathrm{CO_{2}}\)</span> and AOU can indicate the dominance of respiration and photosynthesis in <span class="math inline">\(\mathrm{CO_{2}}\)</span> consumption or production <span class="citation">(<a href="references.html#ref-Dinauer2017">Dinauer and Mucci 2017</a>)</span>. Figure <a href="method.html#fig:C2-AOU-CO2">2.17</a> illustrates the interpretation of photosynthesis and respiration processes by comparing linear correlation between excess <span class="math inline">\(\mathrm{CO_{2}}\)</span> and AOU. Figure <a href="method.html#fig:C2-AOU-CO2">2.17</a> also presents other factors such as allochthonous inputs of <span class="math inline">\(\mathrm{CO_{2}}\)</span> or anoxic production of <span class="math inline">\(\mathrm{CO_{2}}\)</span> when the linear correlation between excess <span class="math inline">\(\mathrm{CO_{2}}\)</span> and AOU is broken. Besides, based on the phytoplankton respiration equation <span class="citation">(<a href="references.html#ref-Redfield1963">Redfield, B. H. Ketchum, and F. A. Richards 1963</a>)</span> of the degradation of organic carbon into <span class="math inline">\(\mathrm{CO_{2}}\)</span>, the ratio <span class="math inline">\(\mathrm{CO_{2}}\)</span>xs/AOU (mol/mol, phytoplanktonic respiration quotient in aerobic) should be 0.77 (106/138) or 1.0 (106/106).</p>
+<p><span class="math inline">\(\left(\mathrm{CH}_{2} \mathrm{O}\right)_{106}\left(\mathrm{NH}_{3}\right)_{16}\left(\mathrm{H}_{3} \mathrm{PO}_{4}\right)+138 \mathrm{O}_{2} \rightarrow 106 \mathrm{CO}_{2}+16 \mathrm{NO}_{3}^{-}+\mathrm{H}_{2} \mathrm{PO}_{4}^{-}+122 \mathrm{H}_{2} \mathrm{O}+17 \mathrm{H}^{+}\)</span></p>
+<p><span class="math inline">\(\left(\mathrm{CH}_{2} \mathrm{O}\right)_{106}\left(\mathrm{NH}_{3}\right)_{16}\left(\mathrm{H}_{3} \mathrm{PO}_{4}\right)+106 \mathrm{O}_{2}+15 \mathrm{H}^{+} \rightarrow 106 \mathrm{CO}_{2}+16 \mathrm{NH}_{4}^{+}+\mathrm{H}_{2} \mathrm{PO}_{4}^{-}+106 \mathrm{H}_{2} \mathrm{O}\)</span></p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-AOU-CO2"></span>
+<embed src="figures/C2-AOU-CO2.pdf" title="Interpretation of respiration process by comparing excess dissolved inorganic carbon (EDIC) vs. AOU. The data sources are from 1641 measurements in 24 estuarine environments worldwide. Processes: The solid line indicates aerobic respiration; the dotted line indicates nitrification. (1) More rapid equilibration of $\mathrm{O_{2}}$; (2) allochthonous inputs of  $\mathrm{CO_{2}}$ (riverine and lateral); and (3) Anoxic production of  $\mathrm{CO_{2}}$ (from \cite{Borges2011})" width="60%" type="application/pdf"></embed><p class="caption">
+Figure 2.17: Interpretation of respiration process by comparing excess dissolved inorganic carbon (EDIC) vs. AOU. The data sources are from 1641 measurements in 24 estuarine environments worldwide. Processes: The solid line indicates aerobic respiration; the dotted line indicates nitrification. (1) More rapid equilibration of <span class="math inline">\(\mathrm{O_{2}}\)</span>; (2) allochthonous inputs of <span class="math inline">\(\mathrm{CO_{2}}\)</span> (riverine and lateral); and (3) Anoxic production of <span class="math inline">\(\mathrm{CO_{2}}\)</span> (from )
+</p>
+</div>
+<p>Besides, the negative relationship between <span class="math inline">\(\mathrm{CH_{4}}\)</span> (<span class="math inline">\({{\mathrm{CH}}_\mathrm{4}}_{xs}={{\mathrm{CH}}_\mathrm{4}}_{water}-{{\mathrm{CH}}_\mathrm{4}}_{air}\)</span>) and AOU can provide information on <span class="math inline">\(\mathrm{CH_{4}}\)</span> oxidation in water <span class="citation">(<a href="references.html#ref-Buioanh2018">Bui and Thi Ngoc Oanh 2018</a>)</span>. However, their positive correlation cannot provide information about biological processes related to <span class="math inline">\(\mathrm{CH_{4}}\)</span> because <span class="math inline">\(\mathrm{CH_{4}}\)</span> production mainly occurs in sediment <span class="citation">(<a href="references.html#ref-Borges2011">Borges and Abril 2011</a>; <a href="references.html#ref-Sierra2020b">Sierra et al. 2020</a>)</span>.</p>
+</div>
+</div>
+<div id="multivariate-statistical-analysis-methods" class="section level3" number="2.2.4">
+<h3>
+<span class="header-section-number">2.2.4</span> Multivariate statistical analysis methods<a class="anchor" aria-label="anchor" href="#multivariate-statistical-analysis-methods"><i class="fas fa-link"></i></a>
+</h3>
+<p>Multivariate statistical analysis was applied to environmental parameters, phytoplankton, GHGs to identify spatiotemporal variation and the relationship between these parameters.</p>
+<div id="spatial-and-temporal-cluster-analysis" class="section level4" number="2.2.4.1">
+<h4>
+<span class="header-section-number">2.2.4.1</span> Spatial and temporal cluster analysis<a class="anchor" aria-label="anchor" href="#spatial-and-temporal-cluster-analysis"><i class="fas fa-link"></i></a>
+</h4>
+<p>Non-parametric tests were performed on bi-weekly monitoring dataset to identify spatial differences between sampling sites and seasonal differences between dry and rainy seasons in Saigon River by Kruskal-Wallis test with a significance level of p&lt;0.05. Hierarchical cluster analysis (HCA) was performed based on Ward’s method and Euclidean distance (as a parameter to measure the similarity) to combine the samples with a high similarity relationship into a cluster (Figure <a href="method.html#fig:C2-HCA">2.18</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-HCA"></span>
+<embed src="figures/C2-HCA.pdf" title="Illustration of dendrogram (tree-like diagram) representing the results of HCA. A cluster share similarity between branch points (from \cite{Buttigieg2014}) " width="60%" type="application/pdf"></embed><p class="caption">
+Figure 2.18: Illustration of dendrogram (tree-like diagram) representing the results of HCA. A cluster share similarity between branch points (from )
+</p>
+</div>
+<p>It should be noted that the HCA is a heuristic procedure and not a statistical test because choosing different clustering methods will lead to different results. Therefore, the choice of method should be consistent with the objectives of the study <span class="citation">(<a href="references.html#ref-Borcard2018">Borcard, Gillet, and Legendre 2018</a>)</span>. Clustering methods include Single-linkage, Complete-linkage, Average-linkage, and Ward’s method. Ward’s method was chosen for this study because of its ability to be effective in grouping of phytoplankton species of sampling sites along the Saigon River.</p>
+</div>
+<div id="principal-component-analysis-and-redundancy-analysis" class="section level4" number="2.2.4.2">
+<h4>
+<span class="header-section-number">2.2.4.2</span> Principal component analysis and redundancy analysis<a class="anchor" aria-label="anchor" href="#principal-component-analysis-and-redundancy-analysis"><i class="fas fa-link"></i></a>
+</h4>
+<p>Principal component analysis (PCA) was used to determine the patterns of environmental variables in dry and rainy seasons. PCA also detected the similarities of data samples between sampling sites. The redundancy analysis (RDA) was used to identify the main drivers of environmental variables on the phytoplankton community and on GHGs in the Saigon River. Figure <a href="method.html#fig:C2-RDA">2.19</a> presents the interpretation of PCA and RDA results.</p>
+<p>For analysis of phytoplankton dynamics: The redundancy analysis (RDA) was used to identify the main drivers of environmental variables on the phytoplankton community in Saigon River. Although we used phytoplankton abundances in the RDA, the use of phytoplankton biomass/biovolume would give a more ecologically sounding relation. Therefore, phytoplankton abundances are recommended when there is a correlation between phytoplankton abundances and chlorophyll-a as a proxy for phytoplankton biomass (e.g., <span class="citation">Varol and Sen (<a href="references.html#ref-Varol2018">2018</a>)</span>; <span class="citation">Hoang et al. (<a href="references.html#ref-Hoang2018">2018</a>)</span>; <span class="citation">Baek et al. (<a href="references.html#ref-Baek2020">2020</a>)</span>). In the RDA, phytoplankton abundance data were transformed by hellinger transformation to reduce the inﬂuence of high proportion taxa.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-RDA"></span>
+<embed src="figures/C2-RDA.pdf" title="Description and interpretation for (a) PCA biplot and (b) RDA triplot. In RDA, the blue points explain for the objects (e.g., sampling site), the green arrows explain for responses (e.g., GHGs concentrations, phytoplankton densities), the red arrows explain for the predictors/explanatory variables (e.g., DO, TSS, TOC concentrations). The green points (optional) are nominal variables. (c) Interpretation: the relationship between variables explained by the red arrows. For instance, arrows 1 and 2 are almost perpendicular, cosines (a)=0, thus not correlate. Similarly, arrows 2 and 4 have a negative relationship because cosines (180) = -1. Same interpretation applies for both PCA and RDA, but the difference between PCA and RDA is that there is no separation between explanatory variables and responses in PCA (interpretation is adapted from \cite{Buttigieg2014})" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.19: Description and interpretation for (a) PCA biplot and (b) RDA triplot. In RDA, the blue points explain for the objects (e.g., sampling site), the green arrows explain for responses (e.g., GHGs concentrations, phytoplankton densities), the red arrows explain for the predictors/explanatory variables (e.g., DO, TSS, TOC concentrations). The green points (optional) are nominal variables. (c) Interpretation: the relationship between variables explained by the red arrows. For instance, arrows 1 and 2 are almost perpendicular, cosines (a)=0, thus not correlate. Similarly, arrows 2 and 4 have a negative relationship because cosines (180) = -1. Same interpretation applies for both PCA and RDA, but the difference between PCA and RDA is that there is no separation between explanatory variables and responses in PCA (interpretation is adapted from )
+</p>
+</div>
+</div>
+<div id="hierarchical-partitioning" class="section level4" number="2.2.4.3">
+<h4>
+<span class="header-section-number">2.2.4.3</span> Hierarchical partitioning<a class="anchor" aria-label="anchor" href="#hierarchical-partitioning"><i class="fas fa-link"></i></a>
+</h4>
+<p>The hierarchical partitioning (HP) method was used to discriminate independent effects of environmental variables on the variation of research subjects (e.g., phytoplankton densities, GHGs). The HP method tested all possible models in a regression hierarchy to distinguish the variables having high independent correlations with the dependent variable. This method calculates the explained proportion of each predictor/explanatory variable into independent and joint contribution with all other variables <span class="citation">(<a href="references.html#ref-Nally1996">Nally 1996</a>)</span>. The HP method effectively separated the independent effects of each environmental parameter which could not be done by separate regression methods (e.g., RDA) <span class="citation">(<a href="references.html#ref-Nally1996">Nally 1996</a>)</span>. Therefore, we use the HP method to estimate the contribution of a single environmental parameters and eutrophication index to the concentrations of GHGs in water column.</p>
+<p>The multivariate statistical procedures were done by R software version 3.6.3 (2020-02-29) (R Development Core Team) with the help of FactoMineR <span class="citation">(<a href="references.html#ref-Le2008">Lê, Josse, and Husson 2008</a>)</span> for PCA, vegan packages <span class="citation">(<a href="references.html#ref-Oksanen2019">Oksanen et al. 2019</a>)</span> for RDA and hier.part package <span class="citation">(<a href="references.html#ref-WalshC.andR.MacNally.2020">Walsh and Ralph 2020</a>)</span> for HP.</p>
+</div>
+</div>
+</div>
+<div id="water-quality-modeling" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Water quality modeling<a class="anchor" aria-label="anchor" href="#water-quality-modeling"><i class="fas fa-link"></i></a>
+</h2>
+<div id="overview-of-c-gem-model" class="section level3" number="2.3.1">
+<h3>
+<span class="header-section-number">2.3.1</span> Overview of C-GEM model<a class="anchor" aria-label="anchor" href="#overview-of-c-gem-model"><i class="fas fa-link"></i></a>
+</h3>
+<p>Carbon-Generic Estuary Model (C-GEM) is a one-dimensional, computationally efficient reaction-transport model that reduces data requirements using a generic, theoretical framework based on the direct relationship between estuarine geometry and hydrodynamics <span class="citation">(<a href="references.html#ref-Volta2014">C. Volta et al. 2014</a>)</span>. The relationship between estuarine geometry and hydrodynamics is described in Literature Review, which discusses the effect of convergence length on hydrodynamics processes. The biogeochemical reaction network of C-GEM and its parameterization were built upon the study of more than 40 temperate estuaries <span class="citation">(<a href="references.html#ref-Volta2016">Chiara Volta et al. 2016</a>)</span>. Although C-GEM requires minimal data input, C-GEM accurately describes estuarine hydrodynamics and biogeochemical processes <span class="citation">(<a href="references.html#ref-Laruelle2017">G. Laruelle et al. 2017</a>; <a href="references.html#ref-Laruelle2019">Goulven G. Laruelle et al. 2019</a>; <a href="references.html#ref-Volta2016">Chiara Volta et al. 2016</a>)</span>.</p>
+<div id="model-assumptions" class="section level4" number="2.3.1.1">
+<h4>
+<span class="header-section-number">2.3.1.1</span> Model assumptions<a class="anchor" aria-label="anchor" href="#model-assumptions"><i class="fas fa-link"></i></a>
+</h4>
+<p>The one-dimensional barotropic, cross-sectionally integrated mass and momentum conservation equations for a channel with arbitrary geometry derived from the following assumptions:</p>
+<ul>
+<li><p>Well-mixed estuaries</p></li>
+<li><p>Small aspect ratio (depth is much smaller than width)</p></li>
+<li><p>Buoyancy distribution is constant throughout the cross-section</p></li>
+<li><p>Coriolis and lateral pressure gradient terms are negligible</p></li>
+<li><p>Wind stress and precipitation or evaporation are negligible impacts</p></li>
+</ul>
+<p>Therefore, the C-GEM model is not suitable to evaluate the benthic-pelagic exchanges. In other words, studies on shallow estuaries with intense element recycling within the sediments are not recommended using this model.</p>
+</div>
+<div id="model-platform" class="section level4" number="2.3.1.2">
+<h4>
+<span class="header-section-number">2.3.1.2</span> Model platform<a class="anchor" aria-label="anchor" href="#model-platform"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Geometry</strong>:</p>
+<p>C-GEM uses an idealized representation of the estuarine geometry, which can describe the estuarine width by an exponential equation along the estuary gradient.</p>
+<p><span class="math display">\[\bar{B}\left(x\right)=B_0\exp{\left(-\frac{x}{b}\right)}\]</span></p>
+<p>Where x is the distance from estuarine mouth [m], B0 is the width at estuarine mouth (x = 0) [m], b is the width convergence length [m]. Convergence length is an important parameter linking geometry and hydrodynamics at tidal estuaries. It will be used to calculate the diffusion coefficient of the pollutant transport equation. This is the parameter that reduces the data requirements for hydrodynamics modeling at tidal estuaries.</p>
+<p><strong>Hydrodynamics</strong></p>
+<p>Based on the above assumptions, the continuity and momentum conservation equations in the literature review become as below <span class="citation">(<a href="references.html#ref-Nihoul1976b">Nihoul and F. C. 1976</a>; <a href="references.html#ref-Regnier1998">P. Regnier et al. 1998</a>; <a href="references.html#ref-Regnier1999">Pierre Regnier and Steefel 1999</a>)</span>.</p>
+<p><span class="math display">\[r_s\frac{\partial A}{\partial t}+\frac{\partial Q}{\partial x}=0\]</span></p>
+<p><span class="math display">\[\frac{\partial U}{\partial t}+U\frac{\partial U}{\partial x}=-g\frac{\partial\xi}{\partial x}-g\frac{U\left|U\right|}{C_h^2H}\]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(x, t\)</span> are distance along the longitudinal axis [m] and time [s].</p>
+<p><span class="math inline">\(R_s\)</span> is the dimensionless storage water ratio.</p>
+<p><span class="math inline">\(A\)</span> is cross-sectional area=H.B [<span class="math inline">\(m^{2}\)</span>].</p>
+<p><span class="math inline">\(H\)</span> is instantaneous water depth [m]= the tidally averaged water depth <span class="math inline">\(h\)</span> + the water elevation <span class="math inline">\(\xi(x,t)\)</span>.</p>
+<p><span class="math inline">\(Q\)</span> is the cross-sectional discharge[<span class="math inline">\(m^3\)</span><span class="math inline">\(s^{-1}\)</span>] = <span class="math inline">\(A\)</span>[<span class="math inline">\(m^{2}\)</span>].<span class="math inline">\(U\)</span>[m<span class="math inline">\(s^{-1}\)</span>].</p>
+<p><span class="math inline">\(C_h\)</span> is Chézy coeﬃcient [<span class="math inline">\(m^{1/2}\)</span><span class="math inline">\(s^{-1}\)</span>].</p>
+<p>The coupled partial diﬀerential equations above are solved by specifying the elevation <span class="math inline">\(\xi\)</span> at the estuarine mouth and the river discharge at the upstream limit of the model domain. <span class="math inline">\(rs\)</span>, <span class="math inline">\(Ch\)</span> need to be calibrated. <span class="math inline">\(\xi(0,t)\)</span> is represented by a sum of harmonics of the form <span class="citation">(<a href="references.html#ref-Regnier1999">Pierre Regnier and Steefel 1999</a>)</span> , then the water depth at estuary is calculated as below:</p>
+<p><span class="math display">\[\xi\left(1,t\right)=\sum_{k=1}^{N}{H_kf_k}\cos{\left[2\pi\left(\nu_kt+V_k+\mu_k-K_k\right)\right]}\]</span></p>
+<p><span class="math display">\[H\left(1,t\right)=\bar{h_0}+\frac{1}{2}H_k\sin{\frac{\left(2\pi t\right)}{T_k}}\]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(H_k, f_k\)</span>: the amplitude of the <span class="math inline">\(k_th\)</span> tidal constituent and the nodal corrections on the amplitude</p>
+<p><span class="math inline">\(T_k\)</span> : <span class="math inline">\(frequency= 1/T_k\)</span>. Saigon River estuary is in semi-diurnal regime, dominated by <span class="math inline">\(m^{2}\)</span> constituent, thus the tidal period <span class="math inline">\(Tk = 12.42h\)</span>) will apply in C-GEM</p>
+<p><span class="math inline">\(V_k , \mu_k, K_k\)</span> : astronomical argument , phase and phase lag of the equilibrium tide</p>
+<p><span class="math inline">\(H(1, t), h_0\)</span> : The water depth at estuarine mouth and at estuarine mouth[ m]</p>
+<p><strong>Transport and reaction module</strong></p>
+<p>The solute C(x, t) in an estuary can be described by the one-dimensional, tidally resolved, advection-dispersion equation</p>
+<p><span class="math display">\[\frac{\partial C_i}{\partial t}=-U\frac{\partial C_i}{\partial x}+\frac{1}{A}\frac{\partial}{\partial x}\left(AD\frac{\partial C_i}{\partial x}\right)+P_i\]</span></p>
+<p><span class="math display">\[\frac{\partial D}{\partial x}=-K\frac{Q_r}{A}\]</span></p>
+<p><span class="math display">\[D_0=26\cdot\left(\bar{h_0}\right)^{0.5}\cdot\left(N\cdot g\right)^{0.5}\]</span></p>
+<p><span class="math display">\[K=4.38\frac{\bar{h_0^{0.36}}}{B_0^{0.21}b^{0.14}}\]</span></p>
+<p><span class="math display">\[N=\frac{Q_bT}{P}\]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(C_i\)</span>: concentration of the species i</p>
+<p>Q, A: are provided in the hydrodynamic module</p>
+<p>D: the dispersion coeﬃcient calculated which mainly based on estuarine geometry (convergence length and ratio of freshwater/volume)</p>
+<p>N: the dimensionless Canter Cremers estuary number defined as the ratio of the freshwater entering the estuary during a tidal cycle to the volume of salt water entering the estuary over a tidal cycle.</p>
+<p><span class="math inline">\(Q_b\)</span> is the bankfull discharge [<span class="math inline">\(m^3\)</span><span class="math inline">\(s^{-1}\)</span>], T is the tidal period [s], P is the tidal prism [<span class="math inline">\(m^3\)</span>]</p>
+<p><span class="math inline">\(Q_r\)</span>: the freshwater discharge [<span class="math inline">\(m^3\)</span><span class="math inline">\(s^{-1}\)</span>]</p>
+<p><span class="math inline">\(K\)</span>: the dimensionless Van der Burgh coeﬃcient</p>
+<p><span class="math inline">\(B_0\)</span>: the width at the estuarine mouth [m]</p>
+<p><span class="math inline">\(b\)</span>: the width convergence length [m]</p>
+<p><span class="math inline">\(P_i\)</span>: sum of volumetric biogeochemical reactions and exchanges which aﬀecting species i.</p>
+<p>The biogeochemical module implemented in C-GEM allows assessing the concentrations of eight state variables, namely ammonium ( <span class="math inline">\(\mathrm{NH_{4}^{+}}\)</span>), nitrate ( <span class="math inline">\(\mathrm{NO_{3}^{-}}\)</span>), phosphate ( <span class="math inline">\(\mathrm{PO_4^{3-}}\)</span>), total organic carbon (TOC), Silica (DSi), dissolved oxygen (DO), phytoplankton (diatoms and non-diatoms) and TSS. Seven biogeochemical processes are simulated in C-GEM (Figure <a href="method.html#fig:C2-C-GEM">2.20</a>), including oxygen exchange through the air-water interface, aerobic degradation (organic carbon mineralization), nitrification, denitrification, primary production, phytoplankton mortality and TSS erosion deposition <span class="citation">(<a href="references.html#ref-Volta2016">Chiara Volta et al. 2016</a>)</span>. Currently, the C-GEM model is only suitable for well-mixed estuaries where biogeochemical processes mainly occur in the water column. Benthic processes are considered not to affect the concentration of variables in the water column.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-C-GEM"></span>
+<embed src="figures/C2-C-GEM.pdf" title="The state variables (rectangle) and processes (ellipse) in the biogeochemical module of C-GEM applied in the Saigon River Estuary. Red and black lines represent the consumption and production processes (adapted from \cite{Volta2014})" width="100%" type="application/pdf"></embed><p class="caption">
+Figure 2.20: The state variables (rectangle) and processes (ellipse) in the biogeochemical module of C-GEM applied in the Saigon River Estuary. Red and black lines represent the consumption and production processes (adapted from )
+</p>
+</div>
+<p>The primary production process corresponds to the growth of phytoplankton and oxygen production through the uptake of C, N, P, and Si in the water column under soluble form depending on environmental forcings, especially light penetration. The light availability in the water column is affected by Total Suspended Sediment (TSS), which is calculated by the model through the simulation of erosion deposition processes. Nitrification consumes DO in the water column, which potentially eliminates a high concentration of ammonium. Denitrification contributes to anaerobic TOC consumption, <span class="math inline">\(\mathrm{PO_4^{3-}}\)</span> production and nitrogen elimination by converting <span class="math inline">\(\mathrm{NO_{3}^{-}}\)</span> into the inert <span class="math inline">\(\mathrm{N_2}\)</span> gas that escapes from the water column into the atmosphere. Mineralization of organic matter (aerobic degradation) consumes TOC and <span class="math inline">\(\mathrm{O_{2}}\)</span> while producing <span class="math inline">\(\mathrm{PO_4^{3-}}\)</span> and <span class="math inline">\(\mathrm{NH_{4}^{+}}\)</span>. Phosphate release from bottom sediment might have a high impact on the phosphorus simulation at shallow estuaries <span class="citation">(<a href="references.html#ref-Vilmin2015">Vilmin et al. 2015</a>)</span>. Note that the modular structure of C-GEM allows for a relatively simple implementation of new processes in its biogeochemical module and increasing the complexity of the N and P cycles could be the subject of future studies.</p>
+<p>It should also be noted that the sediment processes (erosion deposition) in the C-GEM model do not directly affect the geomorphological processes of the riverbed. The setup of sediment transport in C-GEM is mainly aimed at assessing the influence of suspended sediments on light diffusion and phytoplankton growth in the water column. The equations for erosion and deposition processes were described by <span class="citation">C. Volta et al. (<a href="references.html#ref-Volta2014">2014</a>)</span>.</p>
+</div>
+<div id="numerical-solution" class="section level4" number="2.3.1.3">
+<h4>
+<span class="header-section-number">2.3.1.3</span> Numerical solution<a class="anchor" aria-label="anchor" href="#numerical-solution"><i class="fas fa-link"></i></a>
+</h4>
+<p>The non-linear partial diﬀerential equations were solved using a finite diﬀerence scheme on a regular grid, with a grid size Δx = 2000m and a time step Δt = 300s.</p>
+<ul>
+<li><p>Transport and reaction terms are solved in sequences within a single time step using an operator-splitting approach <span class="citation">(<a href="references.html#ref-Regnier1997">P. Regnier, Wollast, and Steefel 1997</a>)</span>.</p></li>
+<li><p>The adjective term is integrated using a third-order accurate total variation diminishing algorithm with ﬂux limiters, ensuring monotonicity.</p></li>
+<li><p>The dispersive term is solved by a semi-implicit Crank–Nicholson algorithm.</p></li>
+<li><p>Erosion–deposition is numerically integrated using the Euler method.</p></li>
+<li><p>The primary production dynamics, which requires vertical resolution of the photic depth, is calculated according to the method described in <span class="citation">Vanderborght et al. (<a href="references.html#ref-Vanderborght2007">2007</a>)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div id="data-requirement" class="section level3" number="2.3.2">
+<h3>
+<span class="header-section-number">2.3.2</span> Data requirement<a class="anchor" aria-label="anchor" href="#data-requirement"><i class="fas fa-link"></i></a>
+</h3>
+<p>The data required to implement the C-GEM model for Saigon River depends on spatio–temporal scales. A steady-state version of C-GEM is established to determine the dominant biogeochemical processes and the influence of average tidal-resolved conditions in the absence of high-resolution data. The data requirements for steady-state C-GEM are shown in Table <a href="#tab:CH2-table1-data"><strong>??</strong></a>.</p>
+<p>The steady-state version does not allow the estimation of the evolution of seasonal variables and phytoplankton development, which also cannot be determined by conventional monitoring. Therefore, the C-GEM model is applied to Saigon River Estuary with a steady-state version first (Chapter 4) and then a transient version (Chapter 5) with more data availability.</p>
+
+<div id="climate-data" class="section level4" number="2.3.2.1">
+<h4>
+<span class="header-section-number">2.3.2.1</span> Climate data<a class="anchor" aria-label="anchor" href="#climate-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>With a steady-state version, C-GEM needs 10 m wind speed and sunshine duration. Wind speed requires calculating oxygen exchange surface water and atmosphere. Sunshine duration is to calculate irradiation for the photosynthesis rate of phytoplankton. Climate condition data were obtained from the statistical office of HCMC (www.pso.hochiminhcity.gov.vn) with the monthly resolution.</p>
+<p>With the transient version, C-GEM uses online-high resolution data from <a href="http://www.lthe.fr/LTHE/IMG/LOGGERNET/IGE-MeteoCARE" class="uri">http://www.lthe.fr/LTHE/IMG/LOGGERNET/IGE-MeteoCARE</a>, the CARE weather station, which provides 10 minutes wind speed and solar radiation. However, CARE station is far more than 10 km from Saigon River; wind speed data from Global Wind Atlas is thus used instead.</p>
+</div>
+<div id="geometry-data" class="section level4" number="2.3.2.2">
+<h4>
+<span class="header-section-number">2.3.2.2</span> Geometry data<a class="anchor" aria-label="anchor" href="#geometry-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>C-GEM 1D does not need detailed bathymetry data. The model only requires an average depth and width of each 2 km along 200 km of Saigon River. The width of the estuary is used to calculate the estuarine convergence length. Mean depth and width for 83 cross-sections along the 200 km long Saigon River Estuary were extracted from bathymetry surveys performed in 2008 and 2016, provided by the Southern Institute of Water Resources Research (SIWRR, Vietnam).</p>
+</div>
+<div id="hydrological-data" class="section level4" number="2.3.2.3">
+<h4>
+<span class="header-section-number">2.3.2.3</span> Hydrological data<a class="anchor" aria-label="anchor" href="#hydrological-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>With the steady-state version, C-GEM needs the average daily discharge at upstream of Saigon Estuary. In addition, the C-GEM requires tidal period and tidal range for a description of generic tidal variation from East Sea Vietnam. Indeed, the steady-state version acts as a quasi-hydrodynamic model with all input parameters constant, but the results are still representative for the fluctuations of the variables over a representative tidal cycle.</p>
+<p>The discharge from urban canals of HCMC is calculated based on water usage per capita <span class="citation">(<a href="references.html#ref-Nguyen2020">T. T. N. Nguyen et al. 2020</a>)</span>. Discharge from tributaries, including Thi Tinh River, Dongnai River, is interpolated from monthly discharge to daily discharge, provided by CEM. However, to avoid misinterpretations from interpolation, the discharge values of the monitoring month will be equal to all days of that month. These errors mainly affect the simulation results downstream of the Saigon River, while the upstream and urban areas are only affected by upstream discharge. At the lower boundary, the water level at the estuary mouth is provided by hourly water level from the Vung Tau station, East Sea Vietnam (<a href="https://uhslc.soest.hawaii.edu/data/" class="uri">https://uhslc.soest.hawaii.edu/data/</a>).</p>
+</div>
+<div id="water-quality-data" class="section level4" number="2.3.2.4">
+<h4>
+<span class="header-section-number">2.3.2.4</span> Water quality data<a class="anchor" aria-label="anchor" href="#water-quality-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>Water quality data were obtained from the Center of Environment Monitoring (CEM, Vietnam) and the Centre Asiatique de Recherche sur l’Eau (CARE, Vietnam). With the steady-state version, C-GEM mainly uses the average concentration provided by CEM. As shown above, CEM lacks data for <span class="math inline">\(\mathrm{NO_{3}^{-}}\)</span>, Si and Chl-a, CARE data complete lacking CEM data. With the transient version, C-GEM uses bi-weekly data of CEM and CARE from 2017 to 2020. Similar to hydrological data, the daily water quality of boundary conditions is interpreted from bi-weekly data. In addition, the results of 4 longitudinal profiles in April 2019, October 2019, March 2020, and October 2020 are also used to complement to model inputs.</p>
+</div>
+</div>
+<div id="model-description-and-setup-protocol" class="section level3" number="2.3.3">
+<h3>
+<span class="header-section-number">2.3.3</span> Model description and setup protocol<a class="anchor" aria-label="anchor" href="#model-description-and-setup-protocol"><i class="fas fa-link"></i></a>
+</h3>
+<p>The generic estuarine model C-GEM was applied in the Saigon River Estuary (200 km, Figure <a href="method.html#fig:C2-Map-Model">2.21</a>) to reproduce the nutrient dynamics over a generic tidal cycle representative of dry season conditions. The version of C-GEM used in this study was built upon the steady-state version described in <span class="citation">Chiara Volta et al. (<a href="references.html#ref-Volta2016">2016</a>)</span>, with some parameter values adjusted for tropical monsoon conditions in the Saigon River Estuary. Based on a literature review, the updated values of the modified parameters (discussed below) fall within the ranges provided by <span class="citation">Chiara Volta et al. (<a href="references.html#ref-Volta2016">2016</a>)</span>. The setup process is the same for the steady-state and transient versions; only the input data differs.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Map-Model"></span>
+<embed src="figures/C2-Map-Model.pdf" title="Model domain and sampling sites" width="90%" type="application/pdf"></embed><p class="caption">
+Figure 2.21: Model domain and sampling sites
+</p>
+</div>
+<div id="idealized-geometry" class="section level4" number="2.3.3.1">
+<h4>
+<span class="header-section-number">2.3.3.1</span> Idealized geometry<a class="anchor" aria-label="anchor" href="#idealized-geometry"><i class="fas fa-link"></i></a>
+</h4>
+<p>C-GEM was designed to account for the interdependency between geometry and hydrodynamics in tidal alluvial estuaries. The width convergence length, which controls the system’s shape, is thus a very sensitive parameter for hydrodynamics. Therefore, the value of the convergence length was carefully calibrated against observations (Figure <a href="method.html#fig:C2-Model-Depth">2.22</a>). The impact of freshwater flow on this estuarine morphology was very different between the upstream (before Dongnai River confluence) and downstream sections <span class="citation">(<a href="references.html#ref-Gugliotta2020">Gugliotta et al. 2020</a>)</span>. The estuarine width ranges from 60 m from Dau Tieng Reservoir (km 0) to 350 m (km 140) and rapidly increases to 3690 m at the estuary mouth. This particular geometry justifies the use of a second convergence length to reproduce the entire width profile of the Saigon River Estuary. C-GEM geometry used a short convergence length from the estuary mouth (km 200) to the confluence of the Saigon and Dongnai rivers (km 142). From this confluence to the upstream section (km 142 – km 0), the width of the river only decreases slowly and gradually (with a longer convergence length). Such a strategy was previously used with C-GEM for applications to other estuaries <span class="citation">(<a href="references.html#ref-Laruelle2019">Goulven G. Laruelle et al. 2019</a>; <a href="references.html#ref-Volta2016b">C. Volta, Laruelle, and Regnier 2016</a>)</span>.
+The depth of the Saigon River Estuary gradually increases from 2.5 m at the outlet of Dau Tieng reservoir to 19 m at km 60. The river’s depth is then almost constant over the next 80 km (i.e., until the confluence with the Dongnai River); it then decreases gradually to 9.6 m at the estuary mouth. The idealized geometry in the model captured well the mean estuarine depth and width, which were extracted from 83 cross-sections of the bathymetry (Figure <a href="method.html#fig:C2-Model-Depth">2.22</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Model-Depth"></span>
+<embed src="figures/C2-Model-Depth.pdf" title="Depth and Width of Saigon River Estuary" width="90%" type="application/pdf"></embed><p class="caption">
+Figure 2.22: Depth and Width of Saigon River Estuary
+</p>
+</div>
+</div>
+<div id="hydrodynamics-and-transport-module" class="section level4" number="2.3.3.2">
+<h4>
+<span class="header-section-number">2.3.3.2</span> Hydrodynamics and transport module<a class="anchor" aria-label="anchor" href="#hydrodynamics-and-transport-module"><i class="fas fa-link"></i></a>
+</h4>
+<p>The one-dimensional hydrodynamic module of C-GEM described the hydrodynamics of the 200 km long reach along Saigon River Estuary based on the continuity and cross-sectional integrated momentum equations. Water elevation at the estuary mouth and freshwater discharge at the upstream limit of the model domain was required to solve the hydrodynamics module. Parameters related to the characteristics of the tidal amplitude and period are also required to calculate the water elevation at the estuary mouth to constrain the downstream boundary.</p>
+
+<p>Table <a href="#tab:CH2-table2-physical"><strong>??</strong></a> summarizes the parameters used to solve these hydrodynamics equations for the Saigon River Estuary. Chézy coefficient was the only parameter being fixed for the calibration of the hydrodynamic module, as it was not measured in the Saigon River Estuary. Chézy coefficient typically ranges from 40 – 60 <span class="math inline">\(m^{1/2}\)</span> <span class="math inline">\(s^{-1}\)</span> along alluvial estuaries <span class="citation">(<a href="references.html#ref-Savenije2001">H. H. G. G. Savenije 2001</a>)</span>. The Chézy coefficient was calibrated based on comparing simulated tidal amplitude profiles and mean tidal observations at seven stations along Saigon River Estuary (Figure <a href="method.html#fig:C2-Model-range">2.23</a>). Calibrated results shown that the Chézy coefficient applied Saigon Estuary ranged from 15 to 60 <span class="math inline">\(m^{1/2}\)</span> <span class="math inline">\(s^{-1}\)</span>. The upper reaches of the Saigon River were much rougher than other alluvial estuaries. The sudden change of topography of upstream Saigon River Estuary compared to downstream probably explains this larger difference between Chézy coefficients in these two areas than the values reported by <span class="citation">H. H. G. G. Savenije (<a href="references.html#ref-Savenije2001">2001</a>)</span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:C2-Model-range"></span>
+<embed src="figures/C2-Model-range.pdf" title="Comparison between observed (black marks) and simulated (black lines) profiles for average tidal amplitude and salinity along the Saigon River Estuary. The vertical gray lines correspond to tributaries or canals. Standard deviations (the gray area) of simulation come from hourly fluctuations over tidal cycles" width="80%" type="application/pdf"></embed><p class="caption">
+Figure 2.23: Comparison between observed (black marks) and simulated (black lines) profiles for average tidal amplitude and salinity along the Saigon River Estuary. The vertical gray lines correspond to tributaries or canals. Standard deviations (the gray area) of simulation come from hourly fluctuations over tidal cycles
+</p>
+</div>
+<p>After validating the hydrodynamics module, the transport module was implemented to reproduce the dynamics of dissolved variables (e.g., ammonium, dissolved oxygen) and total suspended sediment. The transport module was validated by comparing salinity simulation and observation during the dry season 2014 - 2017. Salinity was used because it is not affected by biogeochemical processes. In addition, salinity distributions reflect the combined processes such as advection-dispersion and mixing processes along Saigon River Estuary. Salinity simulations for the 2014-2017 dry season in Saigon River are depicted in Figure <a href="method.html#fig:C2-Model-range">2.23</a>. The fit of data and model has ensured the precise transport of solutes along the Saigon River over tidal cycles</p>
+</div>
+<div id="biogeochemistry-and-sediment-module" class="section level4" number="2.3.3.3">
+<h4>
+<span class="header-section-number">2.3.3.3</span> Biogeochemistry and sediment module<a class="anchor" aria-label="anchor" href="#biogeochemistry-and-sediment-module"><i class="fas fa-link"></i></a>
+</h4>
+<p>In our simulations, seven of the eighteen biogeochemical parameters used by C-GEM were modified to suit the tropical conditions in the Saigon River Estuary (Table <a href="#tab:CH2-table3-parameters"><strong>??</strong></a>). These reaction rate constants (except aerobic degradation rate constant) are higher than the C-GEM applications for temperate estuaries. In particular, nitrification, denitrification rate constants are 2-12 times higher. However, these parameters were in the ranges reported by <span class="citation">(<a href="references.html#ref-Volta2016">Chiara Volta et al. 2016</a>)</span>. In addition, they are similar to findings of biogeochemical reactions in tropical estuaries reported by <span class="citation">Miranda et al. (<a href="references.html#ref-Miranda2008">2008</a>)</span> or <span class="citation">Vipindas et al. (<a href="references.html#ref-Vipindas2018">2018</a>)</span>. The eleven other biogeochemical parameters were similar, including phytoplankton maintenance rate constant (4.11 x 10<span class="math inline">\(^{-7}\)</span> <span class="math inline">\(s^{-1}\)</span>), phytoplankton excretion constant (0.05), phytoplankton growth constant (0.29), Redfield ratio (C:Si:N:P = 106:15:16:1), Michaelis – Menten constant terms for dissolved silica (1.07), phosphate (0.2), ammonium (228.9), nitrate (26.07), organic carbon (186.25), oxygen in aerobic degradation (31.0), oxygen in nitrification (51.25), dissolved nitrogen (1.13).</p>
+
+<p>The TSS concentration has a direct impact on light extinction and then on phytoplankton development. The sediment parameters (critical shear stress and erosion coefficient) were thus determined before adjusting biological ones, though a calibration process only involved hydrological parameters and SPM concentration profiles. The boundary conditions of variables concentrations were the mean values of observations from 2014 – 2017 in the dry season (Table <a href="#tab:CH2-table4-BC"><strong>??</strong></a>).</p>
+
+</div>
+</div>
+<div id="model-evaluation" class="section level3" number="2.3.4">
+<h3>
+<span class="header-section-number">2.3.4</span> Model evaluation<a class="anchor" aria-label="anchor" href="#model-evaluation"><i class="fas fa-link"></i></a>
+</h3>
+<p>The model calibration and validation processes were quantitatively evaluated using statistical criteria (Table <a href="#tab:CH2-table5-equation"><strong>??</strong></a>). The parameters used for the evaluation included the coefficient of determination (<span class="math inline">\(\mathrm{R^2}\)</span>), root mean square error (RMSE) and the bias percentage (pbias). The performance of the hydrodynamics module was assessed by comparing the mean values of simulated variables to observations at eight hydrological stations. The simulation of water quality variables was compared with the mean data at 14 water quality monitoring stations along the Saigon River Estuary.</p>
+
+</div>
+</div>
+<div id="conclusion-of-chapter-2" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Conclusion of Chapter 2<a class="anchor" aria-label="anchor" href="#conclusion-of-chapter-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>This chapter has provided full information of study site, including the environmental, hydrological, and climatic conditions of the Saigon River Estuary, and the impact of a megacity on the water quality in this estuary. The methods of sampling, analysis, statistical analysis and modeling have been presented in detail. The following chapters will focus on presenting the results by applying the above methods.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="literature.html"><span class="header-section-number">1</span> Background and state of the art</a></div>
+<div class="next"><a href="cites-and-refs.html"><span class="header-section-number">3</span> Eutrophication and greenhouse gases in an urbanized tropical estuary</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#method"><span class="header-section-number">2</span> Materials and methodology</a></li>
+<li>
+<a class="nav-link" href="#study-site"><span class="header-section-number">2.1</span> Study site</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#saigon-river-estuary"><span class="header-section-number">2.1.1</span> Saigon River Estuary</a></li>
+<li><a class="nav-link" href="#ho-chi-minh-megacity-southern-vietnam"><span class="header-section-number">2.1.2</span> Ho Chi Minh megacity (Southern Vietnam)</a></li>
+<li><a class="nav-link" href="#water-quality-conditions-in-the-saigon-river-estuary"><span class="header-section-number">2.1.3</span> Water quality conditions in the Saigon River Estuary</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#methods-for-water-quality-evaluation"><span class="header-section-number">2.2</span> Methods for water quality evaluation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#monitoring-and-sampling-strategy"><span class="header-section-number">2.2.1</span> Monitoring and sampling strategy</a></li>
+<li><a class="nav-link" href="#measurement-and-analytical-methods"><span class="header-section-number">2.2.2</span> Measurement and analytical methods</a></li>
+<li><a class="nav-link" href="#eutrophication-status-and-ghgs-calculation"><span class="header-section-number">2.2.3</span> Eutrophication status and GHGs calculation</a></li>
+<li><a class="nav-link" href="#multivariate-statistical-analysis-methods"><span class="header-section-number">2.2.4</span> Multivariate statistical analysis methods</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#water-quality-modeling"><span class="header-section-number">2.3</span> Water quality modeling</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#overview-of-c-gem-model"><span class="header-section-number">2.3.1</span> Overview of C-GEM model</a></li>
+<li><a class="nav-link" href="#data-requirement"><span class="header-section-number">2.3.2</span> Data requirement</a></li>
+<li><a class="nav-link" href="#model-description-and-setup-protocol"><span class="header-section-number">2.3.3</span> Model description and setup protocol</a></li>
+<li><a class="nav-link" href="#model-evaluation"><span class="header-section-number">2.3.4</span> Model evaluation</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#conclusion-of-chapter-2"><span class="header-section-number">2.4</span> Conclusion of Chapter 2</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/ulyngs/oxforddown/blob/master/02-material-methods.rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/ulyngs/oxforddown/edit/master/02-material-methods.rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong><p>Modeling of nutrient dynamics in an urbanized tropical estuary<br>
+and application to eutrophication risk management</p></strong>" was written by Nguyen Truong An. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

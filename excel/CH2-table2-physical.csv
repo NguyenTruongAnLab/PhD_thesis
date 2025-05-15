@@ -1,0 +1,11 @@
+Description,Value,Unit
+"Width at the estuary mouth, at km 140 (Dongnai tributary) and estuarine upper limit","3690, 350, 60",m
+"Width convergence length at the estuary mouth, at km 140 (Dongnai tributary) ","28000, 92500",m
+Depth at the estuary mouth and upstream limit of the model domain,"9.61, 2.49",m
+The tidal amplitude at the estuary mouth,2.8,m
+Tidal period,45720,s
+Mean freshwater inflow (from the reservoir) in dry season 2014-2017,17.61,$m^3s^{-1}$
+"Lateral discharge from tributaries at Thi Tinh (TT River), Dongnai (DN River) in dry season 2014-2017","6.29, 392.9",$m^3s^{-1}$
+Lateral discharge from the urban river (VT River) and three urban canals,"4.3, 5.54",$m^3s^{-1}$
+"Chézy coefficient Ch (0 – 40 km), Ch (40 – 140 km), Ch (140 – 200 km)","15, 25, 60",$m^{1/2} s^{-1}$
+Storage water ratio,1,-

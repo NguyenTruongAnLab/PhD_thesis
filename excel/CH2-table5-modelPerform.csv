@@ -1,0 +1,6 @@
+Statistical indicator,Equation,Range,Optimal value
+$R^2$,$\left[\frac{\sum_{\mathbit{i}=\mathbf{1}}^{\mathbit{n}}\left(\mathbit{O}_\mathbit{i}-\bar{\mathbit{O}}\right)\left(\mathbit{S}_\mathbit{i}-\bar{\mathbit{S}}\right)}{\sqrt{\sum_{\mathbit{i}=\mathbf{1}}^{\mathbit{n}}\left(\mathbit{O}_\mathbit{i}-\bar{\mathbit{O}}\right)^\mathbf{2}}\sqrt{\sum_{\mathbit{i}=\mathbf{1}}^{\mathbit{n}}\left(\mathbit{S}_\mathbit{i}-\bar{\mathbit{S}}\right)^\mathbf{2}}}\right]^\mathbf{2}$,0.0 to 1.0,1
+RMSE,$\sqrt{\frac{\mathbf{1}}{\mathbit{n}}\sum_{\mathbit{i}=\mathbf{1}}^{\mathbit{n}}\left(\mathbit{O}_\mathbit{i}-\mathbit{S}_\mathbit{i}\right)^\mathbf{2}}$,0 to $+\infty$,0
+,,,
+pbias,$\frac{\sum_{\mathbit{i}=\mathbf{1}}^{\mathbit{n}}\mathbit{O}_\mathbit{i}-\mathbit{S}_\mathbit{i}}{\sum_{\mathbit{i}=\mathbf{1}}^{\mathbit{n}}\mathbit{O}_\mathbit{i}}\times\mathbf{100}$,$-\infty$ to $+\infty$,0
+,,,

@@ -1,4 +1,4 @@
-knit_thesis <- function(input, output_format = "pdf", allow_cache = TRUE, ...){
+knit_thesis <- function(input, output_format = "pdf", ...){
   if ("pdf" %in% output_format){
     bookdown::render_book(input, output_format = "bookdown::pdf_book")
     
@@ -23,8 +23,6 @@ knit_thesis <- function(input, output_format = "pdf", allow_cache = TRUE, ...){
     bookdown::render_book(input, output_format = "bookdown::word_document2")
   }
   
-  if (!allow_cache){
-    # remove the _bookdown_files folder after the build
-    unlink("_bookdown_files", recursive = TRUE)  
-  }
+  # remove the _bookdown_files folder after the build
+  unlink("_bookdown_files", recursive = TRUE)
 }

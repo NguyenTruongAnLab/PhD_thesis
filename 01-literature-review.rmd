@@ -1,0 +1,510 @@
+---
+#########################################
+# options for knitting a single chapter #
+#########################################
+output:
+  bookdown::pdf_document2:
+    template: templates/brief_template.tex
+    citation_package: biblatex
+    latex_engine: xelatex
+  bookdown::html_document2: default
+  bookdown::word_document2: default
+header-includes:
+  \usepackage{graphicx}
+  \usepackage{booktabs}
+  \usepackage{lscape}
+documentclass: book
+bibliography: [bibliography/references.bib]
+---
+
+# Background and state of the art {#literature}
+
+\minitoc <!-- this will include a mini table of contents-->
+
+
+```{r , include=FALSE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+```
+
+This chapter presents a literature review of estuaries regarding water quality, focusing on tropical estuaries and the impacts of urban/wastewaters policies. In addition, knowledge gaps are shown in understanding the factors (such as hydrological regimes, biogeochemical processes) controlling water quality in tropical and temperate estuaries. In general, the growth of megacities is putting increasing pressure on the water quality of estuaries and coastal areas, a trend that is exacerbated in developing countries. Eutrophication and greenhouse gas emissions in tropical estuaries are expected to increase in the future. However, difficulties in monitoring and applying biogeochemical models in estuaries have made it difficult to promote effective management policies. Current knowledge shows that the dynamics of nutrients and phytoplankton are complex under the influence of interactions of carbon (C), nitrogen (N), phosphorus (P) cycles and hydrological regimes (inflow discharge, residence time). Appropriate monitoring programs (location and frequency of sampling) are required to apprehend spatial and temporal variations in water quality in estuaries. The application of reaction-transport models can allow understanding the mechanisms of these processes. Data requirements are still the main challenge to applying these models in developing countries. However, if there are no models capable of accurately describing the evolution of phytoplankton and the purification capacity of estuaries, solutions to reduce pollutants such as the construction of wastewater treatment plants will not be effective. Therefore, developing a suitable model for urbanized tropical estuaries is extremely important to urbanization and ongoing climate changes
+
+
+## Hydrodynamics and biogeochemistry in estuaries
+
+### Introduction to estuaries
+
+Estuaries are transitional areas between rivers and seas, transporting nutrients from rivers to seas. Estuaries have both river and sea characteristics, making them an area with rich and diverse ecosystems, providing resources and playing an important role in human development. That is why most densely populated areas are situated in coastal areas near estuaries [@Vitousek2008]. In addition, estuaries are also considered as a buffer zone capable of holding and removing human-induced pollutants [@Savenije2012].
+
+Estuaries are different from rivers and lakes hydrodynamically, chemically, and biologically. Compared to rivers and lakes, the unique characteristics of estuaries include the following (1) tides are a major driving force, (2) salinity and its variations usually play a significant role in hydrodynamics and water quality processes, (3) two-directional net flows (Figure \@ref(fig:C1-fig-estuary)). For pollutant transport aspect, flushing of pollutants is driven primarily by advection in rivers, while in estuaries, both advection and dispersion (mixing and turbulent diffusion) affect the transport of pollutants [@Martin1998]. 
+
+
+### Hydrodynamics processes
+
+Knowledge of the physical phenomena that determine the tidal flow, tidal mixing, and salt intrusion are drivers of water quality and are especially important for modeling and management [@Savenije2012]. The primary factors controlling estuarine hydrodynamic processes are (1) tides, (2) freshwater inflows, and (3) geometry of the estuary [@Savenije2012;@Regnier1998;@Regnier2013].
+
+```{r C1-fig-estuary, echo=FALSE, out.width='100%', fig.cap='Interaction of pollutants, biogeochemical processes and tidal effects in estuarine systems (adapted from \\cite{deSouzaMachadoAndersonAbel2016})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-estuary.pdf")
+```
+
+#### Relationship of estuarine geometry and hydrodynamics
+
+Studying the relationship between geometry and hydrodynamics is significant in reducing data requirements for hydrodynamics models in estuaries [@Savenije2001;@Savenije2012;@Regnier2013]. According to @Savenije2005, the geometries of alluvial estuaries often have common characteristics. Estuarine width and estuarine cross-sectional area typically decrease exponentially with distance from the mouth. Therefore, the geometry of estuaries can be expressed through a function of convergence lengths. Estuaries with funnel-like shapes (diminishing in width from estuary mouth to upstream) have short convergence lengths and small inflow, while prismatic estuaries have long convergence lengths and higher inflow [@Savenije2012]. Estuaries with funnel-shape also exhibit tidal dominance over inflow discharge; in other words, these estuaries often observe the saline intrusion [@Jiang2020]. @Savenije2005 suggested that the salt intrusion length at these estuaries is typically about two-thirds of the total estuarine length. For example, funnel-shaped estuaries, such as Scheldt (in Belgium), Delaware (in the USA), and Saigon (in Vietnam), are marine-dominated estuaries with short convergent lengths and long saline intrusion. Besides, features such as short convergence length, long salt intrusion length, funnel-shape estuaries often have long residence time, about 60–90 days in the Scheldt, 80 days in the Delaware estuary [@Savenije2012;@Regnier2013]. In contrast, prismatic systems with long convergence lengths have shorter residence time and higher flushing capacity [@Savenije2012].
+
+#### Tidal processes
+
+The tide is generated by interactions in the planetary ocean topography with Earth, Sun and Moon gravitational forces (principally). It acts as a periodic function consisting of multiple frequency components. The dominant periods are in the order of 12.3 (semi-diurnal) and 24 (diurnal) hours [@Savenije2012]. Tidal excursion, tidal amplitude and tidal periods are factors controlling the variation of water quality in estuaries.
+
+Understanding and describing tidal oscillations in estuaries are extremely important in water quality modeling because (1) tides are a major factor controlling the flushing time of many estuaries, (2) tidal currents are largely responsible for turbulence and mixing in estuaries, and (3) tidal currents can generate residual flow that affects the long-term transport of pollutants  [@hugo1979;@Regnier1997;@OKane2003;@Ji2017]
+
+
+```{r C1-fig-tidal, echo=FALSE, out.width='80%', fig.cap=' Illustration of tidal variation', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-tidal.pdf")
+```
+
+
+Figure \@ref(fig:C1-fig-tidal) illustrates the tidal variation and shows the important definitions related to tides.
+
+
+Tides can be described as the sum of tidal constituents. Each constituent is a harmonic oscillation and has its amplitude, period, and phase, which can be extracted from measured tidal data using the harmonic analysis. The first five constituents, $M_2$, $S_2$, $O_1$, $K_1$, and $N_2$  (Table \@ref(tab:C1-tide)), are generally the most important tidal constituents [@Martin1998;@Ji2017;@Savenije2012]. For most systems, there will be two high and two low tides on the tidal curve per tidal day (or lunar day, about 24.84 h). Tides that occur twice during a tidal day are called semi-diurnal tides. Some areas, such as estuaries in the Gulf of Mexico, have only one high and one low tide per day, or daily tides. In most estuaries connected to the Pacific Ocean, the magnitudes may be quite different, resulting in what is known as *mixed tides* [@Martin1998].
+
+
+\begin{table}[!ht]
+\centering
+\caption{Major tidal constituents and periods (from Ji 2017)}
+\label{tab:C1-tide}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{>{\hspace{0pt}}m{0.294\linewidth}>{\hspace{0pt}}m{0.378\linewidth}>{\hspace{0pt}}m{0.228\linewidth}} 
+\toprule
+\textbf{Tidal symbol} & \textbf{Generating force} & \textbf{Period (h)} \\ 
+\hline
+M2 & Moon & 12.421 \\
+S2 & Sun & 12.000 \\
+O1 & Moon & 25.819 \\
+K1 & Moon, sun & 23.935 \\
+N2 & Moon & 12.659 \\
+P1 & Sun & 24.067 \\
+K2 & Moon, sun & 11.967 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+
+Another important definition related to tidal effects on pollutant transport is the tidal excursion. The tidal excursion is the distance that a particle travels from low to high water, or vice versa [@Savenije2012]. This parameter is useful for describing the movement of pollutants in estuaries within tidal cycles. Freshwater inflows impose a net seaward movement on water particles over a tidal cycle. Hence, the ebb-tidal excursion should be slightly larger than the flood tidal excursion. For a typical maximum tidal velocity of 1 m $s^{-1}$ and an $M_2$ period of 12.42 h, the tidal excursion is 14.2 km [@Ji2017]. Major factors that influence the propagation and amplitude of tides include bottom friction, water depth and shoreline, and Coriolis force [@Savenije2012].
+
+#### Salinity intrusion
+
+The transport of pollutants and salinity intrusion at alluvial estuaries contribute to the estuarine shape and inflow discharge [@Savenije2012]. Salinity ranges from 0 to 33 ppt in estuaries and ∼35 ppt in the open oceans [@Ji2017;@Savenije2012]. Figure \@ref(fig:C1-fig-salinity) shows the influence of freshwater inflow on salinity intrusion in tidal estuaries. The well-mixed estuary occurs during low flow, resulting in a deeper salt intrusion [@Savenije2012]. In tropical estuaries, seasonal fluctuations in freshwater inflow often cause saltwater intrusion markedly different between the two seasons. In the dry season with low freshwater inflow, saline intrusion can often reach inland (Figure \@ref(fig:C1-fig-salinity)c), whereas in the rainy season, there is almost no effect of salinity (Figure \@ref(fig:C1-fig-salinity)a).
+
+
+```{r C1-fig-salinity, echo=FALSE, out.width='80%', fig.cap='Longitudinal profile of salinity in a) stratified estuary, b) partially mixed estuary, and c) well-mixed estuary (\\cite{Savenije2012})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-salinity.pdf")
+```
+
+#### Flushing time and freshwater inflow
+
+Besides the impact of freshwater inflow on salinity intrusion, inflow also directly affects the flushing time (also so-called residence time) of estuaries [@Martin1998;@Regnier1998;@Viero2016;@Delhez2014]. The flushing time of estuaries represents the average time required to remove a fluid particle of freshwater or a conservative tracer from an upstream location (freshwater inflow) in an estuary to the sea. The flushing time is thus often used in the analysis of pollutant transport in estuaries [@Ji2017]. The flushing time in the estuary can be estimated from the volume of the estuary divided by the freshwater flow rate. Large freshwater inflow and strong tides lead to short flushing time [@Martin1998].
+
+Flushing time can affect the hydrodynamics, sediment distribution, and water quality processes such as eutrophication. An estuary with a very short flushing time is unlikely to have algal blooms because algae may not have enough time to grow before flushing out of the system [@Lancelot2011]. In addition, a waterbody with flushing shorter than the doubling time of algal cells inhibits the formation of algal blooms [@Ji2017]. Therefore, the flushing time is useful to evaluate the exchange rates of biogeochemical processes in estuarine systems such as nutrient fluxes, chlorophyll-*a* concentrations, primary production  [@Bianchi2007].
+ 
+### Biogeochemical processes
+
+Major processes affecting nutrients concentrations in estuaries include (1) algal uptake and release, (2) hydrolysis converting particulate organic nutrients into dissolved organic forms, (3) mineralization and decomposition of dissolved organic nutrients, (4) chemical transformations of nutrients, (5) sediment sorption and desorption, (6) settling of particulate matters, (7) nutrient fluxes from the sediment bed, and (8) external nutrient loadings [@Ji2017]. Figure \@ref(fig:C1-fig-estuary) shows an overview of biogeochemical processes in estuaries under the influence of point discharges and tidal effects, especially on nutrients and phytoplankton parameters. The detailed processes related to oxygen, carbon, nitrogen, phosphorus, silica and phytoplankton will be detailed hereafter.
+
+#### Oxygen dynamics
+
+Dissolved oxygen (DO) is the most important parameter of water quality and is used to measure the available oxygen for biochemical activity in water. DO is depleted by oxidation of organic carbon, nitrification, and respiration and is replenished by surface exchange and photosynthesis [@Bianchi2007]. In polluted waters, bacterial oxygen consumption can rapidly outpace oxygen replenishment from the atmosphere and plant photosynthesis [@Vanderborght2007]. The order of substances consumed in the water column of the estuaries depends on the oxygen conditions in the water. Table \@ref(tab:CH1-table2-reaction) presents the order of transformation in anoxic and oxic conditions.
+
+```{r CH1-table2-reaction, echo=F, warning=F}
+temp.mat = data.frame(image="")
+colnames(temp.mat) <- NULL
+temp.mat %>%
+  kbl(format="latex",booktabs = T,escape = F,caption="The sequence of terminal electron acceptors utilized (by oxidation reactions) for organic matter decomposition under varying $\\mathrm{O_2}$ concentrations in estuaries  (\\cite{Likens2010})") %>%
+  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
+  column_spec(1, image = "excel/CH1-table2-O2.pdf") %>%
+  sub("\\\\toprule", "", .)
+```
+
+In the aquatic environment, the microbes use the electron acceptors in a progressive sequence, beginning with the most effective oxidizing agents such as $\mathrm{O_2}$ and moving to weaker oxidizing agents as the stronger oxidizing agents are exhausted [@Likens2010]. In general, oxygen is firstly depleted, then oxidized manganese (Mn), and nitrate ($\mathrm{NO_3^{-}}$) will be converted to reduced manganese Mn(II) and $\mathrm{N_2}$ gas. If respiration continues, which requires labile organic matter, oxidized iron Fe(III) may be converted to reduced iron Fe(II). Finally, methane is eventually produced from organic matter, which microbes use in highly reduced environments as an electron acceptor [@Likens2010].
+
+#### Carbon dynamics
+
+Like oxygen, organic carbon is an important element for the water quality of aquatic systems, which are considered a source of nutrients for aquatic organisms and can contaminate water at high concentrations [@Bianchi2007]. In water quality modeling studies, organic carbon can be divided into fast rate (labile) and slower rate (refractory) organic carbon. Labile particulate organic carbon (LPOC) has a decomposition time scale of days to weeks. Refractory particulate organic carbon (RPOC) has a decomposition time scale of months to seasons after settling and compacting into the sediment bed [@Ji2017].
+
+**Sources of organic carbon**
+
+Unlike oxygen, whose origin is mainly from photosynthesis and exchange with the atmosphere, organic carbon comes from allochthonous and autochthonous sources. Specifically, organic carbon can come from organisms such as algae in estuaries and external sources such as wastewater, soils runoff, and groundwater input [@Bianchi2007]. In estuarine systems with strong human impact, the predominant organic carbon source often has high RPOC and low LPOC ratios [@Ji2017;@Bianchi2007]. Sediments may also represent an important source to the water column of shallow estuarine systems [@Bianchi2007].
+
+In some estuaries, the Total Organic Carbon (TOC) is generally positively correlated with phytoplankton biomass, which indicates phytoplankton's dominance in organic carbon sources [@Bianchi2007]. However, many estuarine systems do not show positive correlations with phytoplankton biomass because of allochthonous inputs from soils, groundwater. The riverine sources are highly refractory in these estuaries, with only minor input from algal sources [@Bianchi2007].
+
+
+**Carbon cycle in estuaries**
+
+The organic carbon cycle is closely related to nutrient cycles, including photosynthesis, respiration, and decomposition [@Bianchi2007]. The processes of carbon also depend on the oxygen condition in the water (Table \@ref(tab:CH1-table2-reaction)). Figure \@ref(fig:C1-fig-C) depicts the carbon cycle in aquatic systems, including major processes such as primary production, aerobic decomposition, and anaerobic decomposition. Under oxic conditions, bacteria decompose organic material to obtain energy for growth, break it down into simpler organic substances, and eventually convert it into inorganic substances. When insufficient oxygen is available, the resulting anaerobic decomposition is performed by completely different microorganisms [@Ji2017]. This process can produce hydrogen sulfide ($\mathrm{H_2S}$), ammonia ($\mathrm{NH_3}$), and methane ($\mathrm{CH_{4}}$). The sequence transformation of OC under oxic and anoxic conditions is presented in Table \@ref(tab:CH1-table2-reaction).
+
+```{r C1-fig-C, echo=FALSE, out.width='100%', fig.cap='Carbon cycling in the aquatic system (adapted from \\cite{Bianchi2007})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-C.pdf")
+```
+
+#### Nitrogen dynamics
+
+Together with hydrogen, carbon, and oxygen, nitrogen is an essential element for living biomass. Nitrogen can thus limit rates of primary production in the aquatic system. The primary forms of reactive nitrogen which algae and bacteria can assimilate are nitrate, nitrite, ammonium [@Likens2010]. In estuarine systems, dominant inputs of N are linked to freshwater inputs from rivers [@Nixon1995]. Besides, groundwater discharge of N to estuaries has also been important [@Bianchi2007].
+
+**Nitrogen cycles in estuaries**
+
+There are five main processes affecting N concentrations: nitrogen fixation, mineralization, nitrification, denitrification, algal uptake, anammox (Figure \@ref(fig:C1-fig-N))
+
+-   Nitrogen fixation: Some blue-green algae can directly fix $\mathrm{N_2}$ from the atmosphere. This process is usually insignificant in modeling studies.
+
+-   Mineralization: Organic nitrogen can be converted to $\mathrm{NH_{4}^{+}}$ via mineralization.
+
+-   Nitrification: Under aerobic conditions, ammonia is oxidized to nitrite and nitrate via nitrification.
+
+-   Denitrification: Under anaerobic conditions, nitrate is reduced to gas forms as $\mathrm{N_2}$, $\mathrm{N_{2}O}$ and then released out of the water system.
+
+-   Algal uptake: Algae consume $\mathrm{NH_{4}^{+}}$ and $\mathrm{NO_3^{-}}$for growth via the photosynthetic process. Algae take up both $\mathrm{NH_{4}^{+}}$ and $\mathrm{NO_2^{-}}$ + $\mathrm{NO_3^{-}}$. While $\mathrm{NH_{4}^{+}}$ is the preferred form of N for algal growth, algae will utilize $\mathrm{NO_2^{-}}$ +$\mathrm{NO_3^{-}}$for growth as the $\mathrm{NH_{4}^{+}}$ concentration becomes depleted.
+
+-   Anammox: Some bacteria are capable of converting $\mathrm{NO_3^{-}}$and $\mathrm{NH_{4}^{+}}$ directly into gaseous forms. This process is less known in water quality models because of the frailty of anammox microorganisms in aquatic systems.
+
+
+```{r C1-fig-N, echo=FALSE, out.width='100%', fig.cap='Nitrogen cycling in aquatic systems (adapted from \\cite{WorldOceanReview2017} and \\cite{Pinto2021})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-N.pdf")
+```
+
+#### Phosphorus dynamics
+
+Phosphorus (P) is an important element in aquatic ecosystems because it limits primary production [@Bianchi2007]. P is usually divided into the following categories:
+
+- *Orthophosphate* frequently used to represent soluble reactive phosphorus (SRP). Orthophosphate constitutes the majority of phosphates. Many studies have focused on the *soluble reactive P* (SRP) [@Bianchi2007].
+
+- *Organic phosphate* is often found in plant tissue, waste solids, or other organic material. After decomposition, they can be converted to orthophosphate.
+
+Unlike N, phosphorus does not have a gaseous phase. P has low solubility and is strongly adsorbed onto suspended solids that settle out of the water column.
+
+**Source of P**
+
+The pollution source of P often comes from human activities such as agricultural practices, domestic wastewater and animal production [@Likens2010]. Unlike N, inputs of atmospheric P sources are generally considered insignificant to coastal systems [@Bianchi2007].
+
+**P cycles in estuaries**
+
+The P cycle operates similarly to the N cycle in many aspects, except the sorption process. Algae and plants take up dissolved phosphate (largely $\mathrm{PO_{4}^{3-}}$), incorporate it into the food chain, and eventually return it to the water as organic P [@Vilmin2015]. Particulate phosphate sorbs to sediments and settle to the sediment bed [@Vilmin2015;@AissaGrouz2018]. The fate and transport processes of phosphate are thus strongly influenced by the suspended sediment and sediment processes (Figure \@ref(fig:C1-fig-P)). It includes (1) inflow and outflow, (2) settling of the particulate P in the water column, (3); sorption and desorption in both the water column and the bed, (4); exchange between the water column and the bed via deposition/resuspension and diffusion, (5); losses by burial, and (6) algal uptake and metabolism.
+
+
+```{r C1-fig-P, echo=FALSE, out.width='100%', fig.cap='Phosphorus processes in aquatic. DOP is dissolved organic phosphorus, POP is particulate organic phosphorus, PIP is particulate inorganic phosphorus (adapted from \\cite{Vilmin2015})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-P.pdf")
+```
+
+**Difference between N and P**
+
+There are important differences between the two elements, including fixation, oxygen consumption, denitrification, settling process, and toxicity [@Ji2017]. These differences are reported in Table \@ref(tab:CH1-table3-NP).
+
+```{r CH1-table3-NP, echo=F, warning=F}
+temp.mat = data.frame(image="")
+colnames(temp.mat) <- NULL
+temp.mat %>%
+  kbl(format="latex",booktabs = T,escape = F,caption="Difference of N and P in aquatic systems") %>%
+  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
+  column_spec(1, image = "excel/CH1-table3-Difference of N and P.pdf") %>%
+  sub("\\\\toprule", "", .)
+```
+
+
+#### Silica dynamics
+
+Silicon is an element required for the growth of some phytoplankton species. In water, silicates can convert to orthosilicic acid, $\mathrm{Si(OH)_4}$, the form that can be directly consumed by diatoms [@Ji2017]. Silica in waterbodies largely originates from the weathering and erosion of rocks on lands, and its concentrations in freshwater systems are usually between 0.7 and 7 mg$L^{-1}$ (Horn and Goldman, 1994). Silica sources from human activities are usually minor, which is around 10% of the annual river load of DSi [@Likens2010]. The decrease of DSi is mainly due to diatom consumption, some studies have seen this phenomenon, but some activities such as dams can also reduce the DSi concentration.
+
+As discussed above, the silica cycle is not as complex as C, N and P but is mainly concerned with the growth of diatoms, a phytoplankton group that uptake silica for development, forming an outer shell known as a frustule. After a diatom dies, DSi is released again to the water column and other nutrients through remineralization [@Ji2017]. Diatoms take up N, Si and P in a molar ratio of about 16:16:1 (N:P: Si). When dissolved silica (DSi) is depleted, the growth of diatoms is reduced, eventually leading to DSi concentrations limiting their growth. For instance, Chesapeake Bay exhibited strong Si limitation, with the ratio of available nutrients (Si:P) in the range of 100–300. The diatoms will then be replaced by other algae, such as green algae or cyanobacteria, that do not require DSi [@Likens2010]. In some urbanized estuaries, DSi limitation of diatoms has become more frequent because of increasing N and P inputs. Therefore, the increase in harmful algal blooms in estuaries over the past few decades may partly be due to lower Si availability [@Likens2010].
+
+#### Phytoplankton
+
+Phytoplankton is an autotrophic organism and a key part of ocean and freshwater ecosystems. @PierellaKarlusich2020 reported that phytoplankton contributes to half of the global photosynthetic activity and can produce for 50% of dissolved oxygen in ocean.
+
+**Redfield ratio**
+
+Redfield ratio is commonly used to infer resource limitation in phytoplankton growth, which simply states that organisms will become limited by the resource in the lowest supply relative to their needs. Based on this ratio, Stumm and Morgan (1996) further modified the stoichiometry of the chemical reaction of photosynthesis (primary production) and oxidation (degradation) of organic matter by the following equation:
+
+$\mathrm{106CO_2 + 16HNO_3 +H_3PO_4 + 122H_2O \leftrightarrow (CH_2O)_{106} (NH_3)_{16}H_3PO_4 + 138O_2}$
+
+The ratio of nitrogen to phosphorus in phytoplankton biomass is usually in the range of 16:1 by moles (the 'Redfield ratio'). If the N:P ratio is lower than 16:1, then N becomes the limiting factor for phytoplankton. However, most aquatic systems have P as a limiting factor [@Likens2010; @Bianchi2007]. This can be explained by the treatment efficiency of P higher than N by the wastewater treatment plants. In addition, P is often easily adsorbed onto the sediment and buried in the riverbed.
+
+**Factors controlling phytoplankton growth**
+
+Seasonal changes in phytoplankton abundance and composition are primarily controlled by changes in riverine inputs, nutrients, tidal variability, algal respiration, light availability and consumption by grazers [@Bianchi2007]. In estuaries, the phytoplankton dynamics are controlled by salinity gradient, light availability, and water residence time [@Lancelot2011]. The most important factors controlling phytoplankton growth are the nutrients' source and the ratio of these nutrient components (C, N, P) in the water. Processes that lead to a change in the concentration and ratio of nutrients will change the density of phytoplankton. Of particular importance for phosphorus is the adsorption to sediment particles in case of P limitation [@Likens2010]. Algae consume nutrients in a fixed stoichiometric ratio, and this ratio is relatively constant. When the limiting nutrient is depleted, the algal concentrations stop increasing, and the eutrophication process is retarded or even reversed.  $\mathrm{CO_{2}}$ is often not the limiting nutrient because of its dominance in nature. Silica receives little emphasis in water quality management because its abundant supply from natural sources is difficult to control.
+
+## State-of-art of water quality in tropical urbanized estuaries
+
+### Megacities in estuaries and coastal areas
+
+#### Distribution of megacities in the 21st century
+
+Estuaries are amongst the most populated areas of the world. About 60% of the world's population lives along estuaries and the coast. There are 22 in 32 largest cities in the world located beside estuaries [@GRIDArendalandUNEP2016]. According to @Hoornweg2017, the rate of population growth and the formation of megacities by 2050 will be dominated by countries in Asia in tropical regions (Figure \@ref(fig:C1-fig-population)). This indicates that the pressures of population growth and urbanization for tropical estuaries will intensify in the future.
+
+
+```{r C1-fig-population, echo=FALSE, out.width='100%', fig.cap='The world population of largest cities in 2015 and estimated in 2050 (\\cite{WorldOceanReview2017})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-population.pdf")
+```
+
+#### Water quality in estuaries of emerging countries
+
+Since the last century, many studies have warned about the impact of urbanization on nutrient pollution in estuaries and coastal areas, especially in temperate countries in the US and Europe [@Bianchi2007]. The rapid urbanization of many emerging countries in the tropics, mainly in Asia and Africa, require some more research on these regions in this century. Comparing the nutrients export between 2000 and 2050, projections in several regions show that the total amount of nitrogen exported by rivers to the sea in South Asia will be many times higher than in other regions (Figure \@ref(fig:C1-fig-worldDIN)). The rapid development of agriculture, industry, and urbanization of emerging countries significantly increase the nutrient loadings into the estuaries and, ultimately, the ocean.
+
+
+```{r C1-fig-worldDIN, echo=FALSE, out.width='70%', fig.cap='Dissolved inorganic nitrogen exported by rivers to the ocean in 2000 and predicted 2050 (\\cite{Lee2016})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-worldDIN.pdf")
+```
+
+The imbalance between wastewater treatment efficiency and total wastewater emissions in developing countries in this century is similar to emissions in developed countries in temperate regions in the last century. In general, the studies in these areas showed a correlation between population and pollution emissions. Based on synthesis of @Bianchi2007, some notable reports are as follows. Survey results at the Skidaway River estuary (USA) from 1986 to 1996 showed a linear correlation between population growth and dissolved nutrients entering this estuary. During the 1990s, southeastern Queensland, Australia, was one of the most rapidly urbanizing regions globally, also observed this correlation. An increase in nutrients from industrial, agricultural, and municipal wastewater has contaminated estuarine waters, although estuaries are generally considered highly self-cleaning due to biogeochemical processes and seawater dilution. The eutrophication phenomenon was observed in many estuaries in temperate countries in the last century  [@Howarth2011;@Billen2011].
+
+Several studies have indicated the influence of megacities on tropical estuaries in developing countries. For instance, the impact of Ho Chi Minh Megacity (Vietnam) on the water quality in the Saigon River was reported [@Nguyen2019]. Other studies in tropical estuaries are the impact of Mumbai City (India) to Mumbai coast [@Sawant2007], Rio de Janeiro City (Brazil) to Guanabara Bay [@CarvalhoAguiar2011], Shenzhen City (China) to Shenzhen Bay [@Zhou2020], Bangkok to Gulf of Thailand [@Buranapratheprat2021], and Abidjan (Africa) to Ivory Coast [@Droge2007]. In developed countries, nutrient pollution is being controlled thanks to wastewater treatment systems and urbanization control. In many urbanized estuaries in developing countries, nutrient pollution is still not controlled, leading to an increase in eutrophication. For instance, phytoplankton biomass concentrations in Jakarta Bay (Indonesia) increased continuously from 2001 to 2013 [@Damar2019].
+
+### Insights of biogeochemical processes in tropical urbanized estuaries
+
+Eutrophication is one of the well-known topics when assessing anthropogenic impacts on estuaries and coastal waters. While eutrophication in temperate estuaries is usually limited by nitrogen concentration [@Howarth2011], phosphorus limitation is more prevalent in tropical estuaries [@Likens2010]. Differences in climatic conditions such as temperature and light intensity between tropical and temperate estuaries can lead to differences in nutrient dynamics. This section provides a literature review on the biogeochemical processes in tropical estuaries under the influence of urbanization.
+
+#### The nutrients retention
+
+Estuaries can act as a buffer zone for pollutants originating from upstream rivers. A large part of the solutes and particles transported by the rivers can be retained and/or removed by estuaries before reaching the sea [@Romero2019]. Retention may include the assimilation of pollutants through the microorganism activities, phytoplankton consumption [@Trinh2012; @Romero2019] or by transformation; for example, $\mathrm{NH_{4}^{+}}$ is removed by nitrification, or organic carbon is oxidized to $\mathrm{CO_{2}}$ by aerobic degradation process. Similarly, the denitrification of $\mathrm{NO_3^{-}}$ to $\mathrm{N_2}$ is also considered a natural decontamination mechanism of the estuaries [@Garnier2009]. Besides the biochemical processes, there are also physical processes such as adsorption of P into suspended sediments and the burial of pollutants into bed sediments [@AissaGrouz2018; @Vilmin2015]. The retention and removal of nutrient pollutants including C, N, and P are mostly accounted for the processes described in Figure \@ref(fig:C1-fig-retention), including (1) nutrients (C, N, P) cycling, (2) adsorption-desorption and exchange at sediment interface, (3) burial (sedimentation), and (4) nutrient consumption by primary production (e.g., algal bloom).
+
+```{r C1-fig-retention, echo=FALSE, out.width='100%', fig.cap='Conceptual model of nutrient retention (or so-called buffer zone/filtering zone) by estuaries. The main sources of pollution include (1) agriculture, livestock runoff, (2) urban runoff, (3) domestic, industrial wastewater. Mechanisms of nutrient retention and removal in estuaries include (1) nutrients (C, N, P) cycling (transformation), (2) adsorption-desorption and sediment exchange, (3) burial (sedimentation), (4) nutrient consumption by primary production (e.g., algal bloom) (adapted from \\cite{Paerl2006b}).', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-retention.pdf")
+```
+
+According to @Yu2019, the key factors controlling nutrient concentrations by removal, transformation or retention are still poorly understood in tropical-subtropical estuaries because of the lack of experiments and modeling application. However, the retention capacity of estuaries is likely to depend on the hydrological characteristics, particularly the flushing capacity, more than the climatic conditions in a short-term observation [@Eyre2000; @Garnier2013; @Romero2019]. River-dominated estuaries (with large freshwater inflow) typically have a strong flushing capacity (short retention time) with a lower estuarine retention capacity than estuaries with a long retention time. @Le2010 found that in tropical systems, there are higher phosphate retention and lower silica retention than the temperate systems, while nitrogen retention was quite similar in these systems. However, the quality of pollutant sources in these two systems is often different, leading to a change in the main mechanisms of nutrient retention between them.
+
+```{r CH1-table4-tropical, echo=F, warning=F}
+temp.mat = data.frame(image="")
+colnames(temp.mat) <- NULL
+temp.mat %>%
+  kbl(format="latex",booktabs = T,escape = F,caption="The differences between temperate and tropical estuaries") %>%
+  kable_paper(full_width = T,latex_options = c("scale_down","striped", "Hold_position"), stripe_index =1) %>%
+  column_spec(1, image = "excel/CH1-table4-temperate and tropical estuaries.pdf") %>%
+  sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .)
+```
+
+Table \@ref(tab:CH1-table4-tropical) details the differences between tropical and temperate estuaries in terms of nutrient retention and removal in estuaries before discharge into the sea. In addition, the differences in hydrological conditions, climate, and dominant biogeochemical processes of these two regional estuaries are compared. Hydrologically, temperate estuaries generally have a more stable upstream discharge than tropical estuaries. This reduces the variation in the flushing capacity of temperate estuaries between seasons compared with the distinct seasonal variation of tropical estuaries [@Eyre1999]. In other words, in contrast to relatively constant retention capacity in temperate estuaries, the tropical estuaries often have very low retention in the rainy season to high retention in the dry season [@McKee2000]. In terms of biogeochemical processes, nitrification is likely one of the most important transformation processes in the water column in urban tropical estuaries because of very high ammonium input from domestic wastewater [@Yu2019]. In contrast, ammonium inputs of in temperate estuaries have largely dropped thanks to improved wastewater treatments, so that nitrification processes are no longer a major factor [@Romero2019].
+
+#### Eutrophication processes
+
+Residence time and flushing capacity are factors that strongly influence retention capacity in estuaries. Estuaries with long residence time (weeks to months) have higher retention and removal capacity than estuaries with short residence time. However, long-term exposure to high nutrient pollutants may lead to algal blooms [@Romero2019].
+
+**Definition of eutrophication**
+
+```{r C1-fig-eutrophication, echo=FALSE, out.width='80%', fig.cap='Changes in physicochemical parameters and the relative dominance of plants and biodiversity depend on the degree of eutrophication in an aquatic environment (\\cite{LeMoal2019})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-eutrophication.pdf")
+```
+
+Eutrophication is defined as a natural process of increasing the organic material production over time. However, the research and definition of eutrophication mainly focus on "anthropogenic eutrophication" that is, the process of eutrophication under the human influence  [@LeMoal2019]. Anthropogenic eutrophication is defined as a syndrome of an aquatic ecosystem associated with the overproduction of organic material induced by anthropogenic inputs of phosphorus and nitrogen [@LeMoal2019]. In general, an increase in nutrient inputs causes an increase in phytoplankton biomass and a decrease in light penetration in the water column, producing an undesirable disturbance to the balance of organisms in the water [@Durand2011]. Figure \@ref(fig:C1-fig-eutrophication) depicts the interpretation of an increase in eutrophication under increasing water nutrients, leading to an increase in phytoplankton in the water, beginning with diatoms then macrophytes. When the number growth of diatoms is maximum, the oxygen in the water is depleted, and the formation of harmful phytoplankton species such as cyanobacteria replaces diatoms, and biodiversity in the water also decreases.
+
+**A literature review of eutrophication**
+
+Studies on eutrophication have been numerous since the 1970s but focused solely on explaining the causes and consequences of eutrophication for lakes. Eutrophication in estuaries and coastal areas has been studied extensively since the 1990s [@InterResearch]. These days, eutrophication studies in rivers, estuaries and coastal areas are viewed as a "new wine" in an "old bottle" [@LeMoal2019]. Research on eutrophication is considered the new wine because nutrient pollution (as the main cause of eutrophication) has changed from excess phosphorus to excess nitrogen. Meanwhile, consequences of eutrophication such as algal bloom, anoxia from the 1970s in the lakes are still present in rivers, estuaries and coastal areas today [@LeMoal2019].
+
+**Eutrophication processes and consequences**
+
+```{r C1-fig-eutrophication-effect, echo=FALSE, out.width='100%', fig.cap='Conceptual model of eutrophication and consequences (adapted from \\cite{Whitall2007})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-eutrophication-effect.pdf")
+```
+
+The conceptual model of eutrophication and consequences is shown in Figure \@ref(fig:C1-fig-eutrophication-effect). The mechanism and consequences of eutrophication in different aquatic systems share the same general mechanism of eutrophication development [@Whitall2007]. The intensity of eutrophication depends on environmental factors, residence times, high temperatures, and sufficient light utilization [@LeMoal2019]. The little difference between the current conceptual model of eutrophication for estuaries and other aquatic systems is the change in rates of ecosystem metabolism [@Whitall2007]. The most notable effects of eutrophication are algal proliferation, or blooms, leading to large biomass production. Then these large biomasses are degraded, resulting in oxygen depletion in the aquatic environment. The hypoxia or anoxia condition can change all the communities' structure and function (plants, zooplankton, benthic fauna, fish). There is also the formation of toxic gases such as $\mathrm{H_2S}$, or greenhouse gases ($\mathrm{CO_{2}}$,  $\mathrm{CH_{4}}$) [@LeMoal2019].
+
+Eutrophication not only harms aquatic organisms but also directly affects the economy and human health. For example, the formation of toxic phytoplankton such as cyanobacteria has affected drinking water sources of approximately 400,000 residents in Ohio (USA) in 2014 [@Smith2015b]. In coastal waters, eutrophication has indicated one billion dollars losses per year to the fisheries economy of European countries [@Wurtsbaugh2019]. Many North American and European countries effectively reduced eutrophication and many eutrophication-related problems for freshwater rivers, lakes, and coastal oceans [@Wurtsbaugh2019]. Although there are no statistics on the impact of eutrophication in developing countries, particularly in Asia, these reports in developed countries suggest that human health and economic losses in developing countries may be stronger because of the increasing severity of eutrophication in recent years.
+
+
+
+#### Greenhouse gases
+
+In addition to studies warning about the risk of eutrophication in estuaries, there has been more and more research on greenhouse gas emissions (GHGs) in recent years [@Daniel2013; @Borges2018; @Marescaux2018]. Estuaries offer ideal conditions for GHGs production since they receive large amount of organic carbon and nitrogen [@Daniel2013].
+
+Although estuaries occupy a small portion of the global ocean area (about 0.2-0.3%), their  $\mathrm{CO_{2}}$ emissions are a disproportionately large flux (about 0.25 Pg C $yr^{-1}$) compared to the $\mathrm{CO_{2}}$ exchanges between the open ocean and atmosphere (@Bauer2013, Figure \@ref(fig:C1-fig-CO2)). Similarly, @Bange2006 estimated that $\mathrm{N_{2}O}$ accounted for about 33% of the oceanic greenhouse gases emission. In the study of Global Methane Budget 2000–2017, @Saunois2020 estimated that around 50% of $\mathrm{CH_{4}}$ emissions from the coastal and open sea were attributed to estuaries (3–3.5 Tg $\mathrm{CH_{4}}$ $yr^{-1}$). While $\mathrm{CO_{2}}$ makes the largest contribution in terms of concentration to global warming, methane ($\mathrm{CH_{4}}$) and nitrous oxide ($\mathrm{N_{2}O}$) are important trace gases in the atmosphere.  $\mathrm{CH_{4}}$ and $\mathrm{N_{2}O}$ absorb infrared radiation respectively 300 and 25 times more effectively, than $\mathrm{CO_{2}}$ [@Burgos2015]. Therefore, the impact of these two gases on global warming is many times greater than that of $\mathrm{CO_{2}}$. The increase in eutrophication at the estuaries poses a risk of increasing their concentrations. However, the uncertainty of estuarine GHGs emission flux is high due to limited spatial and temporal coverage during field observations [@Bauer2013].
+
+```{r C1-fig-CO2, echo=FALSE, out.width='80%', fig.cap='The contribution of major aquatic systems to global  $CO_{2}$ emission  (\\cite{Bauer2013})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-CO2.pdf")
+```
+
+In contrast to developed countries where GHGs in estuaries are expected to decrease because of nutrient and organic carbon reduction [@Murray2015], such emissions would likely increase in developing countries, especially in tropical and sub-tropical regions [@Cotovicz2016]. Indeed, most developing countries are located in the tropical region and have high population densities but limited environmental management practices (e.g., sewage treatment facilities). Uncertainties of GHGs estimation might be high in developing countries in Southeast Asia due to the lack of GHGs monitoring [@David2018]. The knowledge on how GHGs emissions are affected by water pollutants in a fast-growing urban area is still limited [@Park2018; @Li2021; @Fernandez2020].  Several studies clearly showed the increase of  $\mathrm{N_{2}O}$ emission because of increased nitrogen loadings to estuarine environments, stimulating microbial processes [@Bange2006; @Garnier2009]. The existing research indicates that the most important factors controlling  $\mathrm{N_{2}O}$ emission are dissolved inorganic nitrogen (DIN) and oxygen levels. @Brase2017 found that the main process responsible for  $\mathrm{N_{2}O}$ production in Elbe Estuary (Germany) was denitrification in the 1990s, but it has been changed into nitrification since 2008. The positive relationship between  $\mathrm{N_{2}O}$ and $\mathrm{NH_{4}^{+}}$ in several studies in tropical estuaries (e.g., Mandovi estuary, India; Yangtze River, China) suggested that nitrification is the main process for  $\mathrm{N_{2}O}$ production [@Manjrekar2020; @Zhang2010]. However, the contribution rate of nitrification or denitrification to  $\mathrm{N_{2}O}$ production is still unclear, e.g., in tropical systems [@Daniel2013; @Beaulieu2019].
+
+#### GHGs vs. eutrophication
+
+The GHGs formation in urbanized estuaries is also influenced by the same source, which is wastewater from megacities. Eutrophication can significantly affect GHGs emissions [@Li2021], such as reducing $\mathrm{CO_{2}}$ emissions by intense photosynthesis, while $\mathrm{CH_{4}}$ emissions have been observed to rise exponentially with eutrophication indicators (i.e., chlorophyll a) [@DelSontro2019].  $\mathrm{CO_{2}}$ concentrations depend on photosynthesis and aerobic/anaerobic respiration of organic matter [@Silvennoinen2008; @Davidson2015]. Higher $\mathrm{CH_{4}}$ emissions can be expected from tropical and subtropical regions than temperate ones because of higher pollutant inputs and stronger biological activities [@Huertas2019]. Autochthonous primary production arising with a high amount of untreated domestic wastewater can create easily biodegradable organic matters. More $\mathrm{CH_{4}}$ is thus produced due to oxygen consumption and anaerobic decomposition of organic matter from urban effluents [@Huttunen2003;@Garnier2013]. @Grasset2020 proposed a conceptual model describing non-linear relations between trophic status and GHGs emission in aquatic systems (Figure \@ref(fig:C1-fig-EutrovsCH4vsCO2)). This pattern is established based on the observed data at 20 freshwater mesocosms. As trophic status increased from mesotrophic to hypereutrophic, there was a nearly linear increase in $\mathrm{CH_{4}}$ while $\mathrm{CO_{2}}$ decreased gradually. However, the  $\mathrm{CO_{2}}$ equivalent (total  $\mathrm{CH_{4}}$ and  $\mathrm{CO_{2}}$ in terms of global warming potential) is elevated at hypereutrophic [@Grasset2020].
+
+
+```{r C1-fig-EutrovsCH4vsCO2, echo=FALSE, out.width='70%', fig.cap='Conceptual model of net ecosystem production (gross primary production - respiration) and  $\\mathrm{CH_{4}}$,  $\\mathrm{CO_{2}}$ emissions in the aquatic system (\\cite{Grasset2020})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-EutrovsCH4vsCO2.pdf")
+```
+
+```{r C1-fig-CH4-eutro, echo=FALSE, out.width='100%', fig.cap='(a) Relationships between  $\\mathrm{CH_{4}}$ flux and chlorophyll-a in the water column and (b) predicted  $\\mathrm{CH_{4}}$ emission in eutrophication scenarios in lakes (\\cite{Beaulieu2019})', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-CH4-eutro.pdf")
+```
+
+@Benassi2021 and @Fernandez2020 found that GHGs concentrations were highest in hypereutrophic regions or during large phytoplankton blooms, i.e., higher trophic state resulting in higher GHGs emissions. In lakes, $\mathrm{CH_{4}}$ emission can be doubled under hypereutrophic conditions, especially in tropical regions with a 2$^{\circ}$C increase [@SepulvedaJauregui2018].  @Beaulieu2019 also concluded that an increase in eutrophication by triple nutrient concentrations in the next century might lead to a double concentration of  $\mathrm{CH_{4}}$ (Figure \@ref(fig:C1-fig-CH4-eutro)). [@Zhang2021b] reported that the increase in $\mathrm{CH_{4}}$ emissions would be even faster than the increase in nutrients at a subtropical region if phosphorus is the limiting factor of eutrophication.
+
+Studies on the impact of urbanization on tropical estuaries are still limited. However, these studies also have similar findings with other studies in developed countries on the impact of eutrophication on GHGs emissions (e.g., @Cotovicz2021; @Zhang2021; @Wang2018b; @Noriega2013; @Skerratt2013; @Benassi2021). Most urbanized tropical estuaries show that  $\mathrm{CO_{2}}$, $\mathrm{CH_{4}}$, and $\mathrm{N_{2}O}$ are linearly correlated with increased eutrophication (e.g.,@Cotovicz2016; @Cotovicz2021). In addition, studies in urbanized tropical estuaries mainly focused on one or two GHGs, and only surveyed a short period without season effects and a short area (focus mainly urban area). This leads to interpretations of the interaction of eutrophication and GHGs that are not fully described. For example, the reduction of $\mathrm{CO_{2}}$ towards the sea may be due to either dilution, consumption of phytoplankton [@Noriega2013], and $\mathrm{CO_{2}}$ to $\mathrm{CH_{4}}$ conversion. Besides, the change of $\mathrm{N_{2}O}$ concentration under the variation of $\mathrm{NH_{4}^{+}}$ and $\mathrm{NO_3^{-}}$also affects other GHGs. Therefore, a complete investigation including physiochemical parameters, nutrients, organic carbon and GHGs is needed to understand the processes leading to changes in eutrophication and GHGs in estuaries.
+
+### Difficulties of water quality management in developing countries
+
+Managing estuaries means managing human activities, which involves complex socio-economic and political issues [@Atkins2011]. As a result, the management of estuaries and the coastal area has a long track record of a few successes and many failures or under achievements [@Wolanski2014]. According to @Wolanski2014, the essence of anthropogenic problems comes from three sources: (1) materials that are put into the estuaries, (2) materials taken out from the estuaries, and (3) wider problems such as climate change. The failure to control "materials that are put into the estuaries" is due to a lack of balance between wastewater volume and wastewater treatment capacity. The failure to quantify the "materials taken out from the estuaries" is due to the lack of intensive monitoring and biogeochemical model application that allows the calculation of retention capacity and transformation of nutrients.
+
+#### Difficulties for the implementation of water quality and hydrological monitoring in estuaries
+
+While these failures have been and are being remedied in developed countries, they are increasingly common in emerging countries with megacities. Ultimately, addressing these issues requires understanding the nutrient dynamics at these urbanized estuaries through appropriate monitoring programs and modeling applications. However, understanding the nature of estuaries through observation is a long-term mission and a high cost because of the complex fluctuations of tidal estuaries. There is thus currently no universal method for designing water quality monitoring programs that guarantee both spatial and temporal scales for all estuaries [@Hartnett2011]. Building appropriate water quality monitoring programs that represent estuaries is difficult because of complex pollutant transport patterns at tidal estuaries. Two important factors to consider for monitoring programs at estuaries are (1) appropriateness of time series and (2) appropriateness of sampling station density [@Jonge2006]. High-frequency monitoring is essential to address current and future water-quality issues/evaluations in estuarine systems [@Etcheber2011].
+
+The characteristic feature of estuaries and tidal rivers is the influence of the tides, which usually have two high tides and two low tides, i.e., twice landward and twice seaward flow per day. This has resulted in water quality having a strong fluctuation depending on the hydrological regime. As shown in Figure \@ref(fig:C1-fig-highresolution), the survey results of indicators such as salinity, DO, and turbidity fluctuated in intensity and differed between indicators within only 48 hours of the survey. Therefore, high resolution of hydrologic regimes monitoring is essential to understand the variability of water quality in estuaries [@Etcheber2011].
+
+```{r C1-fig-highresolution, echo=FALSE, out.width='100%', fig.cap='Example of variations of salinity, temperature, turbidity, DO and water level in two days 20-21/07/2006 at Gironde estuary (\\cite{Etcheber2011}). The grey line is the tide fluctuation, and the red one is the parameter fluctuation.', fig.align='center'}
+knitr::include_graphics("figures/C1-fig-highresolution.pdf")
+```
+
+Identifying monitoring locations is important because of large fluctuations of concentrations with tide, season and weather conditions  [@Hartnett2011]. This explained freshwater river was increasingly monitored, while estuaries were not, although they received high loads of pollutants [@Jonge2006]. As shown in Figure \@ref(fig:C1-ExampleProfile), with only three routine monitoring stations along the salinity gradient, the results always show the effect of mixing between fresh and seawater, i.e., the phosphate concentration only decreases towards the sea. However, longitudinal profiles with more points allowed observing more complex oscillation trends, especially in the region with salinity concentrations from 10 to 20 (Figure \@ref(fig:C1-ExampleProfile)).
+
+```{r C1-ExampleProfile, echo=FALSE, out.width='80%', fig.cap='Comparison of survey results at three monitoring stations (black dots) and longitudinal profiles along a salinity gradient (\\cite{Jonge2006})', fig.align='center'}
+knitr::include_graphics("figures/C1-ExampleProfile.pdf")
+```
+
+#### Difficulties for the implementation of water quality modeling tools
+
+In developing countries, the difficulty in applying water quality modeling to estuaries mainly stems from the required data. As discussed above, emerging countries with inadequate monitoring programs have led to insufficient information to implement estuarine models. Missing data also leads to the inaccurately described biogeochemical processes and pollutant transport of estuaries. The quantity and quality of the data determine the confidence that can be placed on the model application. Uncertainties in external driving forces, such as winds and inflow rates, propagate uncertainties in model results. If the data used for model setup and calibration is not reliable, the results would not be reliable, no matter how well the model was applied to previous studies.
+
+Lack of modelers can be widespread in developing countries. However, the lack of connection between the modeler and the monitoring center is more critical. Failure to apply well documented (e.g., MIKE, a commercial model) can stem from the modeler's failure to understand the sampling conditions, data uncertainty. Although calibration and validation are based on observed data, no field data should be considered perfectly accurate. Therefore, the difficulty in applying the model in developing countries is from the lack of modelers who can understand internal processes and observation.
+
+In addition, failures in model application leading to wrong decisions in water quality management of estuaries can also be attributed to model selection. Because of the lack of data, it is preferable to use simple models over more complex ones. In particular, simple models often ignore the retention and transformation characteristics over time (e.g., seasonal) of estuaries, which does not detect eutrophication growth or algal blooms over time [@Arndt2009; @Arndt2011]. Therefore, understanding and using models that accurately describe hydrodynamics and biogeochemical processes are necessary to quantify nutrient dynamics in estuaries and improve management efficiency.
+
+#### Lessons in eutrophication management in industrial countries
+
+Successful lessons in the management or recovery of estuaries have been observed in many developed countries, where the solution has been used was the reduction of the amount of wastewater entering estuaries [@Wolanski2014].
+
+The results of a 40-year survey at the Seine river and estuary (France) have shown the evolution and effectiveness of freshwater quality policies [@Romero2016]. Two decades ago, the Seine estuary used to have summer anoxic episodes, then the extension of WWTPs and agricultural policies has kept the estuary almost always in good condition since 2010 (Figure \@ref(fig:C1-Seine)). Besides the construction of WWTPs, policies such as the ban of phosphates in household detergents have also reduced $\mathrm{PO_4^{3-}}$ concentrations significantly since the 1990s [@Romero2016].
+
+```{r C1-Seine, echo=FALSE, out.width='80%', fig.cap='Environmental Quality Status in Seine River (from 1970 to 2013) (\\cite{Romero2016})', fig.align='center'}
+knitr::include_graphics("figures/C1-Seine.pdf")
+```
+
+The effectiveness of management policies in improving water quality is demonstrated through the stages of development of WWTPs (Figure \@ref(fig:C1-Seine)). However, the effectiveness of new WWTPs with a suitable capacity to the urbanized tropical estuaries in developing countries is still questionable because of the lack of long-term observation. Besides, @Wolanski2014 argue that policies to reduce pollution do not always succeed because the consequences of eutrophication can linger when estuaries have lost their purification capacity. @Schindler2008 concluded that eutrophication of lakes could not be controlled by reducing the nitrogen input because this action can increasingly favor nitrogen-fixing cyanobacteria; the lake thus remained highly eutrophic. Therefore, the determination of policies to reduce pollution should pay attention to the composition and proportion of nutrients (N, P, Si). The contribution of biogeochemical models for estuaries is critical [@Wolanski2014].
+
+In rapidly urbanizing countries, questions about management policies align with megacities' strong impact to reduce eutrophication in estuaries. Improvements in water quality and control of eutrophication in estuaries are also seen in some of the highly urbanizing countries in Asia. Shenzhen Bay (China) is an example of the impact of urbanization on the water quality of estuaries and coastal areas in the 1990s. Similar to other developing countries, a large amount of WWTP cost constraints for N and P mitigation policies in wastewater would discourage governments of China. Therefore, monitoring programs and biogeochemical models were implemented to find other solutions in improving coastal regions adjacent to Shenzhen Bay, China. The monitoring results showed that phosphorus was the potential limiting nutrient for primary production in this area. Simulation results also showed that improving the P treatment efficiency of WWTP will help reduce eutrophication. In addition, the removal efficiency of P was also higher than N; reducing phosphorus was thus performed first, followed by nitrogen years later. As a result, eutrophication has almost disappeared in this area since 2005 in this bay [@Zhou2020]. This experience of urban river restoration at this tropical bay shows that reductions in nutrient concentrations through WWTP are inevitable.  The assistance of modeling in the accurate description of biogeochemical processes and eutrophication development is essential. This helps reduce the cost of building WWTPs that meet the region's demographic trends.
+
+## Water quality modeling approach in estuaries
+
+### Fundamental to water quality modeling
+
+The variation of water quality is mainly governed by (i) the physical transport (e.g., velocity, advection, diffusion/dispersion, settling and burial) and (ii) the biogeochemical processes (e.g., the transformation of nutrients) [@Shanahan1998; @OKane2003]. A water quality model usually includes these components according to the following equation:
+
+```{r FullEQ, echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("figures/FullEQ.pdf")
+```
+
+where:
+
+- $C, t, x$ pollutant concentration, time, distance, respectively
+
+- $U, D, H$ advection velocity, dispersion coefficient, total water depth, respectively
+
+- $Advection$ accounts for the concentrations of pollutants follow the current movement as it flows downstream (see Figure \@ref(fig:C1-avection))
+
+- $Dispersion$ accounts for the spreading pollutants by turbulent mixing and molecular diffusion from the location of high concentration to low concentration
+
+- $Settle$ accounts for the difference between the resuspended particles and the settling particles
+
+- $Transform$ accounts for the rate of the biogeochemical processes that happen in the water column (see Figure \@ref(fig:C1-model) for an example of simplified biogeochemical processes)
+
+- $Load$ accounts for the external sources such as runoff, wastewater treatment plant, lateral loads from tributaries
+
+
+The hydrodynamic model provides the advection and dispersion components (Figure \@ref(fig:C1-avection)), including velocity and turbulent diffusion coefficients. Some hydrodynamic models also provide the information of settling velocity to calculate the amount of settling pollutant and burial. The biogeochemical module provides the transformation of pollutants, which describes the rate of substance variations due to biological and chemical processes, which is usually expressed by a Michaelis–Menten equation. Therefore, the estuarine models are usually called reaction-transport models to describe the substances' behavior according to hydrodynamics and biogeochemistry.
+
+```{r C1-avection, echo=FALSE, out.width='100%', fig.cap='Illustration of pollutant transport by advection and dispersion/diffusion. C(t) is the concentration of variables as a function of time (t) and distance (x)', fig.align='center'}
+knitr::include_graphics("figures/C1-avection.pdf")
+```
+
+#### Governing equations for hydrodynamics
+
+To simulate water quality in estuaries, it is first necessary to determine the physical transport information of the substances. The hydrodynamics model is thus set up first. The required common equations are shown in Table \@ref(tab:CH1-table5-hydro). The tide effect equation is one of the main differences between the hydraulic model in the tidal estuaries and rivers.
+
+```{r CH1-table5-hydro, echo=F, warning=F}
+temp.mat = data.frame(image="")
+colnames(temp.mat) <- NULL
+temp.mat %>%
+  kbl(format="latex",booktabs = T,escape = F,caption="Simplified governing equations of hydrodynamics model in estuaries") %>%
+  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
+  column_spec(1, image = "excel/CH1-table5-Simplified governing equations.pdf") %>%
+  sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .)
+```
+
+In reality, these above equations need to be numerically solved with some approximations. The shallow water approximation is widely used in the studies of rivers, then the continuity and momentum equations can be further simplified [@Savenije2012], for instance:
+
+```{r EqHydraulics, echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("figures/EqHydraulics.pdf")
+```
+
+where *H*(= *h* + $\xi$)=total water depth, *h*=the equilibrium water depth, $\xi$=surface displacement level, *u*=water velocity in x-direction, \|*u*\|=water speed, *Q*=water inflow/outflow from external sources, *C_B*=bottom drag coefficient, *A_H*=horizontal viscosity, $\tau_x$=wind stress
+
+#### Governing equations for water quality
+
+The water quality model simultaneously uses the information in the hydraulic model (e.g., advection and dispersion) and combines it with the biogeochemical processes equations to obtain the variable concentrations over time and space. Besides biogeochemical reactions, the concentration of substances changes according to other processes such as sorption or exchange with the atmosphere. Although many processes lead to changes in the concentration of substances, a water quality model is always based on the conservation of mass equation principle. The total mass of an element such as C, N or P will remain the same; they only change the chemical formula under the influence of reactions in water, sediment, air. The main processes leading to the change in the concentration of variables are presented in Table \@ref(tab:CH1-table6-process).
+
+
+```{r CH1-table6-process, echo=F, warning=F}
+temp.mat = data.frame(image="")
+colnames(temp.mat) <- NULL
+temp.mat %>%
+  kbl(format="latex",booktabs = T,escape = F,caption="Processes controlling concentrations of nutrients in aquatic systems") %>%
+  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
+  column_spec(1, image = "excel/CH1-table6-Processes controlling concentrations of nutrients.pdf") %>%
+  sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .)
+```
+
+```{r C1-model, echo=FALSE, out.width='100%', fig.cap='Simplified biogeochemical processes in the aquatic system (ellipse, rectangle, red line, green line, dot line represent the processes, the elements/pollutants, consumption, production and settling/deposition, respectively), DIC and $CH_2O$ are dissolved inorganic and organic carbon (adapted from \\cite{Regnier2013})', fig.align='center'}
+knitr::include_graphics("figures/C1-model.pdf")
+```
+
+### Application of reaction-transport model in estuaries
+
+#### The applications of estuarine biogeochemical models
+
+The water quality models for estuaries have existed for more than 50 years (e.g., @EspeyNo10), including simple 0-dimensional models (0D models) to complex 3-dimensional models (3D models). Models can be classified into three categories as follows:
+
+1.  **The apparent zero end-member concentration model:** This was a one-dimensional estuarine model which provided the quantitative estimates of primary productivity, nutrient fluxes in the saline part of the estuary to the point of zero salinity. The limitation was to introduce large errors in estimating the long-term residual constituent flux towards the coastal zone because it ignored all processes taking place in the tidal river [@Kaul1984].
+
+2.  **Box model:** Box models treat the estuary as a single, vertically and horizontally well-mixed box with steady residual hydrodynamic characteristics  [@Regnier2013]. These models are still widely used to assess global estuarine dynamics [@Laruelle2009; @Garnier2010]. However, the results of flux calculation in the box models were usually inaccurate because they neglect the transient behavior of the flow and scalar fields [@Regnier2013; @Arndt2009; @Arndt2011].
+
+3.  **Reaction-transport models (RTMs):** RTMs describe the coupling of the transport and reaction in the estuaries. Thus, they can provide a mechanistic description of process interactions over a spectrum of scales. These models are particularly suitable for quantifying process rates and material fluxes at spatial and temporal scales that observations cannot achieve [@Regnier2013]. RTMs are the same approach with the overview of the nutrient dynamic model, which ensures to cover two main parts (i) hydraulics and (ii) biogeochemical processes.
+
+From 1980 to 2013, most of the estuarine biogeochemical model applications were mainly in the temperature climate zone [@Volta2016]. The recent studies of the estuarine biogeochemical model were reported for the estuaries in Western Europe, North America and few studies in Australia and China. Some well-known models have been applied extensively for estuaries such as MIKE [@Arndt2009; @Arndt2011], MOHID 3D [@Trancoso2005; @Fossati2013], HEM- 3D [@Park1995; @Park2005], GEM 3D [@Blauw2009; @Mojica2015], ELCOM-CAEDYM 3D [@Robson2004; @MiguelLucasLavoAntonioJimo2018], MOSES 1D [@Soetaert1995; @Hofmann2008], C-GEM [@Volta2014; @Volta2016]; CONTRASTE [@Regnier1999]. There were very few studies about the nutrient dynamics models in the estuarine systems for tropical estuaries, such as Southeast Asian countries, even though the estuarine water quality in these countries is facing water pollution and eutrophication.
+
+#### Strengths and weaknesses of simplified and complex models
+
+
+```{r CH1-table7-compare, echo=F, warning=F}
+temp.mat = data.frame(image="")
+colnames(temp.mat) <- NULL
+temp.mat %>%
+  kbl(format="latex",booktabs = T,escape = F,caption="Comparison of some well-known biogeochemical model applications in estuaries. The order of models indicates the simplicity to the complexity of the model") %>%
+  kable_paper(full_width = T,latex_options = c("scale_down","striped", "hold_position"), stripe_index =1) %>%
+  column_spec(1, image = "excel/CH1-table7-Comparison of some well-known biogeochemical model.pdf") %>%
+  sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .)
+```
+
+Although water quality modeling for estuaries has greatly improved over time, the adoption of modern models has not always been consistent for many estuaries. In previous decades, mixing diagrams and steady-state box models were often used, but the disadvantage of these models was that they ignored the influence of tides [@Arndt2009]. As in the synthesis report of @EspeyNo10 reaction-transport models allowed an accurate description of biogeochemical processes under the complex influence of many factors in estuaries such as tide, requiring time-costly computation. Today the computational limitation is not an important factor, but the lack of applications of reaction-transport models still exists in many developing countries because of insufficient monitoring plans and access to relevant data series [@Regnier2013]. Therefore, selecting or developing appropriate models to apply on a regional or global scale is critical under the great influence of wastewater from emerging countries [@Regnier2013;@Volta2014].
+
+The model selection is an important step for modeling application because no single model can apply for estuaries systems, even with a very advanced model. One model can be applied for the estuarine system if it can reach these criteria:
+
+1.  Whether the model outputs obtain the studied objectives?
+
+2.  Whether the hydrodynamic processes take into account the tidal regime?
+
+3.  Which data/parameters are in need for the model?
+
+4.  Which assumption and limitation of the model?
+
+Table \@ref(tab:CH1-table7-compare) compares the usage scope of some well-known estuarine biogeochemical models. According to the data requirement from simple to complex, the order of the models is C-GEM, CONTRASTE, ... MIKE, Delft3D. For the not-well monitoring estuarine systems in many tropical estuaries, the C-GEM, CONTRASTE or MOSES models are suitable if the ultimate study's objective is to qualify the impact of point sources, tide and biogeochemical processes. At the same time, HEM-3D, CAEDYM, MOHID are more suitable for the more complex requirements such as dynamics of phytoplankton groups and species. Although 1D reaction-transport models such as CONTRASTE can describe estuarine biogeochemical dynamics, the data requirement at the boundaries of estuarine systems still needs to ensure that high temporal variability is described. Therefore, reaction-transport models are often applied in intensively monitored estuaries such as Scheldt (Belgium/Netherlands) [@Arndt2009].
+
+
+
+## Conclusion of Chapter 1
+
+The chapter gives an overview of the important processes in modeling water quality for urbanized tropical estuaries. The difficulties and limitations of the current models are also presented. The next chapter presents methods of monitoring, data processing, and model selection.

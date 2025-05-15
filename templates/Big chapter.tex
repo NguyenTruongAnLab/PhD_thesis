@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper,oneside]{book}
+\usepackage{lipsum}
+\usepackage{minitoc}
+\usepackage{fix-cm}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+\definecolor{gray75}{gray}{0.75}
+\titleformat{\chapter}[display]{\filleft\Huge\bfseries}{\fontsize{100}{100}\selectfont\textcolor{gray75}\thechapter}{1ex}{}[]%
+
+
+\begin{document}
+	\dominitoc \tableofcontents \adjustmtc
+	
+	\chapter{This is first chapter}
+	
+	\section*{Heading 1}
+	\lipsum[1]
+	\lipsum[2]
+	\lipsum[3]
+	\section*{Heading 2}
+	\lipsum[1]
+	\lipsum[2]
+	\lipsum[3]
+	\subsection*{Heading 3}
+	\lipsum[1]
+	\lipsum[2]
+	\lipsum[3]
+		
+	\chapter{This is second chapter}
+	\section*{Heading 1}
+	\lipsum[1]
+	\lipsum[2]
+	\lipsum[3]
+	\section*{Heading 2}
+	\lipsum[1]
+	\lipsum[2]
+	\lipsum[3]
+	\subsection*{Heading 3}
+	\lipsum[1]
+	\lipsum[2]
+	\lipsum[3]
+	
+\end{document}

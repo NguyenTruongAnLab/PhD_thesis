@@ -1,6 +1,140 @@
-\item[1-D, 2-D] One- or two-dimensional, referring **in this thesis** to spatial dimensions in an image.
+\item[$AOU$] Apparent Oxygen Utilization.
 
-\item[Otter] One of the finest of water mammals.
+\item[$BOD_5$] The 5 day biochemical oxygen demand.
 
-\item[Hedgehog] Quite a nice prickly friend.
+\item[$CH_4$] Methane.
+
+\item[$CH_4xs$] Methane excess.
+
+\item[$Chl-a$] Chlorophyll-a.
+
+\item[$CO_2$] Carbon dioxide.
+
+\item[$CO_2xs$] Carbon dioxide excess.
+
+\item[$COD$] Chemical oxygen demand.
+
+\item[$DIC$] Dissolved inorganic carbon.
+
+\item[$DIN$] Dissolved inorganic nitrogen.
+
+\item[$DIP$] Dissolved inorganic phosphorus.
+
+\item[$DO$] Dissolved oxygen.
+
+\item[$DOC$] Dissolved organic carbon.
+
+\item[$DOP$] Dissolved organic phosphorus.
+
+\item[$DSi$] Dissolved silica.
+
+\item[$eDIC$] Excess dissolved inorganic carbon.
+
+\item[$GHGs$] Greenhouse gases.
+
+\item[$GPP$] Gross primary production.
+
+\item[$H_2S$] Hydrogen sulfide.
+
+\item[$HCA$] Hierarchical cluster analysis.
+
+\item[$HP$] Hierarchical partitioning.
+
+\item[$Kps$] Half-saturation constant.
+
+\item[$LPOC$] Labile particulate organic carbon.
+
+\item[$N_2O$] Nitrous oxide.
+
+\item[$N_2Oxs$] Nitrous oxide excess.
+
+\item[$NH_3$] Ammonia.
+
+\item[${NH_4}^+$] Ammonium.
+
+\item[${NO_2}^-$] Nitrite.
+
+\item[${NO_3}^-$] Nitrate.
+
+\item[$NPP$] Net Primary Production.
+
+\item[$OC$] Organic carbon.
+
+\item[$Pac$] Maximal P sorption capacity.
+
+\item[$pbias$] Bias percentage.
+
+\item[$PCA$] Principal component analysis.
+
+\item[$PH_3$] Phosphine.
+
+\item[$PIP$] Particulate inorganic phosphorus.
+
+\item[$PO_4^{3-}$] Excess dissolved inorganic carbon.
+
+\item[$POC$] Particulate organic carbon.
+
+\item[$POP$] Particulate organic phosphorus.
+
+\item[$R^2$] Coefficient of determination.
+
+\item[$RDA$] Redundancy analysis.
+
+\item[$RMSE$] Root mean square error.
+
+\item[$RPOC$] Refractory particulate organic carbon.
+
+\item[$RTMs$] Reactive-transport models.
+
+\item[$Si(OH)_4$] Orthosilicic acid.
+
+\item[${SO_4}^{2-}$] Sulfate.
+
+\item[$TN$] Total nitrogen.
+
+\item[$TOC$] Total Organic Carbon.
+
+\item[$TP$] Total phosphorus.
+
+\item[$TRIX$] Trophic index.
+
+\item[$TSS$] Total suspended sediment.
+
+
+
+
+
+\item[$BD$] Bach Dang station.
+
+\item[$BK$] Binh Khanh station.
+
+\item[$CARE$] Centre Asiatique de Recherche sur lEau.
+
+\item[$CEM$] Vietnamese Center of Monitoring.
+
+\item[$C-GEM$] The Carbon-Generic Estuarine Model.
+
+\item[$DONRE$] Department of Natural Resources and Environment.
+
+\item[$GSO$] General Statistics Office of Vietnam.
+
+\item[$HA$] Hoa An station.
+
+\item[$HCMC$] Ho Chi Minh City.
+
+\item[$NOAA$] National Oceanic and Atmospheric Administration.
+
+\item[$PC$] Phu Cuong station.
+
+\item[$SIWRR$] Southern Institute of Water Resources Research.
+
+\item[$WWTPs$] Wastewater treatment plants.
+
+\item[$WACC$] Center of Water Management and Climate Change.
+
+
+
+
+
+
 
