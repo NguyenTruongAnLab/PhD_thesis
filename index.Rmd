@@ -150,7 +150,7 @@ output:
       - templates/corrections.css # remove to stop highlighting corrections
     theme:
       primary: "#6D1919"
-    repo: https://github.com/ulyngs/oxforddown
+    repo: https://github.com/NguyenTruongAnLab/PhD_thesis
     pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
   bookdown::gitbook:
     css: templates/style.css
