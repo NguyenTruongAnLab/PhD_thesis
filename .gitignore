@@ -1,0 +1,40 @@
+# R specific files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+*_files/
+_bookdown_files/
+*_main_files/
+
+# LaTeX auxiliary files
+*.log
+*.aux
+*.lof
+*.lot
+*.toc
+*.out
+*.synctex.gz
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+_main.bbl
+_main.blg
+_main.run.xml
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+desktop.ini
+
+# Temporary files created during builds
+_todo.md
+_main.*
+!docs/_main.pdf
